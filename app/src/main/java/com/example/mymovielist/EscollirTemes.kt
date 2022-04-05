@@ -5,8 +5,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mymovielist.databinding.ActivityEscollirTemesBinding
 import com.example.mymovielist.models.ApiService
-import com.example.mymovielist.models.Genre.GenreAdapter
-import com.example.mymovielist.models.Genre.Genres
+import com.example.mymovielist.models.Genre.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
