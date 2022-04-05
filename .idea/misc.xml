@@ -3,7 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_admission_tickets_svgrepo_com.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_cup_cup_svgrepo_com.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_eye_svgrepo_com.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_user_svgrepo_com.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_escollir_temes.xml" value="0.1685185185185185" />
         <entry key="app/src/main/res/layout/activity_films_you_see.xml" value="0.17502532928064843" />
+        <entry key="app/src/main/res/layout/activity_ranking.xml" value="0.1685185185185185" />
+        <entry key="app/src/main/res/layout/activity_recomendedfilms.xml" value="0.1685185185185185" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.1685185185185185" />
+        <entry key="app/src/main/res/layout/activity_reviews.xml" value="0.1685185185185185" />
+        <entry key="app/src/main/res/layout/activity_users.xml" value="0.1685185185185185" />
         <entry key="app/src/main/res/layout/film_item.xml" value="0.17553191489361702" />
         <entry key="app/src/main/res/layout/genre_item.xml" value="0.17553191489361702" />
       </map>
