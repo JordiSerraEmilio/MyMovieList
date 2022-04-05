@@ -13,9 +13,6 @@
             android:name=".Ranking"
             android:exported="false" />
         <activity
-            android:name=".FilmsYouSee"
-            android:exported="false" />
-        <activity
             android:name=".Recomendedfilms"
             android:exported="false" />
         <activity
