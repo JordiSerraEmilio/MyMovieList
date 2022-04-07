@@ -4,11 +4,29 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.mymovielist.databinding.ActivityRankingBinding
+import com.example.mymovielist.models.ApiService
+import com.example.mymovielist.models.TopFilms.ResultsTop
+import com.example.mymovielist.models.TopFilms.TopAdapter
+import com.example.mymovielist.models.TopFilms.TopFilms
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class Ranking : AppCompatActivity() {
+
+    private  lateinit var binding : ActivityRankingBinding
+    private var films = mutableListOf<ResultsTop>()
+    private lateinit var adapter: TopAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ranking)
+        binding = ActivityRankingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Finestra pelicules
         val films1=findViewById<ImageButton>(R.id.bu_rank_films)
@@ -36,5 +54,39 @@ class Ranking : AppCompatActivity() {
             val intento1 = Intent(this, Users::class.java)
             startActivity(intento1)
         }
+
+
+        listaPeliculas()
+    }
+
+    private fun getRetrofit(): Retrofit {
+        return Retrofit.Builder().baseUrl("https://api.themoviedb.org/3/movie/")
+            .addConverterFactory(GsonConverterFactory.create()).build()
+    }
+
+    private fun listaPeliculas() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val call = getRetrofit().create(ApiService::class.java)
+                .getPopularFilms("top_rated?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=es-Es&page=1")
+
+            val peli = call.body()
+
+            runOnUiThread {
+                if (peli != null) {
+                    initFilms(peli)
+
+                }
+            }
+
+        }
+    }
+
+    private fun initFilms(topFilms: TopFilms){
+        for (film in topFilms!!.results){
+            films.add(film)
+        }
+        adapter = TopAdapter(films)
+        binding.rvRanking.layoutManager = LinearLayoutManager(this)
+        binding.rvRanking.adapter = adapter
     }
 }
