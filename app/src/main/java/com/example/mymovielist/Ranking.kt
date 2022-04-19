@@ -3,7 +3,9 @@ package com.example.mymovielist
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mymovielist.databinding.ActivityRankingBinding
 import com.example.mymovielist.models.ApiService
@@ -22,11 +24,14 @@ class Ranking : AppCompatActivity() {
     private  lateinit var binding : ActivityRankingBinding
     private var films = mutableListOf<ResultsTop>()
     private lateinit var adapter: TopAdapter
+    private var pag = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRankingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        listaPeliculas(true)
 
         // Finestra pelicules
         val films1=findViewById<ImageButton>(R.id.bu_rank_films)
@@ -55,8 +60,31 @@ class Ranking : AppCompatActivity() {
             startActivity(intento1)
         }
 
+        val menos=findViewById<Button>(R.id.bu_pag_atras)
+        menos.setOnClickListener {
+            if (pag >1){
+                pag = pag -1;
 
-        listaPeliculas()
+                listaPeliculas(false)
+                listaPeliculas(true)
+            }else{
+                Toast.makeText(this.applicationContext, "No pot fer-ho", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        val mas=findViewById<Button>(R.id.bu_pag_delante)
+        mas.setOnClickListener {
+            if (pag <10){
+                pag = pag +1;
+                listaPeliculas(false)
+                listaPeliculas(true)
+            }else{
+                Toast.makeText(this.applicationContext, "No hi ha més pagines", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+
+
     }
 
     private fun getRetrofit(): Retrofit {
@@ -64,21 +92,26 @@ class Ranking : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
 
-    private fun listaPeliculas() {
-        CoroutineScope(Dispatchers.IO).launch {
-            val call = getRetrofit().create(ApiService::class.java)
-                .getPopularFilms("top_rated?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=es-Es&page=1")
+    private fun listaPeliculas(boolean: Boolean) {
+        if(boolean == true){
+            CoroutineScope(Dispatchers.IO).launch {
+                val call = getRetrofit().create(ApiService::class.java)
+                    .getPopularFilms("top_rated?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=es-Es&page="+pag.toString())
 
-            val peli = call.body()
+                val peli = call.body()
 
-            runOnUiThread {
-                if (peli != null) {
-                    initFilms(peli)
+                runOnUiThread {
+                    if (peli != null) {
+                        initFilms(peli)
 
+                    }
                 }
-            }
 
+            }
+        }else{
+            delFilms()
         }
+
     }
 
     private fun initFilms(topFilms: TopFilms){
@@ -88,5 +121,9 @@ class Ranking : AppCompatActivity() {
         adapter = TopAdapter(films)
         binding.rvRanking.layoutManager = LinearLayoutManager(this)
         binding.rvRanking.adapter = adapter
+    }
+
+    private fun delFilms(){
+        films.removeAll { true }
     }
 }

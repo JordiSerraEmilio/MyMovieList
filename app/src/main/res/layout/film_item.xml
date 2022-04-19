@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="183dp"
+    android:layout_height="143dp"
     app:cardBackgroundColor="#971313">
 
     <LinearLayout
@@ -18,25 +18,29 @@
 
         <ImageView
             android:id="@+id/iv_film_cv"
-            android:layout_width="323dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="315dp"
+            android:layout_height="121dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
+            android:scaleType="fitXY"
             tools:srcCompat="@tools:sample/avatars" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tv_film_title_cv"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
                 android:autoSizeTextType="uniform"
+                android:maxHeight="20dp"
                 android:text="Titol"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
@@ -44,14 +48,14 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="44dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:text="Genres :"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
@@ -59,9 +63,9 @@
                 <TextView
                     android:id="@+id/tv_film_genres_cv"
                     android:layout_width="match_parent"
-                    android:layout_height="44dp"
+                    android:layout_height="20dp"
                     android:layout_marginStart="3dp"
-                    android:layout_marginTop="10dp"
+                    android:maxHeight="20dp"
                     android:text="Genres"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
@@ -69,7 +73,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
+                android:layout_height="22dp"
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
@@ -77,7 +81,6 @@
                     android:id="@+id/textView15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:text="Release date :"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
@@ -87,7 +90,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
-                    android:layout_marginTop="10dp"
                     android:text="Date"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
@@ -98,7 +100,7 @@
                 style="@android:style/Widget.Holo.RatingBar.Indicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
                 android:progressBackgroundTint="#5A5A5A"
                 android:progressTint="@color/yellow"

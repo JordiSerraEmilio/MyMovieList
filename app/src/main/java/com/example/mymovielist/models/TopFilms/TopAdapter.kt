@@ -14,10 +14,13 @@ class TopAdapter (
 
     class TopViewHolder(view: View) : RecyclerView.ViewHolder(view){
         private val binding = FilmItemBinding.bind(view)
-        fun binFilm(image:String?, title: String?, estrena: String?, genres: ArrayList<Int>){
+        fun binFilm(image:String?, title: String?, estrena: String?, point: Double?, genres: ArrayList<Int>){
             Glide.with(itemView).load("https://image.tmdb.org/t/p/w500"+image).into(binding.ivFilmCv)
             binding.tvFilmTitleCv.text = title
             binding.tvFilmDateCv.text = estrena
+            if (point != null) {
+                binding.rbFilmCv.rating = (point.div(2)).toFloat()
+            }
             //binding.tvFilmGenresCv.text = genres.toString()
         }
     }
@@ -30,7 +33,7 @@ class TopAdapter (
 
     override fun onBindViewHolder(holder: TopViewHolder, position: Int) {
        val result = toplist[position]
-       holder.binFilm(result.backdropPath, result.title, result.releaseDate, result.genreIds)
+       holder.binFilm(result.backdropPath, result.title, result.releaseDate, result.voteAverage, result.genreIds)
     }
 
     override fun getItemCount(): Int {

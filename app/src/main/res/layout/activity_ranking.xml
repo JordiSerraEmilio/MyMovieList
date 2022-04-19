@@ -10,14 +10,15 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_ranking"
         android:layout_width="match_parent"
-        android:layout_height="578dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.489" />
+        app:layout_constraintVertical_bias="0.149" />
 
     <TextView
         android:id="@+id/tv_title_fr_ranking4"
@@ -38,6 +39,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="71dp"
         android:background="#5D5D5D"
@@ -46,8 +48,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_ranking"
-        app:layout_constraintVertical_bias="0.884">
+        app:layout_constraintTop_toTopOf="@+id/tv_title_fr_ranking4"
+        app:layout_constraintVertical_bias="1.0">
 
         <ImageButton
             android:id="@+id/bu_rank_review"
@@ -104,4 +106,28 @@
             app:srcCompat="@drawable/ic_cup_cup_svgrepo_com"
             tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/bu_pag_atras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prev"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toStartOf="@+id/bu_pag_delante"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88" />
+
+    <Button
+        android:id="@+id/bu_pag_delante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.746"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88" />
 </androidx.constraintlayout.widget.ConstraintLayout>
