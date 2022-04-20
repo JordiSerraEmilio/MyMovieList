@@ -13,4 +13,5 @@
     <!--  OWN COLORS  -->
     <color name="baseorange">#f77814</color>
     <color name="yellowishorange">#f79a14</color>
+    <color name="grey">#999999</color>
 </resources>

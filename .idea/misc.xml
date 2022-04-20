@@ -5,9 +5,15 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_facebook.xml" value="0.256" />
         <entry key="app/src/main/res/drawable-v24/ic_lock.xml" value="0.2925" />
+        <entry key="app/src/main/res/drawable-v24/ic_lock_focused.xml" value="0.2925" />
         <entry key="app/src/main/res/drawable-v24/ic_mail.xml" value="0.2925" />
+        <entry key="app/src/main/res/drawable-v24/ic_mail_focused.xml" value="0.2925" />
         <entry key="app/src/main/res/drawable-v24/ic_person.xml" value="0.2925" />
+        <entry key="app/src/main/res/drawable-v24/login_bttn_bg.xml" value="0.2925" />
         <entry key="app/src/main/res/drawable-v24/login_edittxt_bg.xml" value="0.2925" />
+        <entry key="app/src/main/res/drawable/custom_email_icon.xml" value="0.2925" />
+        <entry key="app/src/main/res/drawable/custom_input.xml" value="0.2925" />
+        <entry key="app/src/main/res/drawable/custom_lock_icon.xml" value="0.2925" />
         <entry key="app/src/main/res/drawable/ic_admission_tickets_svgrepo_com.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_cup_cup_svgrepo_com.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_eye_svgrepo_com.xml" value="0.1" />
