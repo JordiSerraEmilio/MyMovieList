@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FFC107</color>
     <color name="red">#971313</color>
+
+    <!--  OWN COLORS  -->
+    <color name="baseorange">#f77814</color>
+    <color name="yellowishorange">#f79a14</color>
 </resources>

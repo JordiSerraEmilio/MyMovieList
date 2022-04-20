@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editTxtName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_edittxt_bg"
+        android:drawableStart="@drawable/ic_person"
+        android:drawablePadding="1dp"
+        android:hint="Name"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.183"
+        app:layout_constraintWidth_percent=".8" />
+
+    <EditText
+        android:id="@+id/editTxtEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:background="@drawable/login_edittxt_bg"
+        android:drawableStart="@drawable/ic_mail"
+        android:drawablePadding="5dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtName"
+        app:layout_constraintVertical_bias="0.03"
+        app:layout_constraintWidth_percent=".8" />
+
+    <EditText
+        android:id="@+id/editTxtPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_edittxt_bg"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="2dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtEmail"
+        app:layout_constraintVertical_bias="0.03"
+        app:layout_constraintWidth_percent=".8" />
+
+    <TextView
+        android:id="@+id/txtViewForgetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="5dp"
+        android:text="Forget Password"
+        app:layout_constraintBottom_toTopOf="@+id/bttnLogin"
+        app:layout_constraintEnd_toEndOf="@+id/editTxtPassword"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTxtPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtPassword"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_goneMarginTop="5dp" />
+
+    <TextView
+        android:id="@+id/txtViewTerms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Check our terms and conditions"
+        app:layout_constraintEnd_toEndOf="@+id/bttnLogin"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/bttnLogin"
+        app:layout_constraintTop_toBottomOf="@+id/bttnLogin"
+        app:layout_goneMarginTop="5dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bttnLogin"
+        android:layout_width="199dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/login_bttn_bg"
+        android:elevation="5dp"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtPassword"
+        app:layout_constraintVertical_bias="0.088" />
+</androidx.constraintlayout.widget.ConstraintLayout>
