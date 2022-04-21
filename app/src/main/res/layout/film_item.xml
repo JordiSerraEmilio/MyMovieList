@@ -36,7 +36,7 @@
             <TextView
                 android:id="@+id/tv_film_title_cv"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="10dp"
@@ -102,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:progressBackgroundTint="#5A5A5A"
                 android:progressTint="@color/yellow"
                 android:rating="1"

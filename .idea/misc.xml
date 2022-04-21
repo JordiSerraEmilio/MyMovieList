@@ -37,6 +37,7 @@
         <entry key="app/src/main/res/layout/fragment_signup_tab.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_signup_tab2.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/genre_item.xml" value="0.17553191489361702" />
+        <entry key="app/src/main/res/layout/user_item.xml" value="0.34692028985507245" />
       </map>
     </option>
   </component>

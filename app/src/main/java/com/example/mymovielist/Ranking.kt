@@ -104,7 +104,7 @@ class Ranking : AppCompatActivity() {
         if(boolean == true){
             CoroutineScope(Dispatchers.IO).launch {
                 val call = getRetrofit().create(ApiService::class.java)
-                    .getPopularFilms("top_rated?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=es-Es&page="+pag.toString())
+                    .getPopularFilms("top_rated?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=en-US&page="+pag.toString())
 
                 val peli = call.body()
 
