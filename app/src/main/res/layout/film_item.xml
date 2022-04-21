@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="143dp"
-    app:cardBackgroundColor="#971313">
+    app:cardBackgroundColor="@color/yellowishorange">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,6 +20,7 @@
             android:id="@+id/iv_film_cv"
             android:layout_width="315dp"
             android:layout_height="121dp"
+            android:layout_marginLeft="1dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:scaleType="fitXY"
