@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="143dp"
-    app:cardBackgroundColor="@color/yellowishorange">
+    app:cardBackgroundColor="#2B2929">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
         android:layout_marginTop="3dp"
         android:layout_marginEnd="3dp"
         android:layout_marginBottom="5dp"
-        android:background="#2B2929"
+        android:background="#393636"
         android:orientation="horizontal">
 
         <ImageView

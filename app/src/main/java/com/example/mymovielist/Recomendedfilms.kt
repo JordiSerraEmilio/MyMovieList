@@ -16,6 +16,7 @@ class Recomendedfilms : AppCompatActivity() {
         yousee1.setOnClickListener {
             val intento1 = Intent(this, FilmsYouSee::class.java)
             startActivity(intento1)
+            finish();
         }
 
         // Finestra reviews
@@ -23,12 +24,14 @@ class Recomendedfilms : AppCompatActivity() {
         review1.setOnClickListener {
             val intento1 = Intent(this, Reviews::class.java)
             startActivity(intento1)
+            finish();
         }
         // Finestra users
         val users1=findViewById<ImageButton>(R.id.bu_films_users)
         users1.setOnClickListener {
             val intento1 = Intent(this, Users::class.java)
             startActivity(intento1)
+            finish();
         }
 
         // Finestra ranking
@@ -36,6 +39,7 @@ class Recomendedfilms : AppCompatActivity() {
         rank1.setOnClickListener {
             val intento1 = Intent(this, Ranking::class.java)
             startActivity(intento1)
+            finish();
         }
     }
 }

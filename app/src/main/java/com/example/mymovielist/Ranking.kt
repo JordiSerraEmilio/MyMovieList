@@ -18,6 +18,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import kotlin.concurrent.timer
 
 class Ranking : AppCompatActivity() {
 
@@ -32,12 +33,15 @@ class Ranking : AppCompatActivity() {
         setContentView(binding.root)
 
         listaPeliculas(true)
+        binding.tvNumpagPopular.text = "- $pag -"
+
 
         // Finestra pelicules
         val films1=findViewById<ImageButton>(R.id.bu_rank_films)
         films1.setOnClickListener {
             val intento1 = Intent(this, Recomendedfilms::class.java)
             startActivity(intento1)
+            finish();
         }
 
         // Finestra Films you see
@@ -45,6 +49,7 @@ class Ranking : AppCompatActivity() {
         yousee1.setOnClickListener {
             val intento1 = Intent(this, FilmsYouSee::class.java)
             startActivity(intento1)
+            finish();
         }
 
         // Finestra reviews
@@ -52,19 +57,21 @@ class Ranking : AppCompatActivity() {
         review1.setOnClickListener {
             val intento1 = Intent(this, Reviews::class.java)
             startActivity(intento1)
+            finish();
         }
         // Finestra users
         val users1=findViewById<ImageButton>(R.id.bu_rank_users)
         users1.setOnClickListener {
             val intento1 = Intent(this, Users::class.java)
             startActivity(intento1)
+            finish();
         }
 
         val menos=findViewById<Button>(R.id.bu_pag_atras)
         menos.setOnClickListener {
             if (pag >1){
                 pag = pag -1;
-
+                binding.tvNumpagPopular.text = "- $pag -"
                 listaPeliculas(false)
                 listaPeliculas(true)
             }else{
@@ -76,6 +83,7 @@ class Ranking : AppCompatActivity() {
         mas.setOnClickListener {
             if (pag <10){
                 pag = pag +1;
+                binding.tvNumpagPopular.text = "- $pag -"
                 listaPeliculas(false)
                 listaPeliculas(true)
             }else{
