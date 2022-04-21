@@ -18,31 +18,32 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.149" />
+        app:layout_constraintVertical_bias="0.084" />
 
     <TextView
         android:id="@+id/tv_title_fr_ranking4"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#971313"
-        android:fontFamily="@font/holtwood_one_sc"
+        android:layout_height="30dp"
+        android:background="@color/baseorange"
+        android:fontFamily="@font/autour_one"
         android:gravity="center"
-        android:text="Popular films"
+        android:text="POPULAR FILMS"
         android:textAlignment="center"
-        android:textColor="#FFC107"
-        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextContrastCheck" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="71dp"
-        android:background="#5D5D5D"
+        android:layout_height="51dp"
+        android:background="@color/yellowishorange"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +60,7 @@
             android:layout_weight="1"
             android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_admission_tickets_svgrepo_com"
+            app:srcCompat="@drawable/ticket_black"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
@@ -70,7 +71,7 @@
             android:layout_weight="1"
             android:background="#00FFFFFF"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/ic_eye_svgrepo_com"
+            app:srcCompat="@drawable/gafas3d_black"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
@@ -81,7 +82,7 @@
             android:layout_weight="1"
             android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_popcorn_svgrepo_com"
+            app:srcCompat="@drawable/movie_black"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
@@ -92,7 +93,7 @@
             android:layout_weight="1"
             android:background="#00FFFFFF"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/ic_user_svgrepo_com"
+            app:srcCompat="@drawable/family_black"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
@@ -101,9 +102,9 @@
             android:layout_height="55dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:background="#00FFFFFF"
+            android:background="@color/white"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_cup_cup_svgrepo_com"
+            app:srcCompat="@drawable/director"
             tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
 

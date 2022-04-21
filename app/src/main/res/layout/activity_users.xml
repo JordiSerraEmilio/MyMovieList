@@ -9,36 +9,56 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_users"
-        android:layout_width="409dp"
-        android:layout_height="589dp"
+        android:layout_width="match_parent"
+        android:layout_height="432dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_fr_ranking2" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_fr_ranking2"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tv_title_fr_ranking2"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#971313"
-        android:fontFamily="@font/holtwood_one_sc"
+        android:layout_height="30dp"
+        android:background="@color/baseorange"
+        android:fontFamily="@font/autour_one"
+        android:foregroundTint="@color/black"
         android:gravity="center"
-        android:text="Users"
+        android:text="USERS"
         android:textAlignment="center"
-        android:textColor="#FFC107"
-        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextContrastCheck" />
+
+    <SearchView
+        android:id="@+id/se_busca_usuari"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:commitIcon="@drawable/lupa"
+        android:goIcon="@drawable/lupa"
+        android:searchHintIcon="@drawable/lupa"
+        android:searchIcon="@drawable/lupa"
+        app:layout_constraintBottom_toTopOf="@+id/rv_users"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_fr_ranking2"
+        app:layout_constraintVertical_bias="0.101" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="71dp"
-        android:background="#5D5D5D"
+        android:layout_height="51dp"
+        android:background="@color/yellowishorange"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +75,7 @@
             android:layout_weight="1"
             android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_admission_tickets_svgrepo_com"
+            app:srcCompat="@drawable/ticket_black"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
@@ -66,7 +86,7 @@
             android:layout_weight="1"
             android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_eye_svgrepo_com"
+            app:srcCompat="@drawable/gafas3d_black"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
@@ -77,7 +97,7 @@
             android:layout_weight="1"
             android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_popcorn_svgrepo_com"
+            app:srcCompat="@drawable/movie_black"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
@@ -86,9 +106,9 @@
             android:layout_height="55dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:background="#00FFFFFF"
+            android:background="@color/white"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_user_svgrepo_com"
+            app:srcCompat="@drawable/family"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
@@ -99,7 +119,7 @@
             android:layout_weight="1"
             android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_cup_cup_svgrepo_com"
+            app:srcCompat="@drawable/director_black"
             tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
