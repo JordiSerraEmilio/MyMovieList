@@ -22,7 +22,7 @@ import kotlin.concurrent.timer
 
 class Ranking : AppCompatActivity() {
 
-    private  lateinit var binding : ActivityRankingBinding
+    private lateinit var binding : ActivityRankingBinding
     private var films = mutableListOf<ResultsTop>()
     private lateinit var adapter: TopAdapter
     private var pag = 1

@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_fr_ranking2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.458" />
 
     <TextView
         android:id="@+id/tv_title_fr_ranking2"
@@ -47,12 +47,12 @@
         android:goIcon="@drawable/lupa"
         android:searchHintIcon="@drawable/lupa"
         android:searchIcon="@drawable/lupa"
-        app:layout_constraintBottom_toTopOf="@+id/rv_users"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_fr_ranking2"
-        app:layout_constraintVertical_bias="0.101" />
+        app:layout_constraintVertical_bias="0.027" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
