@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mymovielist.databinding.ActivityUsersBinding
 import com.example.mymovielist.models.ApiService
@@ -14,21 +16,26 @@ import com.example.mymovielist.models.Users.UserAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class Users : AppCompatActivity() {
+class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
 
     private lateinit var binding: ActivityUsersBinding
     private var users = mutableListOf<User>()
     private lateinit var adapter : UserAdapter
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityUsersBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        llistaUsers()
+        binding.seBuscaUsuari.setOnQueryTextListener(this)
+
+        llistaUsers(false,"")
 
         // Finestra pelicules
         val films1=findViewById<ImageButton>(R.id.bu_users_films)
@@ -63,15 +70,31 @@ class Users : AppCompatActivity() {
         }
     }
 
-    private fun getRetrofit(): Retrofit {
+    private fun getUsers(): Retrofit {
         return Retrofit.Builder().baseUrl("https://6o5zl5.deta.dev/")
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
 
-    private fun llistaUsers() {
+    private fun getUsersFiltre(): Retrofit {
+        return Retrofit.Builder().baseUrl("https://6o5zl5.deta.dev/usersnames/")
+            .addConverterFactory(GsonConverterFactory.create()).build()
+    }
+
+    private fun llistaUsers(boolean: Boolean, query:String) {
         CoroutineScope(Dispatchers.IO).launch {
-            val call = getRetrofit().create(ApiService::class.java)
-                .getListUsers("users")
+
+            var call: Response<List<User>>
+
+            if(boolean == true){
+                 call = getUsersFiltre().create(ApiService::class.java)
+                    .getListUsers("{searchName}?search_name=$query")
+
+            }else{
+                call = getUsers().create(ApiService::class.java)
+                    .getListUsers("users")
+            }
+
+
             val user = call.body()
 
             runOnUiThread {
@@ -82,6 +105,16 @@ class Users : AppCompatActivity() {
         }
     }
 
+    private fun searchByName(query:String){
+            if(query.isNotEmpty()){
+                users.removeAll { true }
+                llistaUsers(true, query)
+            }else{
+                llistaUsers(false,"")
+            }
+    }
+
+
     private fun initUsers(user: List<User>){
         for (u in user!!){
             users.add(u)
@@ -89,5 +122,20 @@ class Users : AppCompatActivity() {
         adapter = UserAdapter(users)
         binding.rvUsers.layoutManager = LinearLayoutManager(this)
         binding.rvUsers.adapter = adapter
+    }
+
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        if(!query.isNullOrEmpty()){
+            searchByName(query)
+        }
+        return true
+    }
+
+    override fun onQueryTextChange(query: String?): Boolean {
+        return true
+    }
+
+    private fun showError() {
+        Toast.makeText(this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show()
     }
 }

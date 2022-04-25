@@ -16,4 +16,5 @@ interface ApiService {
 
     @GET()
     suspend fun getListUsers(@Url url:String): Response<List<User>>
+
 }
