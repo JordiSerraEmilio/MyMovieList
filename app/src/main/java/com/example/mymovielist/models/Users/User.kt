@@ -1,15 +1,17 @@
 package com.example.mymovielist.models.Users
 
 import com.example.mymovielist.models.Genre.Genres
+import com.example.mymovielist.models.Reviews.Reviews
 import com.google.gson.annotations.SerializedName
 
 data class User (
 
-    @SerializedName("_id") val _id : String,
-    @SerializedName("name") val name : String,
-    @SerializedName("email") val email : String,
-    @SerializedName("password") val password : String,
-    @SerializedName("salt") val salt : String,
-    @SerializedName("genres") val genres : List<Genres>,
-    @SerializedName("reviews") val reviews : List<String>
+    @SerializedName("_id"      ) var Id       : String?            = null,
+    @SerializedName("image"    ) var image    : String?            = null,
+    @SerializedName("name"     ) var name     : String?            = null,
+    @SerializedName("email"    ) var email    : String?            = null,
+    @SerializedName("password" ) var password : String?            = null,
+    @SerializedName("salt"     ) var salt     : String?            = null,
+    @SerializedName("genres"   ) var genres   : ArrayList<Genres>  = arrayListOf(),
+    @SerializedName("reviews"  ) var reviews  : ArrayList<Reviews> = arrayListOf()
 )

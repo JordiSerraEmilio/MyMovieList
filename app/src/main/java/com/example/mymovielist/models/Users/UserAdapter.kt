@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.mymovielist.R
 import com.example.mymovielist.databinding.UserItemBinding
 import com.example.mymovielist.models.Genre.GenreAdapter
@@ -13,7 +14,9 @@ class UserAdapter(
 
         class UserViewHolder(view: View) : RecyclerView.ViewHolder(view){
             private val binding = UserItemBinding.bind(view)
-            fun binUser(name : String){
+
+            fun binUser(image:String?,name : String?){
+                Glide.with(itemView).load(image).into(binding.ivUserItemImatge)
                 binding.tvUserItemName.text = name
             }
         }
@@ -24,8 +27,8 @@ class UserAdapter(
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        val usuari = user[position]._id
-        holder.binUser( usuari!!)
+        val usuari = user[position]
+        holder.binUser(usuari.image, usuari.name)
     }
 
     override fun getItemCount(): Int {
