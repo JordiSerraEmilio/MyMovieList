@@ -3,6 +3,7 @@ package com.example.mymovielist
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import android.widget.ImageButton
 import android.widget.SearchView
 import android.widget.Toast
@@ -83,6 +84,8 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
     private fun llistaUsers(boolean: Boolean, query:String) {
         CoroutineScope(Dispatchers.IO).launch {
 
+            users.removeAll { true }
+
             var call: Response<List<User>>
 
             if(boolean == true){
@@ -106,12 +109,14 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
     }
 
     private fun searchByName(query:String){
-            if(query.isNotEmpty()){
-                users.removeAll { true }
-                llistaUsers(true, query)
-            }else{
-                llistaUsers(false,"")
-            }
+
+        if(!query.isBlank() || !query.isEmpty()){
+            llistaUsers(true, query)
+        }else{
+            llistaUsers(false, "")
+        }
+
+        hideKeyboard()
     }
 
 
@@ -125,17 +130,27 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
-        if(!query.isNullOrEmpty()){
+        if(query != null) {
             searchByName(query)
         }
         return true
     }
 
     override fun onQueryTextChange(query: String?): Boolean {
+
+        if(query != null) {
+            searchByName(query)
+        }else if(query.isNullOrBlank()){
+            llistaUsers(false, "")
+        }
+
+
         return true
     }
 
-    private fun showError() {
-        Toast.makeText(this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show()
+
+    private fun hideKeyboard() {
+        val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(binding.root.windowToken, 0)
     }
 }
