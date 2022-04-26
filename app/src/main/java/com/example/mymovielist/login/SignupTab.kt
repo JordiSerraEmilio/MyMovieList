@@ -87,6 +87,8 @@ class SignupTab : Fragment() {
 
         inputPassword.setOnFocusChangeListener { _, focused ->
             if (!focused) {
+                len = inputPassword.text.length
+                labelValidatePasswordLength.setText("$len/8")
                 isValidPassword = validatePassword(
                     inputPassword,
                     labelValidatePasswordRequire,
@@ -107,7 +109,7 @@ class SignupTab : Fragment() {
                 labelValidatePasswordLength,
                 len
             )
-            true
+            false
         })
 
         btnSignup.setOnClickListener {
@@ -222,20 +224,37 @@ class SignupTab : Fragment() {
         if (length < 8) {
             labelLength.visibility = View.VISIBLE
             labelLength.setTextColor(Color.parseColor("#808080"))
+            if (!password.text.matches(".*[^A-Za-z0-9].*".toRegex())) {
+                labelSpecial.visibility = View.VISIBLE
+                labelSpecial.setTextColor(Color.parseColor("#808080"))
+                return false
+            } else {
+                labelSpecial.visibility = View.VISIBLE
+                labelSpecial.setTextColor(Color.parseColor("#f77814"))
+            }
             return false
         } else {
             labelLength.visibility = View.VISIBLE
             labelLength.setTextColor(Color.parseColor("#f77814"))
+
+            if (!password.text.matches(".*[^A-Za-z0-9].*".toRegex())) {
+                labelSpecial.visibility = View.VISIBLE
+                labelSpecial.setTextColor(Color.parseColor("#808080"))
+                return false
+            } else {
+                labelSpecial.visibility = View.VISIBLE
+                labelSpecial.setTextColor(Color.parseColor("#f77814"))
+            }
         }
 
-        if (!password.text.matches(".*[^A-Za-z0-9].*".toRegex())) {
-            labelSpecial.visibility = View.VISIBLE
-            labelSpecial.setTextColor(Color.parseColor("#FF018786"))
-            return false
-        } else {
-            labelLength.visibility = View.VISIBLE
-            labelLength.setTextColor(Color.parseColor("#f77814"))
-        }
+//        if (!password.text.matches(".*[^A-Za-z0-9].*".toRegex())) {
+//            labelSpecial.visibility = View.VISIBLE
+//            labelSpecial.setTextColor(Color.parseColor("#808080"))
+//            return false
+//        } else {
+//            labelSpecial.visibility = View.VISIBLE
+//            labelSpecial.setTextColor(Color.parseColor("#f77814"))
+//        }
 
         return true
     }
