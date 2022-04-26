@@ -15,6 +15,7 @@ class Reviews : AppCompatActivity() {
         films1.setOnClickListener {
             val intento1 = Intent(this, Recomendedfilms::class.java)
             startActivity(intento1)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
             finish();
         }
 
@@ -23,6 +24,7 @@ class Reviews : AppCompatActivity() {
         yousee1.setOnClickListener {
             val intento1 = Intent(this, FilmsYouSee::class.java)
             startActivity(intento1)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
             finish();
         }
 
@@ -31,6 +33,7 @@ class Reviews : AppCompatActivity() {
         users1.setOnClickListener {
             val intento1 = Intent(this, Users::class.java)
             startActivity(intento1)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
             finish();
         }
 
@@ -39,6 +42,7 @@ class Reviews : AppCompatActivity() {
         rank1.setOnClickListener {
             val intento1 = Intent(this, FilmsYouSee::class.java)
             startActivity(intento1)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
             finish();
         }
     }

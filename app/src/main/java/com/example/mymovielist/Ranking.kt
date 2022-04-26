@@ -41,6 +41,7 @@ class Ranking : AppCompatActivity() {
         films1.setOnClickListener {
             val intento1 = Intent(this, Recomendedfilms::class.java)
             startActivity(intento1)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
             finish();
         }
 
@@ -49,6 +50,7 @@ class Ranking : AppCompatActivity() {
         yousee1.setOnClickListener {
             val intento1 = Intent(this, FilmsYouSee::class.java)
             startActivity(intento1)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
             finish();
         }
 
@@ -57,6 +59,7 @@ class Ranking : AppCompatActivity() {
         review1.setOnClickListener {
             val intento1 = Intent(this, Reviews::class.java)
             startActivity(intento1)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
             finish();
         }
         // Finestra users
@@ -64,6 +67,7 @@ class Ranking : AppCompatActivity() {
         users1.setOnClickListener {
             val intento1 = Intent(this, Users::class.java)
             startActivity(intento1)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
             finish();
         }
 
