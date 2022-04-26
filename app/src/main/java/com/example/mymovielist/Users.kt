@@ -122,7 +122,7 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
             llistaUsers(false, "")
         }
 
-        hideKeyboard()
+        //hideKeyboard()
     }
 
 
