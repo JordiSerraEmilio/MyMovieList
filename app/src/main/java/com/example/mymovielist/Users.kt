@@ -43,7 +43,7 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
         films1.setOnClickListener {
             val intento1 = Intent(this, Recomendedfilms::class.java)
             startActivity(intento1)
-            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+            overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
         }
 
@@ -52,7 +52,7 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
         yousee1.setOnClickListener {
             val intento1 = Intent(this, FilmsYouSee::class.java)
             startActivity(intento1)
-            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+            overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
         }
 
@@ -61,7 +61,7 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
         rank1.setOnClickListener {
             val intento1 = Intent(this, Ranking::class.java)
             startActivity(intento1)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+            overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
         }
 
@@ -70,7 +70,7 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
         review1.setOnClickListener {
             val intento1 = Intent(this, Reviews::class.java)
             startActivity(intento1)
-            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+            overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
         }
     }
