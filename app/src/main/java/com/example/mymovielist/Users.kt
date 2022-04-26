@@ -84,7 +84,6 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
     private fun llistaUsers(boolean: Boolean, query:String) {
         CoroutineScope(Dispatchers.IO).launch {
 
-            users.removeAll { true }
 
             var call: Response<List<User>>
 
@@ -100,6 +99,8 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
 
             val user = call.body()
 
+            users.removeAll { true }
+
             runOnUiThread {
                 if (user != null) {
                     initUsers(user)
@@ -109,6 +110,7 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
     }
 
     private fun searchByName(query:String){
+
 
         if(!query.isBlank() || !query.isEmpty()){
             llistaUsers(true, query)
@@ -131,12 +133,13 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
 
     override fun onQueryTextSubmit(query: String?): Boolean {
         if(query != null) {
-            searchByName(query)
+           searchByName(query)
         }
         return true
     }
 
     override fun onQueryTextChange(query: String?): Boolean {
+
 
         if(query != null) {
             searchByName(query)
