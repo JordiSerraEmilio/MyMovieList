@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:fontFamily="sans-serif-black"
-        android:text="Welcome home"
+        android:text="Welcome to MyMovieList"
         android:textColor="@color/white"
         android:textSize="25dp"
         app:layout_constraintBottom_toTopOf="@id/constraintLayout"

@@ -27,18 +27,19 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17553191489361702" />
         <entry key="app/src/main/res/layout/activity_movie.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_pre_login.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_ranking.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_ranking.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_recomendedfilms.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.1685185185185185" />
         <entry key="app/src/main/res/layout/activity_reviews.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_users.xml" value="0.25" />
         <entry key="app/src/main/res/layout/film_item.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_login_tab.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_login_tab2.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_signup_tab.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_signup_tab2.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/fragment_signup_tab2.xml" value="1.1" />
         <entry key="app/src/main/res/layout/genre_item.xml" value="0.17553191489361702" />
-        <entry key="app/src/main/res/layout/user_item.xml" value="0.34692028985507245" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1545" />
       </map>
     </option>
   </component>
