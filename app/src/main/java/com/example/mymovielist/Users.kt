@@ -1,17 +1,14 @@
 package com.example.mymovielist
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageButton
 import android.widget.SearchView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mymovielist.databinding.ActivityUsersBinding
 import com.example.mymovielist.models.ApiService
-import com.example.mymovielist.models.TopFilms.TopAdapter
-import com.example.mymovielist.models.TopFilms.TopFilms
 import com.example.mymovielist.models.Users.User
 import com.example.mymovielist.models.Users.UserAdapter
 import kotlinx.coroutines.CoroutineScope
@@ -72,6 +69,10 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
+        }
+
+        binding.seBuscaUsuari.setOnClickListener {
+            binding.seBuscaUsuari.isIconified = false
         }
     }
 
