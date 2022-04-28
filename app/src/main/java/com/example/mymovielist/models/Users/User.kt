@@ -12,6 +12,10 @@ data class User (
     @SerializedName("email"    ) var email    : String?            = null,
     @SerializedName("password" ) var password : String?            = null,
     @SerializedName("salt"     ) var salt     : String?            = null,
+    @SerializedName("isLogged" ) var isLogged : Int?               = null,
     @SerializedName("genres"   ) var genres   : ArrayList<Genres>  = arrayListOf(),
-    @SerializedName("reviews"  ) var reviews  : ArrayList<Reviews> = arrayListOf()
+    @SerializedName("reviews"  ) var reviews  : ArrayList<Reviews> = arrayListOf(),
+    @SerializedName("seen"     ) var seen     : ArrayList<FilmsUser> = arrayListOf(),
+    @SerializedName("toWatch"  ) var toWatch  : ArrayList<FilmsUser> = arrayListOf(),
+    @SerializedName("dropped"  ) var dropped  : ArrayList<FilmsUser> = arrayListOf()
 )

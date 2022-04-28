@@ -10,14 +10,14 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_users"
         android:layout_width="match_parent"
-        android:layout_height="432dp"
+        android:layout_height="520dp"
         android:layout_marginTop="40dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/se_busca_usuari"
-        app:layout_constraintVertical_bias="0.118" />
+        app:layout_constraintVertical_bias="0.656" />
 
     <TextView
         android:id="@+id/tv_title_fr_ranking2"
