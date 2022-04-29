@@ -15,7 +15,7 @@ data class User (
     @SerializedName("isLogged" ) var isLogged : Int?               = null,
     @SerializedName("genres"   ) var genres   : ArrayList<Genres>  = arrayListOf(),
     @SerializedName("reviews"  ) var reviews  : ArrayList<Reviews> = arrayListOf(),
-    @SerializedName("seen"     ) var seen     : ArrayList<FilmsUser> = arrayListOf(),
-    @SerializedName("toWatch"  ) var toWatch  : ArrayList<FilmsUser> = arrayListOf(),
-    @SerializedName("dropped"  ) var dropped  : ArrayList<FilmsUser> = arrayListOf()
+    @SerializedName("seen"     ) var seen     : ArrayList<Seen>    = arrayListOf(),
+    @SerializedName("toWatch"  ) var toWatch  : ArrayList<ToWatch> = arrayListOf(),
+    @SerializedName("dropped"  ) var dropped  : ArrayList<Dropped> = arrayListOf()
 )

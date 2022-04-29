@@ -16,8 +16,8 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Title"
-        app:srcCompat="@drawable/ic_popcorn_svgrepo_com"
-        tools:srcCompat="@drawable/ic_popcorn_svgrepo_com" />
+        app:srcCompat="@drawable/cine"
+        tools:srcCompat="@drawable/cine" />
 
     <Button
         android:id="@+id/bt_login"
