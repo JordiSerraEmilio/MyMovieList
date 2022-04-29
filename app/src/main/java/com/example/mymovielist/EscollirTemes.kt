@@ -51,7 +51,7 @@ class EscollirTemes : AppCompatActivity() {
             generos.add(genre)
         }
         adapter = GenreAdapter(generos)
-        binding.rvChooseGenres.layoutManager = GridLayoutManager(this, 2)
+        binding.rvChooseGenres.layoutManager = GridLayoutManager(this, 3)
         binding.rvChooseGenres.adapter = adapter
     }
 }
