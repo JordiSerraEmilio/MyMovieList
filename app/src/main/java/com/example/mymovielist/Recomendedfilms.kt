@@ -7,11 +7,14 @@ import android.widget.ImageButton
 
 class Recomendedfilms : AppCompatActivity() {
 
-    val valor = intent.getStringExtra("usuario")
+    private var valor = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recomendedfilms)
+
+        valor = intent.getStringExtra("usuario").toString()
 
 
         // Finestra Films you see

@@ -25,12 +25,13 @@ class Ranking : AppCompatActivity() {
     private lateinit var adapter: TopAdapter
     private var pag = 1
 
-    val valor = intent.getStringExtra("usuario")
+    private var valor = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRankingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        valor = intent.getStringExtra("usuario").toString()
 
         listaPeliculas(true)
         binding.tvNumpagPopular.text = "- $pag -"

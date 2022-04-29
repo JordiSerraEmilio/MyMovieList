@@ -20,12 +20,14 @@ class Reviews_a : AppCompatActivity() {
     private lateinit var binding: ActivityReviewsBinding
     private var ur = mutableListOf<Reviews>()
     private lateinit var adapter : ReviewsUserAdapter
+    private var valor = ""
 
-    val valor = intent.getStringExtra("usuario")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reviews)
+
+        valor = intent.getStringExtra("usuario").toString()
 
         // Finestra pelicules
         val films1=findViewById<ImageButton>(R.id.bu_review_films)

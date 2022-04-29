@@ -7,11 +7,13 @@ import android.widget.ImageButton
 
 class FilmsYouSee : AppCompatActivity() {
 
-    val valor = intent.getStringExtra("usuario")
+    private var valor = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_films_you_see)
+
+        valor = intent.getStringExtra("usuario").toString()
 
         // Finestra ranking
         val rank1=findViewById<ImageButton>(R.id.bu_yousee_rank)
