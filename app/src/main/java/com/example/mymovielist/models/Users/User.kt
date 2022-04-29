@@ -1,7 +1,7 @@
 package com.example.mymovielist.models.Users
 
 import com.example.mymovielist.models.Genre.Genres
-import com.example.mymovielist.models.Reviews.Reviews
+import com.example.mymovielist.models.Review.Reviews
 import com.google.gson.annotations.SerializedName
 
 data class User (

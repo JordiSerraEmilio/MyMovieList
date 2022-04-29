@@ -35,7 +35,7 @@ class EscollirTemes : AppCompatActivity() {
     private fun buscarGeneros() {
         CoroutineScope(Dispatchers.IO).launch {
             val call = getRetrofit().create(ApiService::class.java)
-                .getGenresList("list?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=es-ES")
+                .getGenresList("list?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=us-US")
             val nombre = call.body()?.genres
 
             runOnUiThread {
@@ -53,5 +53,6 @@ class EscollirTemes : AppCompatActivity() {
         adapter = GenreAdapter(generos)
         binding.rvChooseGenres.layoutManager = GridLayoutManager(this, 3)
         binding.rvChooseGenres.adapter = adapter
+
     }
 }

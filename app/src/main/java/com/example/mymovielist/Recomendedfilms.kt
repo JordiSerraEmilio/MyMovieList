@@ -23,7 +23,7 @@ class Recomendedfilms : AppCompatActivity() {
         // Finestra reviews
         val review1=findViewById<ImageButton>(R.id.bu_films_review)
         review1.setOnClickListener {
-            val intento1 = Intent(this, Reviews::class.java)
+            val intento1 = Intent(this, Reviews_a::class.java)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();

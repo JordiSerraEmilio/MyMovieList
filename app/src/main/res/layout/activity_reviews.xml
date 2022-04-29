@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2B2929"
-    tools:context=".Reviews">
+    tools:context=".Reviews_a">
 
     <TextView
         android:id="@+id/tv_title_fr_ranking6"

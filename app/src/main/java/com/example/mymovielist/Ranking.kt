@@ -15,10 +15,8 @@ import com.example.mymovielist.models.TopFilms.TopFilms
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import kotlin.concurrent.timer
 
 class Ranking : AppCompatActivity() {
 
@@ -57,7 +55,7 @@ class Ranking : AppCompatActivity() {
         // Finestra reviews
         val review1=findViewById<ImageButton>(R.id.bu_rank_review)
         review1.setOnClickListener {
-            val intento1 = Intent(this, Reviews::class.java)
+            val intento1 = Intent(this, Reviews_a::class.java)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();

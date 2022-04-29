@@ -6,7 +6,6 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.ImageButton
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.marginTop
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mymovielist.databinding.ActivityUsersBinding
 import com.example.mymovielist.models.ApiService
@@ -66,7 +65,7 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
         // Finestra reviews
         val review1=findViewById<ImageButton>(R.id.bu_users_review)
         review1.setOnClickListener {
-            val intento1 = Intent(this, Reviews::class.java)
+            val intento1 = Intent(this, Reviews_a::class.java)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();

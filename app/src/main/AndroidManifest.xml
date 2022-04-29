@@ -21,7 +21,7 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".Reviews"
+            android:name=".Reviews_a"
             android:exported="false" />
         <activity
             android:name=".Users"

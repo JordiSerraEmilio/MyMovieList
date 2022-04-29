@@ -1,6 +1,9 @@
 package com.example.mymovielist.login
 
+import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Patterns
@@ -15,7 +18,7 @@ import androidx.fragment.app.Fragment
 import com.example.mymovielist.EscollirTemes
 import com.example.mymovielist.R
 import com.example.mymovielist.models.Genre.Genres
-import com.example.mymovielist.models.Reviews.Reviews
+import com.example.mymovielist.models.Review.Reviews
 import com.example.mymovielist.models.Users.FilmsUser
 import com.example.mymovielist.models.Users.User
 
@@ -113,11 +116,10 @@ class SignupTab : Fragment() {
         })
 
         btnSignup.setOnClickListener {
-//            if (validateAllInputs(isValidName, isValidEmail, isValidPassword)) {
-//                signup(inputName.text.toString(), inputEmail.text.toString(), inputPassword.text.toString())
-//            }
-            val intent = Intent(activity, EscollirTemes::class.java)
-            startActivity(intent)
+            if (validateAllInputs(isValidName, isValidEmail, isValidPassword)) {
+                signup(inputName.text.toString(), inputEmail.text.toString(), inputPassword.text.toString())
+
+            }
         }
 
         // ......... //
@@ -267,13 +269,15 @@ class SignupTab : Fragment() {
 
 
     private fun signup(name: String, email: String, password: String) {
+        Toast.makeText(context, "Please wait...", Toast.LENGTH_SHORT).show()
+
         var user = User()
         user.image = ""
         user.name = name
         user.email = email
         user.password = password
         user.salt = ""
-        user.isLogged = 0
+        user.isLogged = 1
         user.genres = arrayListOf(Genres("", ""))
         user.reviews = arrayListOf(Reviews("", "", "", "", "", 0.0f ))
         user.seen = arrayListOf(FilmsUser("", ""))
@@ -284,14 +288,28 @@ class SignupTab : Fragment() {
 
         apiService.createuser(user){
             if (it?.Id != null){
-                Toast.makeText(context, "Making SignUp...", Toast.LENGTH_SHORT).show()
+
+                Toast.makeText(context, "Singing up completed", Toast.LENGTH_SHORT).show()
+
+                // Guardar datos en el SharedPreferences
+                val shared: SharedPreferences = requireContext().getSharedPreferences("Login", Context.MODE_PRIVATE)
+                val edit = shared.edit()
+                edit.putString("email", user.email)
+                edit.commit()
+
+                // Pillar datos del SharedPreferences
+//                val test = shared.getString("email", "")
+//                Toast.makeText(context, test.toString(), Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(activity, EscollirTemes::class.java)
+                startActivity(intent)
+
             }else{
-                Toast.makeText(context, "Failed SingingUp", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Failed Singing up, try again or check validations", Toast.LENGTH_SHORT).show()
             }
         }
 
     }
-
 
     // .............. //
 }
