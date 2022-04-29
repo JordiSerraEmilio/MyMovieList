@@ -17,7 +17,17 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.mymovielist.R
+import com.example.mymovielist.models.Reviews.Reviews
+import com.example.mymovielist.models.ApiService
+import com.example.mymovielist.models.Genre.Genres
+import com.example.mymovielist.models.Users.FilmsUser
+import com.example.mymovielist.models.Users.User
+import com.google.gson.Gson
+import kotlinx.coroutines.coroutineScope
 import org.w3c.dom.Text
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -117,7 +127,7 @@ class SignupTab : Fragment() {
 //                signup()
 //            }
             if (validateAllInputs(isValidName, isValidEmail, isValidPassword)) {
-                signup()
+                signup(inputName.text.toString(), inputEmail.text.toString(), inputPassword.text.toString())
             }
         }
 
@@ -148,6 +158,7 @@ class SignupTab : Fragment() {
 
     // FUNCTIONS SPACE //
 
+    //region VALIDATIONS
     private fun validateInputs(name: EditText, email: EditText, password: EditText): Boolean {
 
         if (name.length() == 0) {
@@ -263,8 +274,33 @@ class SignupTab : Fragment() {
         return name && email && password
     }
 
-    private fun signup() {
-        Toast.makeText(context, "Making SignUp...", Toast.LENGTH_SHORT).show()
+    //endregion
+
+
+    private fun signup(name: String, email: String, password: String) {
+        var user = User()
+        user.image = ""
+        user.name = name
+        user.email = email
+        user.password = password
+        user.salt = ""
+        user.isLogged = 0
+        user.genres = arrayListOf(Genres("", ""))
+        user.reviews = arrayListOf(Reviews("", "", "", "", "", 0.0f ))
+        user.seen = arrayListOf(FilmsUser("", ""))
+        user.toWatch = arrayListOf(FilmsUser("", ""))
+        user.dropped = arrayListOf(FilmsUser("", ""))
+
+        val apiService = RestApiService()
+
+        apiService.createuser(user){
+            if (it?.Id != null){
+                Toast.makeText(context, "Making SignUp...", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(context, "Failed SingingUp", Toast.LENGTH_SHORT).show()
+            }
+        }
+
     }
 
 
