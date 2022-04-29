@@ -15,10 +15,8 @@ import com.example.mymovielist.models.TopFilms.TopFilms
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import kotlin.concurrent.timer
 
 class Ranking : AppCompatActivity() {
 
@@ -26,6 +24,8 @@ class Ranking : AppCompatActivity() {
     private var films = mutableListOf<ResultsTop>()
     private lateinit var adapter: TopAdapter
     private var pag = 1
+
+    val valor = intent.getStringExtra("usuario")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +40,7 @@ class Ranking : AppCompatActivity() {
         val films1=findViewById<ImageButton>(R.id.bu_rank_films)
         films1.setOnClickListener {
             val intento1 = Intent(this, Recomendedfilms::class.java)
+            intent.putExtra("usuario", valor)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
@@ -49,6 +50,7 @@ class Ranking : AppCompatActivity() {
         val yousee1=findViewById<ImageButton>(R.id.bu_rank_yousee)
         yousee1.setOnClickListener {
             val intento1 = Intent(this, FilmsYouSee::class.java)
+            intent.putExtra("usuario", valor)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
@@ -57,7 +59,8 @@ class Ranking : AppCompatActivity() {
         // Finestra reviews
         val review1=findViewById<ImageButton>(R.id.bu_rank_review)
         review1.setOnClickListener {
-            val intento1 = Intent(this, Reviews::class.java)
+            val intento1 = Intent(this, Reviews_a::class.java)
+            intent.putExtra("usuario", valor)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
@@ -66,6 +69,7 @@ class Ranking : AppCompatActivity() {
         val users1=findViewById<ImageButton>(R.id.bu_rank_users)
         users1.setOnClickListener {
             val intento1 = Intent(this, Users::class.java)
+            intent.putExtra("usuario", valor)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();

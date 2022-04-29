@@ -1,11 +1,7 @@
 package com.example.mymovielist.login
 
-import android.content.Context
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.text.SpannableStringBuilder
-import android.text.style.ForegroundColorSpan
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
@@ -14,20 +10,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.mymovielist.R
-import com.example.mymovielist.models.Reviews.Reviews
-import com.example.mymovielist.models.ApiService
 import com.example.mymovielist.models.Genre.Genres
 import com.example.mymovielist.models.Users.FilmsUser
 import com.example.mymovielist.models.Users.User
-import com.google.gson.Gson
-import kotlinx.coroutines.coroutineScope
-import org.w3c.dom.Text
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 
 // TODO: Rename parameter arguments, choose names that match

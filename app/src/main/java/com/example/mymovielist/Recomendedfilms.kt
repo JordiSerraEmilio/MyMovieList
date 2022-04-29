@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.widget.ImageButton
 
 class Recomendedfilms : AppCompatActivity() {
+
+    val valor = intent.getStringExtra("usuario")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recomendedfilms)
@@ -15,6 +18,7 @@ class Recomendedfilms : AppCompatActivity() {
         val yousee1=findViewById<ImageButton>(R.id.bu_films_yousee)
         yousee1.setOnClickListener {
             val intento1 = Intent(this, FilmsYouSee::class.java)
+            intent.putExtra("usuario", valor)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
@@ -23,7 +27,8 @@ class Recomendedfilms : AppCompatActivity() {
         // Finestra reviews
         val review1=findViewById<ImageButton>(R.id.bu_films_review)
         review1.setOnClickListener {
-            val intento1 = Intent(this, Reviews::class.java)
+            val intento1 = Intent(this, Reviews_a::class.java)
+            intent.putExtra("usuario", valor)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
@@ -32,6 +37,7 @@ class Recomendedfilms : AppCompatActivity() {
         val users1=findViewById<ImageButton>(R.id.bu_films_users)
         users1.setOnClickListener {
             val intento1 = Intent(this, Users::class.java)
+            intent.putExtra("usuario", valor)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
@@ -41,6 +47,7 @@ class Recomendedfilms : AppCompatActivity() {
         val rank1=findViewById<ImageButton>(R.id.bu_films_rank)
         rank1.setOnClickListener {
             val intento1 = Intent(this, Ranking::class.java)
+            intent.putExtra("usuario", valor)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();

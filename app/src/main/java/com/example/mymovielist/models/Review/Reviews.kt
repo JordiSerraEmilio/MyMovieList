@@ -1,4 +1,4 @@
-package com.example.mymovielist.models.Reviews
+package com.example.mymovielist.models.Review
 
 import com.google.gson.annotations.SerializedName
 

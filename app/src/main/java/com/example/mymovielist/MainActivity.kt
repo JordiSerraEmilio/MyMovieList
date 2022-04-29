@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         boton2.setOnClickListener {
             val intento2 = Intent(this, Recomendedfilms::class.java)
+            intent.putExtra("usuario", "rockyrockyUPDATED@example.com!")
             startActivity(intento2)
         }
 
