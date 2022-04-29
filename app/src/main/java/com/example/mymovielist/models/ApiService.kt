@@ -24,9 +24,7 @@ interface ApiService {
     suspend fun getListUsers(@Url url:String): Response<List<User>>
 
 
-    // Register
-//    @GET()
-//    suspend fun getUser(@Url url:String): Response<User>
+    //region REGISTER
 
     @POST("/users")
     fun postUser(@Body user: User): Call<User>
@@ -44,4 +42,6 @@ interface ApiService {
             return retrofit.create(service)
         }
     }
+
+    //endregion
 }

@@ -20,7 +20,7 @@ class GenreAdapter (
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GenreViewHolder {
         return  GenreViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.genre_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.choose_genres, parent, false)
         )
     }
 
