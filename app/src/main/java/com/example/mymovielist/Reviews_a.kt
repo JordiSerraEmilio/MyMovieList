@@ -7,6 +7,7 @@ import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mymovielist.databinding.ActivityReviewsBinding
 import com.example.mymovielist.models.ApiService
+import com.example.mymovielist.models.Review.Reviews
 import com.example.mymovielist.models.Review.ReviewsUserAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -17,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class Reviews_a : AppCompatActivity() {
 
     private lateinit var binding: ActivityReviewsBinding
-    private var ur = mutableListOf<Reviews_a>()
+    private var ur = mutableListOf<Reviews>()
     private lateinit var adapter : ReviewsUserAdapter
 
     val valor = intent.getStringExtra("usuario")
@@ -89,7 +90,7 @@ class Reviews_a : AppCompatActivity() {
 
     }
 
-    private fun initReviewsUser(reviews: List<Reviews_a>){
+    private fun initReviewsUser(reviews: List<Reviews>){
         for (review in reviews!!){
             ur.add(review)
        }
