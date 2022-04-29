@@ -15,4 +15,5 @@
     <color name="yellowishorange">#f79a14</color>
     <color name="grey">#999999</color>
     <color name="defaulttextcolor">#808080</color>
+    <color name="backgroudcolor">#2B2929</color>
 </resources>
