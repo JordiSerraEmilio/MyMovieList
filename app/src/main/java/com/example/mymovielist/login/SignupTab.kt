@@ -1,5 +1,6 @@
 package com.example.mymovielist.login
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Patterns
@@ -11,8 +12,10 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.mymovielist.EscollirTemes
 import com.example.mymovielist.R
 import com.example.mymovielist.models.Genre.Genres
+import com.example.mymovielist.models.Reviews.Reviews
 import com.example.mymovielist.models.Users.FilmsUser
 import com.example.mymovielist.models.Users.User
 
@@ -110,12 +113,11 @@ class SignupTab : Fragment() {
         })
 
         btnSignup.setOnClickListener {
-//            if (validateInputs(inputName, inputEmail, inputPassword)) {
-//                signup()
+//            if (validateAllInputs(isValidName, isValidEmail, isValidPassword)) {
+//                signup(inputName.text.toString(), inputEmail.text.toString(), inputPassword.text.toString())
 //            }
-            if (validateAllInputs(isValidName, isValidEmail, isValidPassword)) {
-                signup(inputName.text.toString(), inputEmail.text.toString(), inputPassword.text.toString())
-            }
+            val intent = Intent(activity, EscollirTemes::class.java)
+            startActivity(intent)
         }
 
         // ......... //
