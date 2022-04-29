@@ -1,6 +1,7 @@
 package com.example.mymovielist.models
 
 import com.example.mymovielist.models.Genre.LlistaGenres
+import com.example.mymovielist.models.Reviews.Reviews
 import com.example.mymovielist.models.TopFilms.TopFilms
 import com.example.mymovielist.models.Users.User
 import okhttp3.OkHttpClient
@@ -23,6 +24,8 @@ interface ApiService {
     @GET()
     suspend fun getListUsers(@Url url:String): Response<List<User>>
 
+    @GET()
+    suspend fun getListReviewsUser(@Url url:String): Response<List<Reviews>>
 
     //region REGISTER
 
