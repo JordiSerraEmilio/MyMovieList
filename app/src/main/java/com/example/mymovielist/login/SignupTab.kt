@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment
 import com.example.mymovielist.EscollirTemes
 import com.example.mymovielist.R
 import com.example.mymovielist.models.Genre.Genres
-import com.example.mymovielist.models.Reviews.Reviews
+import com.example.mymovielist.models.Review.Reviews
 import com.example.mymovielist.models.Users.FilmsUser
 import com.example.mymovielist.models.Users.User
 
