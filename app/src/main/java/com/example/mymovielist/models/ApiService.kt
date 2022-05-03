@@ -47,10 +47,6 @@ interface ApiService {
 //        }
 //    }
 
-    @GET()
-    suspend fun getUser(@Url url:String): Response<User>
-
-
     @POST("/users")
     fun postUser(@Body user: User): Call<User>
 
