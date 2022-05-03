@@ -4,13 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.384375" />
+        <entry key="app/src/main/res/drawable-v24/ic_drama_focused.xml" value="0.3035" />
         <entry key="app/src/main/res/drawable-v24/ic_facebook.xml" value="0.256" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_lock.xml" value="0.2925" />
         <entry key="app/src/main/res/drawable-v24/ic_mail.xml" value="0.2925" />
+        <entry key="app/src/main/res/drawable-v24/ic_music_focused.xml" value="0.3035" />
         <entry key="app/src/main/res/drawable-v24/ic_person.xml" value="0.2925" />
         <entry key="app/src/main/res/drawable-v24/login_edittxt_bg.xml" value="0.2925" />
+        <entry key="app/src/main/res/drawable-v24/vie_bg.xml" value="0.3035" />
         <entry key="app/src/main/res/drawable/cine.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/custom_drama_icon.xml" value="0.3035" />
+        <entry key="app/src/main/res/drawable/custom_email_icon.xml" value="0.3035" />
+        <entry key="app/src/main/res/drawable/custom_music_icon.xml" value="0.3035" />
+        <entry key="app/src/main/res/drawable/custom_person_icon.xml" value="0.3035" />
         <entry key="app/src/main/res/drawable/director.xml" value="0.1675" />
         <entry key="app/src/main/res/drawable/director_black.xml" value="0.2565" />
         <entry key="app/src/main/res/drawable/family.xml" value="0.1675" />
@@ -28,7 +35,7 @@
         <entry key="app/src/main/res/drawable/movie_black.xml" value="0.3035" />
         <entry key="app/src/main/res/drawable/test.xml" value="0.2925" />
         <entry key="app/src/main/res/drawable/ticket.xml" value="0.1675" />
-        <entry key="app/src/main/res/layout/activity_escollir_temes.xml" value="0.24866548042704625" />
+        <entry key="app/src/main/res/layout/activity_escollir_temes.xml" value="0.19" />
         <entry key="app/src/main/res/layout/activity_films_you_see.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17553191489361702" />
         <entry key="app/src/main/res/layout/activity_movie.xml" value="0.33" />
@@ -46,7 +53,6 @@
         <entry key="app/src/main/res/layout/fragment_signup_tab.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_signup_tab2.xml" value="1.1" />
         <entry key="app/src/main/res/layout/genre_item.xml" value="0.17553191489361702" />
-        <entry key="app/src/main/res/layout/reviewsuser_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/user_item.xml" value="0.35625" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1545" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />

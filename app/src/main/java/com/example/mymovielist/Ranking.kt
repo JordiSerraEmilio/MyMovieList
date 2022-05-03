@@ -25,13 +25,10 @@ class Ranking : AppCompatActivity() {
     private lateinit var adapter: TopAdapter
     private var pag = 1
 
-    private var valor = ""
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRankingBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        valor = intent.getStringExtra("usuario").toString()
 
         listaPeliculas(true)
         binding.tvNumpagPopular.text = "- $pag -"
@@ -41,7 +38,6 @@ class Ranking : AppCompatActivity() {
         val films1=findViewById<ImageButton>(R.id.bu_rank_films)
         films1.setOnClickListener {
             val intento1 = Intent(this, Recomendedfilms::class.java)
-            intent.putExtra("usuario", valor)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
@@ -51,7 +47,6 @@ class Ranking : AppCompatActivity() {
         val yousee1=findViewById<ImageButton>(R.id.bu_rank_yousee)
         yousee1.setOnClickListener {
             val intento1 = Intent(this, FilmsYouSee::class.java)
-            intent.putExtra("usuario", valor)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
@@ -61,7 +56,6 @@ class Ranking : AppCompatActivity() {
         val review1=findViewById<ImageButton>(R.id.bu_rank_review)
         review1.setOnClickListener {
             val intento1 = Intent(this, Reviews_a::class.java)
-            intent.putExtra("usuario", valor)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
@@ -70,7 +64,6 @@ class Ranking : AppCompatActivity() {
         val users1=findViewById<ImageButton>(R.id.bu_rank_users)
         users1.setOnClickListener {
             val intento1 = Intent(this, Users::class.java)
-            intent.putExtra("usuario", valor)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();

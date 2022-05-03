@@ -24,15 +24,12 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
     private var users = mutableListOf<User>()
     private lateinit var adapter : UserAdapter
 
-    private var valor = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityUsersBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        valor = intent.getStringExtra("usuario").toString()
 
         binding.seBuscaUsuari.setOnQueryTextListener(this)
 
