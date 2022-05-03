@@ -160,8 +160,8 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
     }
 
 
-    private fun hideKeyboard() {
-        val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(binding.root.windowToken, 0)
-    }
+    //private fun hideKeyboard() {
+    //    val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+    //    imm.hideSoftInputFromWindow(binding.root.windowToken, 0)
+    //}
 }
