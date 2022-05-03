@@ -25,6 +25,9 @@ interface ApiService {
     suspend fun getListUsers(@Url url:String): Response<List<User>>
 
     @GET()
+    suspend fun getUser(@Url url:String): Response<User>
+
+    @GET()
     suspend fun getListReviewsUser(@Url url:String): Response<List<Reviews>>
 
     //region REGISTER
