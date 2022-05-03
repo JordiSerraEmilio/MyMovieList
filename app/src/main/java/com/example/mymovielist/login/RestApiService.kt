@@ -22,4 +22,34 @@ class RestApiService {
             }
         )
     }
+
+//    fun putuser(email: String, userInfo: User, onResult: (User?) -> Unit){
+//        val retrofit = ApiService.ServiceBuilderPut.buildService(ApiService::class.java)
+//        retrofit.putUser(email, userInfo).enqueue(
+//            object : Callback<User> {
+//                override fun onFailure(call: Call<User>, t: Throwable) {
+//                    onResult(null)
+//                }
+//                override fun onResponse( call: Call<User>, response: Response<User>) {
+//                    val updatedUser = response.body()
+//                    onResult(updatedUser)
+//                }
+//            }
+//        )
+//    }
+
+//    fun getuser(email: String, onResult: (User?) -> Unit){
+//        val retrofit = ApiService.ServiceBuilderGet.buildService(ApiService::class.java)
+//        retrofit.getUser(email).enqueue(
+//            object : Callback<User> {
+//                override fun onFailure(call: Call<User>, t: Throwable) {
+//                    onResult(null)
+//                }
+//                override fun onResponse( call: Call<User>, response: Response<User>) {
+//                    val addedUser = response.body()
+//                    onResult(addedUser)
+//                }
+//            }
+//        )
+//    }
 }

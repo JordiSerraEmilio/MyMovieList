@@ -116,10 +116,14 @@ class SignupTab : Fragment() {
         })
 
         btnSignup.setOnClickListener {
-            if (validateAllInputs(isValidName, isValidEmail, isValidPassword)) {
-                signup(inputName.text.toString(), inputEmail.text.toString(), inputPassword.text.toString())
+            //DEFINITIVO
+//            if (validateAllInputs(isValidName, isValidEmail, isValidPassword)) {
+//                signup(inputName.text.toString(), inputEmail.text.toString(), inputPassword.text.toString())
+//            }
 
-            }
+            // Para pruebas BORRAR
+            val intent = Intent(activity, EscollirTemes::class.java)
+            startActivity(intent)
         }
 
         // ......... //
