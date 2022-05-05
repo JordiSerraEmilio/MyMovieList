@@ -5,6 +5,8 @@ import com.example.mymovielist.models.Users.User
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class RestApiService {
 
@@ -23,20 +25,20 @@ class RestApiService {
         )
     }
 
-//    fun putuser(email: String, userInfo: User, onResult: (User?) -> Unit){
-//        val retrofit = ApiService.ServiceBuilderPut.buildService(ApiService::class.java)
-//        retrofit.putUser(email, userInfo).enqueue(
-//            object : Callback<User> {
-//                override fun onFailure(call: Call<User>, t: Throwable) {
-//                    onResult(null)
-//                }
-//                override fun onResponse( call: Call<User>, response: Response<User>) {
-//                    val updatedUser = response.body()
-//                    onResult(updatedUser)
-//                }
-//            }
-//        )
-//    }
+    fun putuser(email: String, userInfo: User, onResult: (User?) -> Unit){
+        val retrofit = ApiService.ServiceBuilder.buildService(ApiService::class.java)
+        retrofit.putUser(email, userInfo)?.enqueue(
+            object : Callback<User> {
+                override fun onFailure(call: Call<User>, t: Throwable) {
+                    onResult(null)
+                }
+                override fun onResponse( call: Call<User>, response: Response<User>) {
+                    val addedUser = response.body()
+                    onResult(addedUser)
+                }
+            }
+        )
+    }
 
 //    fun getuser(email: String, onResult: (User?) -> Unit){
 //        val retrofit = ApiService.ServiceBuilderGet.buildService(ApiService::class.java)

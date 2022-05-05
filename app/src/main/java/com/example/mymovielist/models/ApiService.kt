@@ -5,14 +5,13 @@ import com.example.mymovielist.models.Review.Reviews
 import com.example.mymovielist.models.TopFilms.TopFilms
 import com.example.mymovielist.models.Users.User
 import okhttp3.OkHttpClient
-import okhttp3.RequestBody
 import okhttp3.ResponseBody
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
+
 
 interface ApiService {
     @GET()
@@ -65,21 +64,8 @@ interface ApiService {
     }
 
     @PUT("/{email}")
-    fun putUser(@Url email: String, @Body user: User): Call<User>
+    fun putUser(@Path("email") email: String, @Body user: User?): Call<User>
 
-    object ServiceBuilderPut {
-        private val client = OkHttpClient.Builder().build()
-
-        private val retrofit = Retrofit.Builder()
-            .baseUrl("https://6o5zl5.deta.dev/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(client)
-            .build()
-
-        fun<T> buildService(service: Class<T>): T{
-            return retrofit.create(service)
-        }
-    }
 
 
     //endregion

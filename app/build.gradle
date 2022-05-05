@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
 }
+apply plugin: 'kotlin-android'
 android {
     compileSdk 32
 

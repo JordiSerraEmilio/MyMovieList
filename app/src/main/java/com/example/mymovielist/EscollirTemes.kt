@@ -1,6 +1,7 @@
 package com.example.mymovielist
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
@@ -19,6 +20,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
 
 class EscollirTemes : AppCompatActivity() {
     private lateinit var binding: ActivityEscollirTemesBinding
@@ -79,8 +81,33 @@ class EscollirTemes : AppCompatActivity() {
 
         // TESTING
         val shared: SharedPreferences = applicationContext.getSharedPreferences("Login", Context.MODE_PRIVATE)
-        val test = shared.getString("email", "")
-        Toast.makeText(applicationContext, test.toString(), Toast.LENGTH_SHORT).show()
+        val email = shared.getString("email", "")
+        val apiService = RestApiService()
+        //IMPLEMENTAR
+        //var user = getUser
+        apiService.putuser(email.toString(), user){
+            if (it?.Id != null){
+
+                Toast.makeText(this.applicationContext, "Genres added", Toast.LENGTH_SHORT).show()
+
+                // Guardar datos en el SharedPreferences
+                val shared: SharedPreferences = this.applicationContext.getSharedPreferences("Login", Context.MODE_PRIVATE)
+                val edit = shared.edit()
+                edit.putString("email", user.email)
+                edit.commit()
+
+                // Pillar datos del SharedPreferences
+//                val test = shared.getString("email", "")
+//                Toast.makeText(context, test.toString(), Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(activity, EscollirTemes::class.java)
+                startActivity(intent)
+
+            }else{
+                Toast.makeText(context, "Failed Singing up, try again or check validations", Toast.LENGTH_SHORT).show()
+            }
+        }
+        Toast.makeText(applicationContext, email.toString(), Toast.LENGTH_SHORT).show()
     }
     //
 }
