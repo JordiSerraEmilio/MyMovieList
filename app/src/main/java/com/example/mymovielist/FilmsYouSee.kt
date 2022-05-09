@@ -100,7 +100,6 @@ class FilmsYouSee : AppCompatActivity() {
         useradd = u
 
         adapter = usAdapter(useradd)
-        println(useradd.toString())
        // binding.rvRanking.layoutManager = LinearLayoutManager(this)
        // binding.rvRanking.adapter = adapter
     }

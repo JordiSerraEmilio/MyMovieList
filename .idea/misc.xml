@@ -53,6 +53,7 @@
         <entry key="app/src/main/res/layout/fragment_signup_tab.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_signup_tab2.xml" value="1.1" />
         <entry key="app/src/main/res/layout/genre_item.xml" value="0.17553191489361702" />
+        <entry key="app/src/main/res/layout/reviewuser_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/user_item.xml" value="0.35625" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1545" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
