@@ -26,6 +26,17 @@
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintWidth_percent=".8" />
 
+    <TextView
+        android:id="@+id/txtViewValidateEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:text="Required"
+        android:textSize="12dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/editTxtEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtEmail" />
+
     <EditText
         android:id="@+id/editTxtPassword"
         android:layout_width="0dp"
@@ -35,31 +46,27 @@
         android:drawablePadding="2dp"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textColor="@color/baseorange"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        android:textColor="@color/baseorange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtEmail"
-        app:layout_constraintVertical_bias="0.041"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewValidateEmail"
+        app:layout_constraintVertical_bias="0.027"
         app:layout_constraintWidth_percent=".8" />
 
     <TextView
-        android:id="@+id/txtViewForgetPassword"
+        android:id="@+id/txtViewValidatePasswordRequired"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="5dp"
-        android:text="Forget Password"
-        app:layout_constraintBottom_toTopOf="@+id/bttnLogin"
-        app:layout_constraintEnd_toEndOf="@+id/editTxtPassword"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginLeft="25dp"
+        android:text="Required"
+        android:textSize="12dp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="@+id/editTxtPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtPassword"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_goneMarginTop="5dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editTxtPassword" />
 
     <TextView
         android:id="@+id/txtViewTerms"
@@ -86,5 +93,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTxtPassword"
-        app:layout_constraintVertical_bias="0.088" />
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

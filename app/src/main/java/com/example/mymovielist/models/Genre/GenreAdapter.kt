@@ -2,6 +2,7 @@ package com.example.mymovielist.models.Genre
 
 import android.content.Context
 import android.content.Intent
+
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Parcelable
@@ -17,6 +18,7 @@ import com.example.mymovielist.R
 import com.example.mymovielist.databinding.ChooseGenresBinding
 import com.example.mymovielist.login.RestApiService
 import com.google.gson.Gson
+import java.io.Serializable
 
 
 class GenreAdapter(
@@ -74,16 +76,17 @@ class GenreAdapter(
             if (isChecked){
                 if(!user_genres.contains(genres[position]))
                     user_genres+=(genres[position])
-                    println("##### ADD ##### "+user_genres.toString())
+                    println("##### ADD ##### "+user_genres.toString()) //Comprovación
 
             }else{
                 if(user_genres.contains(genres[position]))
                     user_genres-=(genres[position])
-                    println("##### REMOVE ##### "+user_genres.toString())
+                    println("##### REMOVE ##### "+user_genres.toString()) //Comprovación
             }
-            //val intent = Intent(toggle.context, EscollirTemes::class.java)
-            //var arrayList = ArrayList(user_genres)
-            //intent.putExtra("user_genres", arrayList)
+//            val intent = Intent(toggle.context, EscollirTemes::class.java)
+//            //var arrayList = ArrayList(user_genres)
+////            intent.putExtra("user_genres", user_genres)
+//            intent.putExtra("user_genres", user_genres)
         }
         holder.binGenre(genero!!)
     }
