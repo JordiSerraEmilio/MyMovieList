@@ -7,14 +7,13 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mymovielist.databinding.ActivityEscollirTemesBinding
 import com.example.mymovielist.login.RestApiService
 import com.example.mymovielist.models.ApiService
 import com.example.mymovielist.models.Genre.GenreAdapter
 import com.example.mymovielist.models.Genre.Genres
 import com.example.mymovielist.models.Users.User
-import com.example.mymovielist.models.Users.UserAdapter
+import com.example.mymovielist.models.Users.usAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,9 +24,14 @@ import java.util.*
 class EscollirTemes : AppCompatActivity() {
     private lateinit var binding: ActivityEscollirTemesBinding
     private lateinit var adapter: GenreAdapter
+    private lateinit var adapterGetUser: usAdapter
 
     private var generos = mutableListOf<Genres>()
+
     private var user_genres = ArrayList<Genres>()
+    private lateinit var inputUser: User
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityEscollirTemesBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -79,35 +83,101 @@ class EscollirTemes : AppCompatActivity() {
 
 
 
-//        // TESTING
+        // TESTING
+        // Sacar el email guardado en el SharedPreferences para hacer el Get de ese usuario
 //        val shared: SharedPreferences = applicationContext.getSharedPreferences("Login", Context.MODE_PRIVATE)
 //        val email = shared.getString("email", "")
+//
 //        val apiService = RestApiService()
+//
 //        //IMPLEMENTAR
 //        //var user = getUser
-//        apiService.putuser(email.toString(), user){
-//            if (it?.Id != null){
+//        println(email)
 //
-//                Toast.makeText(this.applicationContext, "Genres added", Toast.LENGTH_SHORT).show()
+//        if (email != null) {
+//            gettingUser(email)
+//            println("################# GETTED "+gettedUser)
+//            apiService.putuser(email, gettedUser){
+//                if (it?.Id != null){
 //
-//                // Guardar datos en el SharedPreferences
-//                val shared: SharedPreferences = this.applicationContext.getSharedPreferences("Login", Context.MODE_PRIVATE)
-//                val edit = shared.edit()
-//                edit.putString("email", user.email)
-//                edit.commit()
+//                    Toast.makeText(this.applicationContext, "Genres added", Toast.LENGTH_SHORT).show()
 //
-//                // Pillar datos del SharedPreferences
-////                val test = shared.getString("email", "")
-////                Toast.makeText(context, test.toString(), Toast.LENGTH_SHORT).show()
+//                    val intent = Intent(this.applicationContext, Recomendedfilms::class.java)
+//                    startActivity(intent)
 //
-//                val intent = Intent(activity, EscollirTemes::class.java)
-//                startActivity(intent)
-//
-//            }else{
-//                Toast.makeText(context, "Failed Singing up, try again or check validations", Toast.LENGTH_SHORT).show()
+//                }else{
+//                    Toast.makeText(this.applicationContext, "Fail adding genres", Toast.LENGTH_SHORT).show()
+//                }
 //            }
+//        }else{
+//            Toast.makeText(this.applicationContext, "Email not saved in configuration", Toast.LENGTH_SHORT).show()
 //        }
-//        Toast.makeText(applicationContext, email.toString(), Toast.LENGTH_SHORT).show()
+
+
+        val shared: SharedPreferences = applicationContext.getSharedPreferences("Login", Context.MODE_PRIVATE)
+        val email = shared.getString("email", "")
+//        val list = intent.getParcelableExtra<Genres>("user_genres")
+//        println(list.toString())
+        if (email != null) {
+            gettingUser(email)
+        }
     }
+
+    //region GET USER
+
+    private fun getRetrofitUserByEmail(): Retrofit {
+        return Retrofit.Builder().baseUrl("https://6o5zl5.deta.dev/users/")
+            .addConverterFactory(GsonConverterFactory.create()).build()
+    }
+
+    private fun gettingUser(email: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val call = getRetrofitUserByEmail().create(ApiService::class.java)
+                .getUser(email)
+
+            val user = call.body()
+
+            runOnUiThread {
+                if (user != null) {
+                    initUser(user, email)
+                }
+            }
+        }
+    }
+
+    private fun initUser(u: User, email: String){
+        inputUser = u
+        adapterGetUser = usAdapter(inputUser)
+
+        // PUT METHOD
+        if (email != null) {
+
+            // Setting genre list to the user retrived from api
+
+            inputUser.genres = user_genres
+
+            // Instance of RestApi resources
+            val apiService = RestApiService()
+            apiService.putuser(email, inputUser){
+                if (it?.Id != null){
+                    println(it.toString())
+                    Toast.makeText(this.applicationContext, "Genres added", Toast.LENGTH_SHORT).show()
+
+                    val intent = Intent(this.applicationContext, Recomendedfilms::class.java)
+                    startActivity(intent)
+
+                }else{
+                    Toast.makeText(this.applicationContext, "Fail adding genres", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }else{
+            Toast.makeText(this.applicationContext, "Email not saved in configuration", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    //endregion
+
+
+
     //
 }
