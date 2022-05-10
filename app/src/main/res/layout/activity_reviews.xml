@@ -27,7 +27,7 @@
         tools:ignore="TextContrastCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_reviews"
+        android:id="@+id/rv_reviewsUser"
         android:layout_width="409dp"
         android:layout_height="589dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
