@@ -13,8 +13,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.example.mymovielist.EscollirTemes
 import com.example.mymovielist.R
+import com.example.mymovielist.models.Recomended.Recomendedfilms
 import com.example.mymovielist.models.ApiService
 import com.example.mymovielist.models.Users.User
 import com.example.mymovielist.models.Users.usAdapter
@@ -23,6 +23,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import com.example.mymovielist.login.utilsEncrypt.sha256
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -127,7 +128,7 @@ class LoginTab : Fragment() {
 
     private fun login(email: String, password: String) {
         Toast.makeText(context, "Please wait...", Toast.LENGTH_SHORT).show()
-        gettingUser(email)
+        gettingUser(email, password)
     }
 
     // RETROFIT //
@@ -137,7 +138,7 @@ class LoginTab : Fragment() {
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
 
-    private fun gettingUser(email: String) {
+    private fun gettingUser(email: String, password: String) {
         CoroutineScope(Dispatchers.IO).launch {
             val call = getRetrofitUserByEmail().create(ApiService::class.java)
                 .getUser(email)
@@ -146,32 +147,46 @@ class LoginTab : Fragment() {
 
             launch {
                 if (user != null) {
-                    initUser(user, email)
+                    initUser(user, email, password)
                 }
             }
         }
     }
 
-    private fun initUser(u: User, email: String){
-        inputUser = u
+    private fun initUser(u: User, email: String, password: String){
+//        println("########## " + u.toString())
+//        var apiSalt = u.salt.toString().drop(7)
+//        val inputPasswordHash = sha256(password, apiSalt)
+//        println("############# salt ###########  " + apiSalt)
+//        println("############# input password + salt HASH ###########  " + inputPasswordHash)
+//        if (inputPasswordHash.equals(u.password)){
+//            inputUser = u
+//            adapterGetUser = usAdapter(inputUser)
+//            val intent = Intent(this.context, Recomendedfilms::class.java)
+//            startActivity(intent)
+//        }else{
+////            Toast.makeText(context, "This user doesn't exist, check email.", Toast.LENGTH_LONG).show()
+//        }
 
-        adapterGetUser = usAdapter(inputUser)
-        println("######### "+inputUser.toString())
+        println("########## " + u.toString())
+        var apiSalt = u.salt.toString().drop(7)
+        val inputPasswordHash = sha256(password, apiSalt)
+        println("############# salt ###########  " + apiSalt)
+        println("############# input password + salt HASH ###########  " + inputPasswordHash)
+        if (inputPasswordHash.equals(u.password)){
+
+        }else{
+            inputUser = u
+            adapterGetUser = usAdapter(inputUser)
+            val intent = Intent(this.context, Recomendedfilms::class.java)
+            // Guardar datos en el SharedPreferences
+            val shared: SharedPreferences = requireContext().getSharedPreferences("Login", Context.MODE_PRIVATE)
+            val edit = shared.edit()
+            edit.putString("email", inputUser.email)
+            edit.commit()
+            startActivity(intent)
+        }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     companion object {

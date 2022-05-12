@@ -5,13 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mymovielist.databinding.ActivityFilmsYouSeeBinding
-import com.example.mymovielist.databinding.ActivityRankingBinding
 import com.example.mymovielist.models.ApiService
-import com.example.mymovielist.models.TopFilms.ResultsTop
-import com.example.mymovielist.models.TopFilms.TopAdapter
-import com.example.mymovielist.models.TopFilms.TopFilms
+import com.example.mymovielist.models.Recomended.Recomendedfilms
 import com.example.mymovielist.models.Users.User
 import com.example.mymovielist.models.Users.usAdapter
 import kotlinx.coroutines.CoroutineScope

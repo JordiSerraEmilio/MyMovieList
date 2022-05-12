@@ -3,12 +3,14 @@ package com.example.mymovielist
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mymovielist.databinding.ActivityRankingBinding
 import com.example.mymovielist.models.ApiService
+import com.example.mymovielist.models.Recomended.Recomendedfilms
 import com.example.mymovielist.models.TopFilms.ResultsTop
 import com.example.mymovielist.models.TopFilms.TopAdapter
 import com.example.mymovielist.models.TopFilms.TopFilms
@@ -76,8 +78,6 @@ class Ranking : AppCompatActivity() {
                 binding.tvNumpagPopular.text = "- $pag -"
                 listaPeliculas(false)
                 listaPeliculas(true)
-            }else{
-                Toast.makeText(this.applicationContext, "No pot fer-ho", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -88,13 +88,8 @@ class Ranking : AppCompatActivity() {
                 binding.tvNumpagPopular.text = "- $pag -"
                 listaPeliculas(false)
                 listaPeliculas(true)
-            }else{
-                Toast.makeText(this.applicationContext, "No hi ha més pagines", Toast.LENGTH_SHORT).show()
             }
         }
-
-
-
     }
 
     private fun getRetrofit(): Retrofit {
@@ -113,7 +108,6 @@ class Ranking : AppCompatActivity() {
                 runOnUiThread {
                     if (peli != null) {
                         initFilms(peli)
-
                     }
                 }
 

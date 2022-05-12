@@ -1,4 +1,4 @@
-package com.example.mymovielist.models.TopFilms
+package com.example.mymovielist.models.Recomended
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,22 +7,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mymovielist.R
 import com.example.mymovielist.databinding.FilmItemBinding
+import com.example.mymovielist.models.Genre.Genres
+import com.example.mymovielist.models.TopFilms.ResultsTop
 
-class TopAdapter(
-    private val toplist: List<ResultsTop>
-) : RecyclerView.Adapter<TopAdapter.TopViewHolder>() {
+class RecomendedAdapter (
+    private val genresList : List<Genres>,
+    private val recofilms : List<ResultsTop>
+) : RecyclerView.Adapter<RecomendedAdapter.TopViewHolder>(){
 
-    class TopViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class TopViewHolder(view: View) : RecyclerView.ViewHolder(view){
         private val binding = FilmItemBinding.bind(view)
-        fun binFilm(
-            image: String?,
-            title: String?,
-            estrena: String?,
-            point: Double?,
-            genres: ArrayList<Int>
-        ) {
-            Glide.with(itemView).load("https://image.tmdb.org/t/p/w500" + image)
-                .into(binding.ivFilmCv)
+        fun binFilm(image:String?, title: String?, estrena: String?, point: Double?, genres: ArrayList<Int>){
+            Glide.with(itemView).load("https://image.tmdb.org/t/p/w500"+image).into(binding.ivFilmCv)
             binding.tvFilmTitleCv.text = title
             binding.tvFilmDateCv.text = estrena
             if (point != null) {
@@ -84,18 +80,12 @@ class TopAdapter(
     }
 
     override fun onBindViewHolder(holder: TopViewHolder, position: Int) {
-        val result = toplist[position]
-        holder.binFilm(
-            result.backdropPath,
-            result.title,
-            result.releaseDate,
-            result.voteAverage,
-            result.genreIds
-        )
+        val result = recofilms[position]
+        holder.binFilm(result.backdropPath, result.title, result.releaseDate, result.voteAverage, result.genreIds)
     }
 
     override fun getItemCount(): Int {
-        return toplist.size
+        return recofilms.size
     }
 
 

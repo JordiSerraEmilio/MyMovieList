@@ -12,6 +12,7 @@ import com.example.mymovielist.login.RestApiService
 import com.example.mymovielist.models.ApiService
 import com.example.mymovielist.models.Genre.GenreAdapter
 import com.example.mymovielist.models.Genre.Genres
+import com.example.mymovielist.models.Recomended.Recomendedfilms
 import com.example.mymovielist.models.Users.User
 import com.example.mymovielist.models.Users.usAdapter
 import kotlinx.coroutines.CoroutineScope

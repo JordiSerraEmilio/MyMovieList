@@ -7,6 +7,7 @@ import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mymovielist.databinding.ActivityReviewsBinding
 import com.example.mymovielist.models.ApiService
+import com.example.mymovielist.models.Recomended.Recomendedfilms
 import com.example.mymovielist.models.Review.ReviewUserAdapter
 import com.example.mymovielist.models.Review.Reviews
 import com.example.mymovielist.models.Users.User
