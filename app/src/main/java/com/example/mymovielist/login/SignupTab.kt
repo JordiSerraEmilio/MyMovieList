@@ -118,6 +118,14 @@ class SignupTab : Fragment() {
         })
 
         btnSignup.setOnClickListener {
+
+            // Clear focus de los edittext para que salten las validaciones
+            // en caso de error para que no haga el signup
+            inputName.clearFocus()
+            inputEmail.clearFocus()
+            inputPassword.clearFocus()
+
+
             //DEFINITIVO
 //            if (validateAllInputs(isValidName, isValidEmail, isValidPassword)) {
 //                signup(inputName.text.toString(), inputEmail.text.toString(), inputPassword.text.toString())
@@ -284,20 +292,21 @@ class SignupTab : Fragment() {
         user.salt = ""
         user.isLogged = 1
         user.genres = arrayListOf(Genres("", ""))
-        user.reviews = arrayListOf(Reviews("", "", "", "", "", 0.0f ))
+        user.reviews = arrayListOf(Reviews("", "", "", "", "", 0.0f))
         user.seen = arrayListOf(FilmsUser("", ""))
         user.toWatch = arrayListOf(FilmsUser("", ""))
         user.dropped = arrayListOf(FilmsUser("", ""))
 
         val apiService = RestApiService()
 
-        apiService.createuser(user){
-            if (it?.Id != null){
+        apiService.createuser(user) {
+            if (it?.Id != null) {
 
                 Toast.makeText(context, "Singing up completed", Toast.LENGTH_SHORT).show()
 
                 // Guardar datos en el SharedPreferences
-                val shared: SharedPreferences = requireContext().getSharedPreferences("Login", Context.MODE_PRIVATE)
+                val shared: SharedPreferences =
+                    requireContext().getSharedPreferences("Login", Context.MODE_PRIVATE)
                 val edit = shared.edit()
                 edit.putString("email", user.email)
                 edit.commit()
@@ -309,8 +318,12 @@ class SignupTab : Fragment() {
                 val intent = Intent(activity, EscollirTemes::class.java)
                 startActivity(intent)
 
-            }else{
-                Toast.makeText(context, "Failed Singing up, try again or check validations", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(
+                    context,
+                    "Failed Singing up, try again or check validations",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 

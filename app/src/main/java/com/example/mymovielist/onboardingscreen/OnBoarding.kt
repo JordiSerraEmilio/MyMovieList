@@ -43,178 +43,178 @@ class OnBoarding : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_on_boarding)
     }
-
-    @ExperimentalPagerApi
-    @Composable
-    fun OnBoardScreen() {
-        val scaffoldState = rememberScaffoldState()
-        val scope = rememberCoroutineScope()
-        val onBoardViewModel: OnBoardViewModel = viewModel()
-        val context = LocalContext.current
-        val currentPage = onBoardViewModel.currentPage.collectAsState()
-
-
-        val pagerState = rememberPagerState(
-            pageCount = onBoardItem.size,
-            initialOffscreenLimit = 2,
-            initialPage = 0,
-            infiniteLoop = false
-        )
-
-        Scaffold(
-            modifier = Modifier.fillMaxSize(),
-            scaffoldState = scaffoldState
-        ) {
-            Surface(
-                modifier = Modifier.fillMaxSize()
-            ) {
-                scope.launch {
-                    pagerState.animateScrollToPage(
-                        page = currentPage.value
-                    )
-                }
-
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                ) {
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        HorizontalPager(
-                            state = pagerState
-                        ) { page ->
-                            Column(
-                                modifier = Modifier
-                                    .padding(top = 65.dp)
-                                    .fillMaxWidth(),
-                                horizontalAlignment = Alignment.CenterHorizontally
-                            ) {
-                                Image(
-                                    painter = painterResource(id = onBoardItem[page].image),
-                                    contentDescription = "OnBoardImage",
-                                    modifier = Modifier
-                                        .size(250.dp)
-                                )
-
-                                Text(
-                                    text = onBoardItem[page].tittle,
-                                    modifier = Modifier
-                                        .padding(top = 50.dp),
-                                    color = Color.BLACK,
-                                    fontWeight = FontWeight.Bold,
-                                    fontSize = 20.sp
-                                )
-
-                                Text(
-                                    text = onBoardItem[page].description,
-                                    modifier = Modifier
-                                        .padding(30.dp),
-                                    color = Color.BLACK,
-                                    fontSize = 18.sp,
-                                    textAlign = TextAlign.Center
-                                )
-                            }
-                        }
-
-                        PagerIndicator(onBoardItem.size, pagerState.currentPage)
-                    }
-
-                    Box(
-                        modifier = Modifier
-                            .align(Alignment.BottomCenter)
-                    ) {
-                        Row(
-                            modifier = Modifier
-                                .padding(bottom = 20.dp)
-                                .fillMaxWidth(),
-                            horizontalArrangement = if (pagerState.currentPage != 2) {
-                                Arrangement.SpaceBetween
-                            } else {
-                                Arrangement.Center
-                            }
-                        ) {
-                            if (pagerState.currentPage == 2) {
-                                OutlinedButton(
-                                    onClick = {
-                                        Toast.makeText(
-                                            context,
-                                            "Start the Screen",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-                                    },
-                                    shape = RoundedCornerShape(45.dp)
-                                ) {
-                                    Text(
-                                        text = "Get Started",
-                                        modifier = Modifier.padding(
-                                            vertical = 8.dp,
-                                            horizontal = 40.dp
-                                        ),
-                                        color = Color.Black
-                                    )
-                                }
-                            } else {
-                                Text(
-                                    text = "Skip",
-                                    color = Color.White,
-                                    modifier = Modifier.padding(start = 20.dp),
-                                    fontSize = 18.sp,
-                                    fontWeight = FontWeight.Medium
-                                )
-
-                                Text(
-                                    text = "Next",
-                                    color = Color.White,
-                                    modifier = Modifier
-                                        .clickable {
-                                            onBoardViewModel.setCurrentPage(pagerState.currentPage + 1)
-                                        }
-                                        .padding(end = 20.dp),
-                                    fontSize = 18.sp,
-                                    fontWeight = FontWeight.Medium
-                                )
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @Composable
-    fun PagerIndicator(size: Int, currentPage: Int) {
-        Row(
-            horizontalArrangement = Arrangement.SpaceBetween,
-            modifier = Modifier.padding(top = 60.dp)
-        ) {
-            repeat(size) {
-                IndicateIcon(
-                    isSelected = it == currentPage
-                )
-            }
-        }
-    }
-
-    @Composable
-    fun IndicateIcon(isSelected: Boolean) {
-        val width = animateDpAsState(
-            targetValue = if (isSelected) 25.dp else 10.dp
-        )
-
-        Box(
-            modifier = Modifier
-                .padding(2.dp)
-                .height(10.dp)
-                .width(width.value)
-                .clip(CircleShape)
-                .background(
-                    if (isSelected) {
-                        Color.Green
-                    } else {
-                        Color.Gray.copy(alpha = 0.5f)
-                    }
-                )
-        )
-    }
+//
+//    @ExperimentalPagerApi
+//    @Composable
+//    fun OnBoardScreen() {
+//        val scaffoldState = rememberScaffoldState()
+//        val scope = rememberCoroutineScope()
+//        val onBoardViewModel: OnBoardViewModel = viewModel()
+//        val context = LocalContext.current
+//        val currentPage = onBoardViewModel.currentPage.collectAsState()
+//
+//
+//        val pagerState = rememberPagerState(
+//            pageCount = onBoardItem.size,
+//            initialOffscreenLimit = 2,
+//            initialPage = 0,
+//            infiniteLoop = false
+//        )
+//
+//        Scaffold(
+//            modifier = Modifier.fillMaxSize(),
+//            scaffoldState = scaffoldState
+//        ) {
+//            Surface(
+//                modifier = Modifier.fillMaxSize()
+//            ) {
+//                scope.launch {
+//                    pagerState.animateScrollToPage(
+//                        page = currentPage.value
+//                    )
+//                }
+//
+//                Box(
+//                    modifier = Modifier
+//                        .fillMaxWidth()
+//                ) {
+//                    Column(
+//                        horizontalAlignment = Alignment.CenterHorizontally
+//                    ) {
+//                        HorizontalPager(
+//                            state = pagerState
+//                        ) { page ->
+//                            Column(
+//                                modifier = Modifier
+//                                    .padding(top = 65.dp)
+//                                    .fillMaxWidth(),
+//                                horizontalAlignment = Alignment.CenterHorizontally
+//                            ) {
+//                                Image(
+//                                    painter = painterResource(id = onBoardItem[page].image),
+//                                    contentDescription = "OnBoardImage",
+//                                    modifier = Modifier
+//                                        .size(250.dp)
+//                                )
+//
+//                                Text(
+//                                    text = onBoardItem[page].tittle,
+//                                    modifier = Modifier
+//                                        .padding(top = 50.dp),
+//                                    color = Color.BLACK,
+//                                    fontWeight = FontWeight.Bold,
+//                                    fontSize = 20.sp
+//                                )
+//
+//                                Text(
+//                                    text = onBoardItem[page].description,
+//                                    modifier = Modifier
+//                                        .padding(30.dp),
+//                                    color = Color.BLACK,
+//                                    fontSize = 18.sp,
+//                                    textAlign = TextAlign.Center
+//                                )
+//                            }
+//                        }
+//
+//                        PagerIndicator(onBoardItem.size, pagerState.currentPage)
+//                    }
+//
+//                    Box(
+//                        modifier = Modifier
+//                            .align(Alignment.BottomCenter)
+//                    ) {
+//                        Row(
+//                            modifier = Modifier
+//                                .padding(bottom = 20.dp)
+//                                .fillMaxWidth(),
+//                            horizontalArrangement = if (pagerState.currentPage != 2) {
+//                                Arrangement.SpaceBetween
+//                            } else {
+//                                Arrangement.Center
+//                            }
+//                        ) {
+//                            if (pagerState.currentPage == 2) {
+//                                OutlinedButton(
+//                                    onClick = {
+//                                        Toast.makeText(
+//                                            context,
+//                                            "Start the Screen",
+//                                            Toast.LENGTH_SHORT
+//                                        ).show()
+//                                    },
+//                                    shape = RoundedCornerShape(45.dp)
+//                                ) {
+//                                    Text(
+//                                        text = "Get Started",
+//                                        modifier = Modifier.padding(
+//                                            vertical = 8.dp,
+//                                            horizontal = 40.dp
+//                                        ),
+//                                        color = Color.Black
+//                                    )
+//                                }
+//                            } else {
+//                                Text(
+//                                    text = "Skip",
+//                                    color = Color.White,
+//                                    modifier = Modifier.padding(start = 20.dp),
+//                                    fontSize = 18.sp,
+//                                    fontWeight = FontWeight.Medium
+//                                )
+//
+//                                Text(
+//                                    text = "Next",
+//                                    color = Color.White,
+//                                    modifier = Modifier
+//                                        .clickable {
+//                                            onBoardViewModel.setCurrentPage(pagerState.currentPage + 1)
+//                                        }
+//                                        .padding(end = 20.dp),
+//                                    fontSize = 18.sp,
+//                                    fontWeight = FontWeight.Medium
+//                                )
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+//
+//    @Composable
+//    fun PagerIndicator(size: Int, currentPage: Int) {
+//        Row(
+//            horizontalArrangement = Arrangement.SpaceBetween,
+//            modifier = Modifier.padding(top = 60.dp)
+//        ) {
+//            repeat(size) {
+//                IndicateIcon(
+//                    isSelected = it == currentPage
+//                )
+//            }
+//        }
+//    }
+//
+//    @Composable
+//    fun IndicateIcon(isSelected: Boolean) {
+//        val width = animateDpAsState(
+//            targetValue = if (isSelected) 25.dp else 10.dp
+//        )
+//
+//        Box(
+//            modifier = Modifier
+//                .padding(2.dp)
+//                .height(10.dp)
+//                .width(width.value)
+//                .clip(CircleShape)
+//                .background(
+//                    if (isSelected) {
+//                        Color.Green
+//                    } else {
+//                        Color.Gray.copy(alpha = 0.5f)
+//                    }
+//                )
+//        )
+//    }
 }

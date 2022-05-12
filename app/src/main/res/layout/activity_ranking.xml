@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:background="@color/baseorange"
-        android:fontFamily="@font/autour_one"
+        android:fontFamily="@font/opensans"
         android:gravity="center"
         android:text="POPULAR FILMS"
         android:textAlignment="center"
@@ -133,6 +133,7 @@
         app:layout_constraintEnd_toStartOf="@+id/bu_pag_delante"
         app:layout_constraintHorizontal_bias="0.256"
         app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/opensans"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.054" />
 
@@ -147,6 +148,7 @@
         app:layout_constraintHorizontal_bias="0.839"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/opensans"
         app:layout_constraintVertical_bias="0.054" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

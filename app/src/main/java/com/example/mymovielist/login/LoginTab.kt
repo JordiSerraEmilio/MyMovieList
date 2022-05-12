@@ -86,6 +86,8 @@ class LoginTab : Fragment() {
         }
 
         btnLogin.setOnClickListener {
+            inputEmail.clearFocus()
+            inputPassword.clearFocus()
             //DEFINITIVO
             if (validateAllInputs(isValidEmail, isValidPassword)) {
                 login(inputEmail.text.toString(), inputPassword.text.toString())

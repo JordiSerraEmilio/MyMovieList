@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,PreLoginActivity::class.java)
             startActivity(intent)
             finish()
-        }, 3000)
+        }, 2000)
 
     }
 }
