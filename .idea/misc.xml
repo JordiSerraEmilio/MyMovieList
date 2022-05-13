@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.384375" />
+        <entry key="app/src/main/res/drawable-v24/custom_button.xml" value="0.311" />
         <entry key="app/src/main/res/drawable-v24/ic_drama_focused.xml" value="0.3035" />
         <entry key="app/src/main/res/drawable-v24/ic_facebook.xml" value="0.256" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
@@ -34,15 +35,19 @@
         <entry key="app/src/main/res/drawable/lupa.xml" value="0.1675" />
         <entry key="app/src/main/res/drawable/movie.xml" value="0.1675" />
         <entry key="app/src/main/res/drawable/movie_black.xml" value="0.3035" />
+        <entry key="app/src/main/res/drawable/round_style.xml" value="0.311" />
+        <entry key="app/src/main/res/drawable/selected_indicator.xml" value="0.311" />
         <entry key="app/src/main/res/drawable/test.xml" value="0.2925" />
         <entry key="app/src/main/res/drawable/ticket.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/unselected_indicator.xml" value="0.311" />
         <entry key="app/src/main/res/layout/activity_escollir_temes.xml" value="0.19" />
         <entry key="app/src/main/res/layout/activity_films_you_see.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_movie.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_on_boarding.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/activity_on_boarding_main.xml" value="0.43650287172941926" />
         <entry key="app/src/main/res/layout/activity_pre_login.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_ranking.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_ranking.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_recomendedfilms.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.1685185185185185" />
         <entry key="app/src/main/res/layout/activity_reviews.xml" value="0.25" />
@@ -52,6 +57,9 @@
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_login_tab.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_login_tab2.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/fragment_on_boarding1.xml" value="0.17" />
+        <entry key="app/src/main/res/layout/fragment_on_boarding2.xml" value="0.19603825136612021" />
+        <entry key="app/src/main/res/layout/fragment_on_boarding3.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_signup_tab.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_signup_tab2.xml" value="0.33" />
         <entry key="app/src/main/res/layout/genre_item.xml" value="0.17553191489361702" />

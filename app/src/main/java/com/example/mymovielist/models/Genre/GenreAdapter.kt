@@ -86,7 +86,8 @@ class GenreAdapter(
 //            val intent = Intent(toggle.context, EscollirTemes::class.java)
 //            //var arrayList = ArrayList(user_genres)
 ////            intent.putExtra("user_genres", user_genres)
-//            intent.putExtra("user_genres", user_genres)
+//            var genreList = arrayOf<Int?>(1, 2, 3, 4)
+//            intent.putExtra("genreList", genreList)
         }
         holder.binGenre(genero!!)
     }

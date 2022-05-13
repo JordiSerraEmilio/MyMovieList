@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMovieList">
         <activity
+            android:name=".onboardingscreen.OnBoardingMain"
+            android:exported="false" />
+        <activity
             android:name=".User_a"
             android:exported="false" />
         <activity

@@ -179,6 +179,7 @@ class LoginTab : Fragment() {
 
         }else{
             inputUser = u
+            inputUser.isLogged = 1 // Se mantendrá loggeado
             adapterGetUser = usAdapter(inputUser)
             val intent = Intent(this.context, Recomendedfilms::class.java)
             // Guardar datos en el SharedPreferences

@@ -149,12 +149,10 @@ class EscollirTemes : AppCompatActivity() {
     private fun initUser(u: User, email: String){
         inputUser = u
         adapterGetUser = usAdapter(inputUser)
-
         // PUT METHOD
         if (email != null) {
 
-            // Setting genre list to the user retrived from api
-
+            // Añadir la nueva lista de generos al usuario sacado de la API
             inputUser.genres = user_genres
 
             // Instance of RestApi resources

@@ -290,7 +290,7 @@ class SignupTab : Fragment() {
         user.email = email
         user.password = password
         user.salt = ""
-        user.isLogged = 1
+        user.isLogged = 1 // Si acaba de crear la cuenta significa que va a estar loggeado apartir de ahora
         user.genres = arrayListOf(Genres("", ""))
         user.reviews = arrayListOf(Reviews("", "", "", "", "", 0.0f))
         user.seen = arrayListOf(FilmsUser("", ""))

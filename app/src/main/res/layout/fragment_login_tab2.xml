@@ -24,6 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
+        android:fontFamily="@font/opensans"
         app:layout_constraintWidth_percent=".8" />
 
     <TextView
@@ -55,6 +56,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtViewValidateEmail"
         app:layout_constraintVertical_bias="0.027"
+        android:fontFamily="@font/opensans"
         app:layout_constraintWidth_percent=".8" />
 
     <TextView
