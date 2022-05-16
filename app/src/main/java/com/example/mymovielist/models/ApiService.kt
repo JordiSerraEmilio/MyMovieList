@@ -1,6 +1,7 @@
 package com.example.mymovielist.models
 
 import com.example.mymovielist.models.Genre.LlistaGenres
+import com.example.mymovielist.models.Movies.MovieById
 import com.example.mymovielist.models.Recomended.DiscoverRecoFilms
 import com.example.mymovielist.models.Review.Reviews
 import com.example.mymovielist.models.TopFilms.TopFilms
@@ -32,6 +33,9 @@ interface ApiService {
 
     @GET()
     suspend fun getListReviewsUser(@Url url:String): Response<List<Reviews>>
+
+    @GET()
+    suspend fun getMevie(@Url url:String): Response<MovieById>
 
     //region REGISTER
 //    @GET("/users/{email}")
