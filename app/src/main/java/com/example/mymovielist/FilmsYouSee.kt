@@ -30,7 +30,7 @@ class FilmsYouSee : AppCompatActivity() {
         // Finestra ranking
         val rank1=findViewById<ImageButton>(R.id.bu_yousee_rank)
         rank1.setOnClickListener {
-            val intento1 = Intent(this, FilmsYouSee::class.java)
+            val intento1 = Intent(this, Ranking::class.java)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
