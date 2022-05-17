@@ -22,8 +22,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class Recomendedfilms : AppCompatActivity() {
-    private lateinit var binding: ActivityRecomendedfilmsBinding
 
+    private lateinit var binding: ActivityRecomendedfilmsBinding
     private lateinit var adapter: TopAdapter
 
     private var pags = arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
@@ -35,7 +35,7 @@ class Recomendedfilms : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRecomendedfilmsBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_recomendedfilms)
+        setContentView(binding.root)
 
 //        for (x in pags){
 //            pag = x
