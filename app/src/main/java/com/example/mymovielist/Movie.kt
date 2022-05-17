@@ -18,6 +18,8 @@ import com.example.mymovielist.models.TopFilms.PageAdapter
 import com.example.mymovielist.models.ApiService
 import com.example.mymovielist.models.Movies.AdapterCompanies
 import com.example.mymovielist.models.Movies.ProductionCompanies
+import com.example.mymovielist.models.Review.ReviewFilmsAdapter
+import com.example.mymovielist.models.Users.User
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.coroutines.CoroutineScope
@@ -33,9 +35,11 @@ class Movie : AppCompatActivity() {
 
     private var companies = mutableListOf<ProductionCompanies>()
     private var actores = mutableListOf<Cast>()
+    private var users = mutableListOf<User>()
 
     private lateinit var adapter: AdapterCompanies
     private lateinit var adapter2: AdapterActor
+    private lateinit var adapter3: ReviewFilmsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,24 +55,38 @@ class Movie : AppCompatActivity() {
                 if(i == 1){
                     companies.removeAll {true}
                 }else if(i == 3){
+                    users.removeAll { true }
                 }
                 i = 2
                 CanviarRecycleView(idmovie.toString())
                 }
             }
 
-
-            val rank2 = findViewById<TextView>(R.id.tv_bu_producers)
-            rank2.setOnClickListener {
-                if(i != 1) {
+        val rank2 = findViewById<TextView>(R.id.tv_bu_producers)
+        rank2.setOnClickListener {
+            if(i != 1) {
                 if (i == 2) {
                     actores.removeAll { true }
                 } else if (i == 3) {
+                    users.removeAll { true }
                 }
                 i = 1
                 CanviarRecycleView(idmovie.toString())
-                }
             }
+        }
+
+        val rank3 = findViewById<TextView>(R.id.tv_bu_reviews)
+        rank3.setOnClickListener {
+            if(i != 3) {
+                if (i == 1) {
+                    companies.removeAll {true}
+                } else if (i == 2) {
+                    actores.removeAll { true }
+                }
+                i = 3
+                CanviarRecycleView(idmovie.toString())
+            }
+        }
 
 
         //var pager = findViewById<ViewPager2>(R.id.viewPagerTopFilms)
@@ -100,16 +118,17 @@ class Movie : AppCompatActivity() {
         return Retrofit.Builder().baseUrl("https://api.themoviedb.org/3/movie/")
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
+    private fun getRetrofit2(): Retrofit {
+        return Retrofit.Builder().baseUrl("https://6o5zl5.deta.dev/")
+            .addConverterFactory(GsonConverterFactory.create()).build()
+    }
 
     private fun bucarPorId(id: String) {
         val img = findViewById<ImageView>(R.id.movie_image)
         CoroutineScope(Dispatchers.IO).launch {
             val call = getRetrofit().create(ApiService::class.java)
                 .getMevie(id+"?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=en-US")
-            val call2 = getRetrofit().create(ApiService::class.java)
-                .getActors(id+"/credits?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=en-US")
             val body = call.body()
-            val body2 = call2.body()
             if (body != null) {
                 runOnUiThread {
                     var imatge = body.backdropPath
@@ -184,8 +203,14 @@ class Movie : AppCompatActivity() {
                 .getMevie(id+"?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=en-US")
             val call2 = getRetrofit().create(ApiService::class.java)
                 .getActors(id+"/credits?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=en-US")
+            val call3 = getRetrofit2().create(ApiService::class.java)
+                .getListUsers("users")
             val body = call.body()
             val body2 = call2.body()
+            val body3 = call3.body()
+
+            println(id)
+
             if (i == 1){
                 if (body != null) {
                     runOnUiThread {
@@ -245,9 +270,15 @@ class Movie : AppCompatActivity() {
                 if (body2 != null){
                     runOnUiThread {
                         if (body2 != null) {
-                            println(body2.cast)
                             initActors(body2.cast)
                         }
+                    }
+                }
+            }
+            else if(i == 3){
+                if (body3 != null){
+                    runOnUiThread {
+                        initReviews(body3, id)
                     }
                 }
             }
@@ -274,6 +305,20 @@ class Movie : AppCompatActivity() {
 
         findViewById<RecyclerView>(R.id.rv_film).layoutManager = LinearLayoutManager(this.baseContext)
         findViewById<RecyclerView>(R.id.rv_film).adapter = adapter2
+    }
+
+    private fun initReviews(Users : List<User>, id : String?){
+        for (us in Users!!){
+            for(re in us.reviews){
+                if(re.id == id){
+                    users.add(us)
+                }
+            }
+        }
+        adapter3 = ReviewFilmsAdapter(users)
+
+        findViewById<RecyclerView>(R.id.rv_film).layoutManager = LinearLayoutManager(this.baseContext)
+        findViewById<RecyclerView>(R.id.rv_film).adapter = adapter3
     }
 
 }
