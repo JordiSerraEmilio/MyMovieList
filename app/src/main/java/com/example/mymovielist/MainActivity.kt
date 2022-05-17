@@ -35,21 +35,23 @@ class MainActivity : AppCompatActivity() {
             val email = shared.getString("email", "") // Intenta coger el valor email
             if (email != "") { // Si hay email, por lo tanto ha creado cuenta o ha iniciado anteriormente...
                 gettingUser(email!!) // Assigna a apiUser el usuario guardado en la API
-                if (apiUser.isLogged == 0) { // Si apiUser no estaba logeado previamente...
-                    handler = Handler()
-                    handler.postDelayed({
-                        val intent = Intent(this, OnBoardingMain::class.java)
-                        startActivity(intent)
-                        finish()
-                    }, 2000)
-                } else { // Si ya estaba logeado previamente...
-                    handler = Handler()
-                    handler.postDelayed({
-                        val intent = Intent(this, Recomendedfilms::class.java)
-                        startActivity(intent)
-                        finish()
-                    }, 2000)
-                }
+//                if (apiUser != null) {
+                    if (apiUser.isLogged == 0) { // Si apiUser no estaba logeado previamente...
+                        handler = Handler()
+                        handler.postDelayed({
+                            val intent = Intent(this, OnBoardingMain::class.java)
+                            startActivity(intent)
+                            finish()
+                        }, 2000)
+                    } else { // Si ya estaba logeado previamente...
+                        handler = Handler()
+                        handler.postDelayed({
+                            val intent = Intent(this, Recomendedfilms::class.java)
+                            startActivity(intent)
+                            finish()
+                        }, 2000)
+                    }
+//                }
             } else {
                 handler = Handler()
                 handler.postDelayed({

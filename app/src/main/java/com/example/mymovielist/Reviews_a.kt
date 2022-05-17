@@ -1,6 +1,8 @@
 package com.example.mymovielist
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
@@ -23,9 +25,6 @@ class Reviews_a : AppCompatActivity() {
     private var reviewsUser = mutableListOf<Reviews>()
     private lateinit var adapter: ReviewUserAdapter
 
-    //private val shared : SharedPreferences = applicationContext.getSharedPreferences("Login", Context.MODE_PRIVATE)
-    //private val email = shared.getString("email", "")
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityReviewsBinding.inflate(layoutInflater)
@@ -33,8 +32,9 @@ class Reviews_a : AppCompatActivity() {
 
         listaReviewsUser()
 
+        // region MENU
         // Finestra pelicules
-        val films1=findViewById<ImageButton>(R.id.bu_review_films)
+        val films1 = findViewById<ImageButton>(R.id.bu_review_films)
         films1.setOnClickListener {
             val intento1 = Intent(this, Recomendedfilms::class.java)
             startActivity(intento1)
@@ -43,7 +43,7 @@ class Reviews_a : AppCompatActivity() {
         }
 
         // Finestra Films you see
-        val yousee1=findViewById<ImageButton>(R.id.bu_review_yousee)
+        val yousee1 = findViewById<ImageButton>(R.id.bu_review_yousee)
         yousee1.setOnClickListener {
             val intento1 = Intent(this, FilmsYouSee::class.java)
             startActivity(intento1)
@@ -52,7 +52,7 @@ class Reviews_a : AppCompatActivity() {
         }
 
         // Finestra users
-        val users1=findViewById<ImageButton>(R.id.bu_review_users)
+        val users1 = findViewById<ImageButton>(R.id.bu_review_users)
         users1.setOnClickListener {
             val intento1 = Intent(this, Users::class.java)
             startActivity(intento1)
@@ -61,13 +61,15 @@ class Reviews_a : AppCompatActivity() {
         }
 
         // Finestra ranking
-        val rank1=findViewById<ImageButton>(R.id.bu_review_rank)
+        val rank1 = findViewById<ImageButton>(R.id.bu_review_rank)
         rank1.setOnClickListener {
             val intento1 = Intent(this, Ranking::class.java)
             startActivity(intento1)
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
         }
+
+        // endregion
     }
 
     private fun getRetrofit(): Retrofit {
@@ -76,25 +78,31 @@ class Reviews_a : AppCompatActivity() {
     }
 
     private fun listaReviewsUser() {
-            CoroutineScope(Dispatchers.IO).launch {
-                val call = getRetrofit().create(ApiService::class.java)
-                    .getUser("rockyrockyUPDATED@example.com")
+        val shared: SharedPreferences = applicationContext.getSharedPreferences("Login", Context.MODE_PRIVATE)
+        val edit = shared.edit()
+        edit.putString("email", "rockyrockyUPDATED@example.com")
+        edit.commit()
+        val email = shared.getString("email", "")
 
-                val user = call.body()
+        CoroutineScope(Dispatchers.IO).launch {
+            val call = getRetrofit().create(ApiService::class.java)
+                .getUser(email!!)
 
-                runOnUiThread {
-                    if (user != null) {
-                        initReviewsUser(user)
+            val user = call.body()
 
-                    }
+            runOnUiThread {
+                if (user != null) {
+                    initReviewsUser(user)
+
                 }
-
             }
+
+        }
 
     }
 
-    private fun initReviewsUser(user: User){
-        for (u in user!!.reviews){
+    private fun initReviewsUser(user: User) {
+        for (u in user!!.reviews) {
             reviewsUser.add(u)
             println(u)
         }

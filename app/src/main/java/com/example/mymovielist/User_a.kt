@@ -1,11 +1,16 @@
 package com.example.mymovielist
 
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
+import com.example.mymovielist.login.PreLoginActivity
 import com.example.mymovielist.models.ApiService
 import com.example.mymovielist.models.Users.PageAdapter
 import com.google.android.material.tabs.TabLayout

@@ -10,14 +10,14 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_users"
         android:layout_width="match_parent"
-        android:layout_height="520dp"
+        android:layout_height="490dp"
         android:layout_marginTop="40dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/se_busca_usuari"
-        app:layout_constraintVertical_bias="0.656" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tv_title_fr_ranking2"
@@ -44,6 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/white"
+        android:clickable="true"
         android:commitIcon="@drawable/lupa"
         android:contextClickable="true"
         android:focusable="auto"
@@ -51,7 +52,6 @@
         android:searchHintIcon="@drawable/lupa"
         android:searchIcon="@drawable/lupa"
         app:iconifiedByDefault="true"
-        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -129,4 +129,52 @@
 
     </LinearLayout>
 
+    <ImageButton
+        android:id="@+id/bttnCloseSession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_closesession"
+        android:text="CLOSE SESSION"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imgBttnUserImage"
+        app:layout_constraintTop_toBottomOf="@+id/se_busca_usuari" />
+
+    <Button
+        android:id="@+id/bttnUpdateProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="124dp"
+        android:background="@drawable/custom_button"
+        android:text="UPDATE PROFILE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgBttnUserImage"
+        app:layout_constraintTop_toBottomOf="@+id/se_busca_usuari" />
+
+    <ImageButton
+        android:id="@+id/imgBttnUserImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/defaultusericon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/se_busca_usuari" />
+
+    <EditText
+        android:id="@+id/editTxtUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="48dp"
+        android:hint="Your new name"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgBttnUserImage"
+        app:layout_constraintTop_toTopOf="@+id/imgBttnUserImage" />
 </androidx.constraintlayout.widget.ConstraintLayout>
