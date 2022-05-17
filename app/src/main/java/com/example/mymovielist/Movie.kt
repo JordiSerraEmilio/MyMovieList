@@ -22,7 +22,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class Movie : AppCompatActivity() {
-    var tabTitle = arrayOf("INFORMATION", "REVIEWS")
+    var tabTitle = arrayOf("COMPANIES", "ACTORS","REVIEWS")
     private var companies = mutableListOf<ProductionCompanies>()
     private lateinit var adapter: AdapterCompanies
     override fun onCreate(savedInstanceState: Bundle?) {
