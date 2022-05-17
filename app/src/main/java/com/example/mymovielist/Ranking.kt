@@ -36,6 +36,7 @@ class Ranking : AppCompatActivity() {
         binding.tvNumpagPopular.text = "- $pag -"
 
 
+
         // Finestra pelicules
         val films1=findViewById<ImageButton>(R.id.bu_rank_films)
         films1.setOnClickListener {

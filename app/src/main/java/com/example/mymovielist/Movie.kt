@@ -5,8 +5,12 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
+import com.example.mymovielist.models.TopFilms.PageAdapter
 import com.example.mymovielist.models.ApiService
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -14,13 +18,22 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class Movie : AppCompatActivity() {
-
+    var tabTitle = arrayOf("INFORMATION", "REVIEWS")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie)
         val idmovie = intent.extras?.getInt("rid")
 
         bucarPorId(idmovie.toString())
+
+        var pager = findViewById<ViewPager2>(R.id.viewPagerTopFilms)
+        var tab1 = findViewById<TabLayout>(R.id.tabs)
+        pager.adapter = PageAdapter(supportFragmentManager, lifecycle)
+        TabLayoutMediator(tab1, pager){
+                tab, position ->
+            tab.text = tabTitle[position]
+        }.attach()
+
         //setContent()
     }
 

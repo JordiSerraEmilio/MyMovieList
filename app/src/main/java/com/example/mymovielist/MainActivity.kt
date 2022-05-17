@@ -26,33 +26,34 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         apiUser = User()
-        val shared: SharedPreferences = applicationContext.getSharedPreferences("Login", Context.MODE_PRIVATE)
 
-        if(shared!=null){
-            val email = shared.getString("email", "")
-            if (email != ""){
-                if (apiUser != null){
-                    gettingUser(email!!)
-                    if (apiUser.isLogged == 0){ // Si no estaba logeado previamente...
-                        handler = Handler()
-                        handler.postDelayed({
-                            val intent = Intent(this,OnBoardingMain::class.java)
-                            startActivity(intent)
-                            finish()
-                        }, 2000)
-                    }else{ // Si ya estaba logeado previamente...
-                        handler = Handler()
-                        handler.postDelayed({
-                            val intent = Intent(this,Recomendedfilms::class.java)
-                            startActivity(intent)
-                            finish()
-                        }, 2000)
-                    }
+        // Instancia del shared
+        val shared: SharedPreferences =
+            applicationContext.getSharedPreferences("Login", Context.MODE_PRIVATE)
+
+        if (shared != null) { // Comprovación por si acaso peta
+            val email = shared.getString("email", "") // Intenta coger el valor email
+            if (email != "") { // Si hay email, por lo tanto ha creado cuenta o ha iniciado anteriormente...
+                gettingUser(email!!) // Assigna a apiUser el usuario guardado en la API
+                if (apiUser.isLogged == 0) { // Si apiUser no estaba logeado previamente...
+                    handler = Handler()
+                    handler.postDelayed({
+                        val intent = Intent(this, OnBoardingMain::class.java)
+                        startActivity(intent)
+                        finish()
+                    }, 2000)
+                } else { // Si ya estaba logeado previamente...
+                    handler = Handler()
+                    handler.postDelayed({
+                        val intent = Intent(this, Recomendedfilms::class.java)
+                        startActivity(intent)
+                        finish()
+                    }, 2000)
                 }
-            }else{
+            } else {
                 handler = Handler()
                 handler.postDelayed({
-                    val intent = Intent(this,Recomendedfilms::class.java)
+                    val intent = Intent(this, OnBoardingMain::class.java)
                     startActivity(intent)
                     finish()
                 }, 2000)
@@ -72,7 +73,7 @@ class MainActivity : AppCompatActivity() {
             val call = getRetrofitUserByEmail().create(ApiService::class.java)
                 .getUser(email)
 
-             apiUser = call.body()!!
+            apiUser = call.body()!!
         }
     }
 }

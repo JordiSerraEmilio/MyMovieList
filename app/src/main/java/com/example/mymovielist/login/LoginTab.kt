@@ -170,17 +170,28 @@ class LoginTab : Fragment() {
 ////            Toast.makeText(context, "This user doesn't exist, check email.", Toast.LENGTH_LONG).show()
 //        }
 
-        println("########## " + u.toString())
-        var apiSalt = u.salt.toString().drop(7)
-        val inputPasswordHash = sha256(password, apiSalt)
-        println("############# salt ###########  " + apiSalt)
-        println("############# input password + salt HASH ###########  " + inputPasswordHash)
-        if (inputPasswordHash.equals(u.password)){
+//        println("########## " + u.toString())
+//        var apiSalt = u.salt.toString().drop(7)
+//        val inputPasswordHash = sha256(password, apiSalt)
+//        println("############# salt ###########  " + apiSalt)
+//        println("############# input password + salt HASH ###########  " + inputPasswordHash)
+//
+//        if (inputPasswordHash.equals(u.password)){
+//
+//        }else{
+//            inputUser = u
+//            inputUser.isLogged = 1 // Se mantendrá loggeado
+//            adapterGetUser = usAdapter(inputUser)
+//            val intent = Intent(this.context, Recomendedfilms::class.java)
+//            // Guardar datos en el SharedPreferences
+//            val shared: SharedPreferences = requireContext().getSharedPreferences("Login", Context.MODE_PRIVATE)
+//            val edit = shared.edit()
+//            edit.putString("email", inputUser.email)
+//            edit.commit()
+//            startActivity(intent)
+//        }
 
-        }else{
-            inputUser = u
-            inputUser.isLogged = 1 // Se mantendrá loggeado
-            adapterGetUser = usAdapter(inputUser)
+
             val intent = Intent(this.context, Recomendedfilms::class.java)
             // Guardar datos en el SharedPreferences
             val shared: SharedPreferences = requireContext().getSharedPreferences("Login", Context.MODE_PRIVATE)
@@ -188,7 +199,6 @@ class LoginTab : Fragment() {
             edit.putString("email", inputUser.email)
             edit.commit()
             startActivity(intent)
-        }
     }
 
 
