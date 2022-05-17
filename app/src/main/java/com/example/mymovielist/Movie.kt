@@ -5,10 +5,14 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.example.mymovielist.models.TopFilms.PageAdapter
 import com.example.mymovielist.models.ApiService
+import com.example.mymovielist.models.Movies.AdapterCompanies
+import com.example.mymovielist.models.Movies.ProductionCompanies
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.coroutines.CoroutineScope
@@ -19,6 +23,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class Movie : AppCompatActivity() {
     var tabTitle = arrayOf("INFORMATION", "REVIEWS")
+    private var companies = mutableListOf<ProductionCompanies>()
+    private lateinit var adapter: AdapterCompanies
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie)
@@ -122,9 +128,21 @@ class Movie : AppCompatActivity() {
                             }
                         }
                     }
+                    if(body.productionCompanies != null){
+                        initCompanies(body.productionCompanies)
+                    }
                 }
             }
         }
+    }
+
+    private fun initCompanies(Companies : List<ProductionCompanies>){
+        for (compani in Companies!!){
+            companies.add(compani)
+        }
+        adapter = AdapterCompanies(companies)
+        findViewById<RecyclerView>(R.id.rv_companies).layoutManager = LinearLayoutManager(this)
+        findViewById<RecyclerView>(R.id.rv_companies).adapter = adapter
     }
 
 }
