@@ -53,6 +53,7 @@
                 android:layout_weight="1"
                 android:autoSizeMaxTextSize="18sp"
                 android:autoSizeTextType="uniform"
+                android:padding="5dp"
                 android:text="TextView"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
@@ -64,9 +65,11 @@
                 android:layout_height="0dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:indeterminateTint="#5A5A5A"
                 android:progressBackgroundTint="#5A5A5A"
                 android:progressTint="@color/yellow"
-                android:rating="1" />
+                android:rating="1"
+                android:secondaryProgressTint="#5A5A5A" />
         </LinearLayout>
 
     </LinearLayout>

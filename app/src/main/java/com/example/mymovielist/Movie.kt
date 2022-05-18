@@ -266,12 +266,13 @@ class Movie : AppCompatActivity() {
     private fun initReviews(Users : List<User>, id : String?){
         for (us in Users!!){
             for(re in us.reviews){
-                if(re.id == id){
+                if(re.movieId == id){
                     users.add(us)
+
                 }
             }
         }
-        adapter3 = ReviewFilmsAdapter(users)
+        adapter3 = ReviewFilmsAdapter(users, id.toString())
 
         findViewById<RecyclerView>(R.id.rv_film).layoutManager = LinearLayoutManager(this.baseContext)
         findViewById<RecyclerView>(R.id.rv_film).adapter = adapter3

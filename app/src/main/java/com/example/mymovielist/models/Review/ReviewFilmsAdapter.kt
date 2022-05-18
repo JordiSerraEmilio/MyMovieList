@@ -10,7 +10,7 @@ import com.example.mymovielist.databinding.ReviewfilmItemBinding
 import com.example.mymovielist.models.Users.User
 
 class ReviewFilmsAdapter(
-    private val users: List<User>
+    private val users: List<User>, val idP : String
     ): RecyclerView.Adapter<ReviewFilmsAdapter.ReviewFilmUserViewHolder>()  {
 
 
@@ -34,8 +34,17 @@ class ReviewFilmsAdapter(
 
     override fun onBindViewHolder(holder: ReviewFilmUserViewHolder, position: Int) {
         val result = users[position]
-        val rreview = result.reviews[position]
-        holder.binReviewfilm(result.image, result.name, rreview.score, rreview.comment )
+        var num = 0.0F
+        var com = ""
+
+        for(a in result.reviews){
+            if(a.movieId.equals(idP)){
+                num = a.score!!.toFloat()
+                com = a.comment.toString()
+            }
+        }
+
+        holder.binReviewfilm(result.image, result.name, num, com )
     }
 
     override fun getItemCount(): Int {

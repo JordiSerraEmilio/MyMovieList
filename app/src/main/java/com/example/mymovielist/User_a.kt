@@ -1,25 +1,18 @@
 package com.example.mymovielist
 
-import android.content.Context
-import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
-import com.example.mymovielist.login.PreLoginActivity
 import com.example.mymovielist.models.ApiService
+import com.example.mymovielist.models.Movies.MovieById
+import com.example.mymovielist.models.Movies.MovieByIdAdapter
 import com.example.mymovielist.models.Review.ReviewUserAdapter
 import com.example.mymovielist.models.Review.Reviews
-import com.example.mymovielist.models.Users.PageAdapter
 import com.example.mymovielist.models.Users.User
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -32,7 +25,9 @@ class User_a : AppCompatActivity() {
 
     var i = 1;
     private var reviewsUser = mutableListOf<Reviews>()
+    private var favoritefilms = mutableListOf<MovieById>()
     private lateinit var adapter: ReviewUserAdapter
+    private lateinit var adapter2: MovieByIdAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,21 +36,8 @@ class User_a : AppCompatActivity() {
         val mailuser = intent.extras?.getString("uCorreo")
         BuscarPorCorreo(mailuser.toString())
 
-        val rank1=findViewById<TextView>(R.id.tv_bu_watched_user)
+        val rank1 = findViewById<TextView>(R.id.tv_bu_favorite_user)
         rank1.setOnClickListener {
-            if(i != 2){
-                if(i == 1){
-                    //companies.removeAll {true}
-                }else if(i == 3){
-                    reviewsUser.removeAll { true }
-                }
-                i = 2
-                CanviarRecycleView(mailuser.toString())
-            }
-        }
-
-        val rank2 = findViewById<TextView>(R.id.tv_bu_favorite_user)
-        rank2.setOnClickListener {
             if(i != 1) {
                 if (i == 2) {
                     //actores.removeAll { true }
@@ -63,6 +45,19 @@ class User_a : AppCompatActivity() {
                     reviewsUser.removeAll { true }
                 }
                 i = 1
+                CanviarRecycleView(mailuser.toString())
+            }
+        }
+
+        val rank2=findViewById<TextView>(R.id.tv_bu_watched_user)
+        rank2.setOnClickListener {
+            if(i != 2){
+                if(i == 1){
+                    //companies.removeAll {true}
+                }else if(i == 3){
+                    reviewsUser.removeAll { true }
+                }
+                i = 2
                 CanviarRecycleView(mailuser.toString())
             }
         }
@@ -126,29 +121,54 @@ class User_a : AppCompatActivity() {
             val body = call.body()
 
             if(i == 1){
-                if (body != null) {
-                    runOnUiThread {
-                        initReviewsUser(body)
-                    }
-                }
+                //runOnUiThread {
+
+                //}
             }
             else if(i == 2){
 
+                    if (body != null) {
+                        var id = ""
+                        for( r in body.reviews){
+                            id = r.movieId.toString()
+                            val call2 = getRetrofit().create(ApiService::class.java)
+                                .getMevie(id+"?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=en-US")
+                            val body2 = call2.body()
+                            if (body2 != null) {
+                                favoritefilms.add(body2)
+                            }
+                        }
+                        runOnUiThread {
+                            initFavorite()
+                        }
+
+                    }
+
             }
             else if(i == 3){
-
+                runOnUiThread {
+                    if (body != null) {
+                        initReviewsUser(body)
+                    }
+                 }
             }
         }
     }
 
-    private fun initReviewsUser(user: User) {
+    private fun initReviewsUser(user: User?) {
         for (u in user!!.reviews) {
             reviewsUser.add(u)
-            println(u)
+
         }
         adapter = ReviewUserAdapter(reviewsUser)
-        findViewById<RecyclerView>(R.id.rv_reviewsUser).layoutManager = LinearLayoutManager(this)
-        findViewById<RecyclerView>(R.id.rv_reviewsUser).adapter = adapter
+        findViewById<RecyclerView>(R.id.rv_user_act).layoutManager = LinearLayoutManager(this)
+        findViewById<RecyclerView>(R.id.rv_user_act).adapter = adapter
+    }
+
+    private fun initFavorite() {
+        adapter2 = MovieByIdAdapter(favoritefilms)
+        findViewById<RecyclerView>(R.id.rv_user_act).layoutManager = LinearLayoutManager(this)
+        findViewById<RecyclerView>(R.id.rv_user_act).adapter = adapter2
     }
 
 }
