@@ -14,7 +14,7 @@
         android:background="@color/baseorange"
         android:fontFamily="@font/autour_one"
         android:gravity="center"
-        android:text="FILMS SEEN"
+        android:text="FILMS LIST"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -94,16 +94,6 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/prova"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_fr_ranking5"
-        app:layout_constraintVertical_bias="0.035" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

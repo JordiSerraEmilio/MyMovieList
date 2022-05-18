@@ -128,13 +128,13 @@ class SignupTab : Fragment() {
 
 
             //DEFINITIVO
-//            if (validateAllInputs(isValidName, isValidEmail, isValidPassword)) {
-//                signup(inputName.text.toString(), inputEmail.text.toString(), inputPassword.text.toString())
-//            }
+            if (validateAllInputs(isValidName, isValidEmail, isValidPassword)) {
+                signup(inputName.text.toString(), inputEmail.text.toString(), inputPassword.text.toString())
+            }
 
             // Para pruebas BORRAR
-            val intent = Intent(activity, EscollirTemes::class.java)
-            startActivity(intent)
+//            val intent = Intent(activity, EscollirTemes::class.java)
+//            startActivity(intent)
         }
 
         return view

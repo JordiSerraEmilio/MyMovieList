@@ -252,8 +252,9 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
                     println(it.toString())
                     Toast.makeText(this.applicationContext, "User name updated", Toast.LENGTH_SHORT).show()
 
-                    val intent = Intent(this.applicationContext, Recomendedfilms::class.java)
+                    val intent = Intent(this.applicationContext, Users::class.java)
                     startActivity(intent)
+                    finish()
 
                 }else{
                     Toast.makeText(this.applicationContext, "Fail updating username", Toast.LENGTH_SHORT).show()

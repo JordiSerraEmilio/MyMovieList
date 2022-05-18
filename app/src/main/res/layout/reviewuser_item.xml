@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="340dp"
-    app:cardBackgroundColor="@color/yellowishorange">
+    android:layout_height="360dp"
+    app:cardElevation="10dp"
+    app:cardBackgroundColor="@color/cardviewbackground">
 
     <TextView
         android:id="@+id/tv_titol_film_i_ru"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/autour_one"
+        android:fontFamily="@font/opensans"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -24,7 +25,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="3dp"
-        android:background="#393636"
+        android:background="@color/cardviewbackground"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -39,13 +40,6 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginBottom="3dp"
                 tools:srcCompat="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:background="@color/yellowishorange"
-                android:text="TextView" />
 
             <RatingBar
                 android:id="@+id/rb_points_film_i_ru"
@@ -63,20 +57,14 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:background="@color/yellowishorange"
-                android:text="TextView" />
-
-            <TextView
                 android:id="@+id/tv_coment_film_i_ru"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white"
+                android:background="@color/backgroundcolor"
                 android:padding="5dp"
+                android:fontFamily="@font/opensans"
                 android:text="TextView"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 tools:ignore="TextContrastCheck" />
         </LinearLayout>
 

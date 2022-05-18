@@ -16,5 +16,6 @@
     <color name="grey">#999999</color>
     <color name="defaulttextcolor">#808080</color>
     <color name="backgroundcolor">#2B2929</color>
-    <color name="backgroundcolordarker">#1E1C1C</color>
+    <color name="backgroundcolordarker">#1E1C1C</color>393636
+    <color name="cardviewbackground">#393636</color>
 </resources>

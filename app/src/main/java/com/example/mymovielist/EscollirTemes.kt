@@ -40,7 +40,7 @@ class EscollirTemes : AppCompatActivity() {
         //initRecyclerView()
         buscarGeneros()
 
-        //
+        var a = intent.extras?.getIntArray("genreList")
         binding.bttnAddGenres.setOnClickListener {
             AddGenresToUser()
         }
@@ -175,7 +175,6 @@ class EscollirTemes : AppCompatActivity() {
     }
 
     //endregion
-
 
 
     //

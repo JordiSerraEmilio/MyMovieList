@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.Toast
 import android.widget.ToggleButton
 import com.example.mymovielist.R
+import com.example.mymovielist.Users
 import com.example.mymovielist.login.RestApiService
 import com.example.mymovielist.models.ApiService
 import com.example.mymovielist.models.Recomended.Recomendedfilms
@@ -92,7 +93,7 @@ class ChooseImageUserActivity : AppCompatActivity() {
                     println(it.toString())
                     Toast.makeText(this.applicationContext, "User image updated", Toast.LENGTH_SHORT).show()
 
-                    val intent = Intent(this.applicationContext, Recomendedfilms::class.java)
+                    val intent = Intent(this.applicationContext, Users::class.java)
                     startActivity(intent)
 
                 }else{

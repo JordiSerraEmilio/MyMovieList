@@ -6,11 +6,10 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 import kotlinx.serialization.Serializable
 
-@Parcelize
 data class Genres(
-     var id   : String?    = null,
-     var name : String? = null
-):Parcelable
+     @SerializedName("id") var id   : String?    = null,
+     @SerializedName("name") var name : String? = null
+)
 
 
 

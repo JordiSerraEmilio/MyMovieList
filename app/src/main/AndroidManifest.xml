@@ -37,7 +37,8 @@
             android:exported="false" />
         <activity
             android:name=".Users"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".FilmsYouSee"
             android:exported="false" />
