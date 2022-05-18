@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="360dp"
+    android:layout_height="395dp"
     app:cardElevation="10dp"
     app:cardBackgroundColor="@color/cardviewbackground">
 
@@ -58,8 +58,9 @@
 
             <TextView
                 android:id="@+id/tv_coment_film_i_ru"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="150dp"
                 android:background="@color/backgroundcolor"
                 android:padding="5dp"
                 android:fontFamily="@font/opensans"
