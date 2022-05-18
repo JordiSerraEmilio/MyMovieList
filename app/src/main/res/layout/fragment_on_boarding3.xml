@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center"
-            android:text="Our service provides a long top rated movies api so you can look for the perfect movie!"
+            android:text="Our service provides a long top rated movies API so you can look for the perfect movie!"
             android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"

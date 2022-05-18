@@ -133,12 +133,12 @@
         android:id="@+id/bttnCloseSession"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:background="@android:color/transparent"
         android:src="@drawable/ic_closesession"
         android:text="CLOSE SESSION"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.878"
         app:layout_constraintStart_toEndOf="@+id/imgBttnUserImage"
         app:layout_constraintTop_toBottomOf="@+id/se_busca_usuari" />
 
@@ -162,6 +162,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/defaultusericon"
+        android:background="@color/backgroundcolor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/se_busca_usuari" />
 
@@ -172,6 +173,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="48dp"
         android:hint="Your new name"
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

@@ -155,7 +155,7 @@ class LoginTab : Fragment() {
         }
     }
 
-    private fun initUser(u: User, email: String, password: String){
+    private fun initUser(u: User, email: String, password: String) {
 //        println("########## " + u.toString())
 //        var apiSalt = u.salt.toString().drop(7)
 //        val inputPasswordHash = sha256(password, apiSalt)
@@ -191,14 +191,16 @@ class LoginTab : Fragment() {
 //            startActivity(intent)
 //        }
 
-
-            val intent = Intent(this.context, Recomendedfilms::class.java)
-            // Guardar datos en el SharedPreferences
-            val shared: SharedPreferences = requireContext().getSharedPreferences("Login", Context.MODE_PRIVATE)
-            val edit = shared.edit()
-            edit.putString("email", inputUser.email)
-            edit.commit()
-            startActivity(intent)
+            inputUser = u
+            adapterGetUser = usAdapter(inputUser)
+        // Guardar datos en el SharedPreferences
+        val shared: SharedPreferences =
+            requireContext().getSharedPreferences("Login", Context.MODE_PRIVATE)
+        val edit = shared.edit()
+        edit.putString("email", inputUser.email)
+        edit.commit()
+        val intent = Intent(this.context, Recomendedfilms::class.java)
+        startActivity(intent)
     }
 
 

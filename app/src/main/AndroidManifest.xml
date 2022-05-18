@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMovieList">
         <activity
+            android:name=".GenreChooser"
+            android:exported="false" />
+        <activity
             android:name=".models.Users.ChooseImageUserActivity"
             android:exported="false" />
         <activity
@@ -37,7 +40,8 @@
             android:exported="false" />
         <activity
             android:name=".Users"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".FilmsYouSee"
             android:exported="false" />

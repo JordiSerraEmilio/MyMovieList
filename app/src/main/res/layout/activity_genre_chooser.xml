@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GenreChooser"
+    android:background="@color/backgroundcolor">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="245dp"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ToggleButton
+            android:id="@+id/tbttnAction"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="ACTION"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnAction"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnAction"
+            app:layout_constraintStart_toStartOf="@+id/tbttnAction" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout2"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout2"
+        android:layout_marginLeft="20dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnAdventure"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="ADVENTURE"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnAdventure"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnAdventure"
+            app:layout_constraintStart_toStartOf="@+id/tbttnAdventure" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout3"
+        android:layout_marginLeft="20dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnAnimation"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="ANIMATION"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnAnimation"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnAnimation"
+            app:layout_constraintStart_toStartOf="@+id/tbttnAnimation" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:background="@color/cardviewbackground"
+
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout2">
+
+        <ToggleButton
+            android:id="@+id/tbttnComedy"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="COMEDY"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnComedy"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnComedy"
+            app:layout_constraintStart_toStartOf="@+id/tbttnComedy" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout4"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout4"
+        android:layout_marginLeft="20dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnCrime"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="CRIME"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnCrime"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnCrime"
+            app:layout_constraintStart_toStartOf="@+id/tbttnCrime" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout5"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout5"
+        android:layout_marginLeft="20dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnDocumentary"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="DOCUMENTARY"
+            android:textColor="@color/white"
+            android:textSize="13.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnDocumentary"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnDocumentary"
+            app:layout_constraintStart_toStartOf="@+id/tbttnDocumentary" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        android:layout_marginTop="19dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnDrama"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="DRAMA"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnDrama"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnDrama"
+            app:layout_constraintStart_toStartOf="@+id/tbttnDrama" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout5"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"
+        android:layout_marginTop="19dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnFamily"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="FAMILY"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnFamily"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnFamily"
+            app:layout_constraintStart_toStartOf="@+id/tbttnFamily" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout6"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6"
+        android:layout_marginTop="19dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnFantasy"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="FANTASY"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnFantasy"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnFantasy"
+            app:layout_constraintStart_toStartOf="@+id/tbttnFantasy" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout7"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout7"
+        android:layout_marginTop="19dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnHistory"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="HISTORY"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnHistory"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnHistory"
+            app:layout_constraintStart_toStartOf="@+id/tbttnHistory" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout8"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout8"
+        android:layout_marginTop="19dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnHorror"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="HORROR"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnHorror"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnHorror"
+            app:layout_constraintStart_toStartOf="@+id/tbttnHorror" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout9"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout9"
+        android:layout_marginTop="19dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnMusic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="MUSIC"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnMusic"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnMusic"
+            app:layout_constraintStart_toStartOf="@+id/tbttnMusic" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout10"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout10"
+        android:layout_marginTop="19dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnMystery"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="MYSTERY"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnMystery"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnMystery"
+            app:layout_constraintStart_toStartOf="@+id/tbttnMystery" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout11"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout11"
+        android:layout_marginTop="19dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnRomance"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="ROMANCE"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnRomance"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnRomance"
+            app:layout_constraintStart_toStartOf="@+id/tbttnRomance" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout12"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout12"
+        android:layout_marginTop="19dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnScienceFiction"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="SCIENCE FICTION"
+            android:textColor="@color/white"
+            android:textSize="12.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnScienceFiction"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnScienceFiction"
+            app:layout_constraintStart_toStartOf="@+id/tbttnScienceFiction" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout13"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout13"
+        android:layout_marginTop="19dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnTVMovie"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="TV MOVIE"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnTVMovie"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnTVMovie"
+            app:layout_constraintStart_toStartOf="@+id/tbttnTVMovie" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout14"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout14"
+        android:layout_marginTop="19dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnThriller"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="THRILLER"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnThriller"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnThriller"
+            app:layout_constraintStart_toStartOf="@+id/tbttnThriller" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout15"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout15"
+        android:layout_marginTop="19dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnWar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="WAR"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnWar"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnWar"
+            app:layout_constraintStart_toStartOf="@+id/tbttnWar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardviewbackground"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout16"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout16"
+        android:layout_marginTop="19dp">
+
+        <ToggleButton
+            android:id="@+id/tbttnWestern"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/custom_drama_icon"
+            android:textOff="@null"
+            android:textOn="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.02" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:text="WESTERN"
+            android:textColor="@color/white"
+            android:textSize="14.5sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tbttnWestern"
+            app:layout_constraintEnd_toEndOf="@+id/tbttnWestern"
+            app:layout_constraintStart_toStartOf="@+id/tbttnWestern" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/bttnAdd"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/custom_button"
+        android:text="ADD GENRES"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout19"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout19" />
+</androidx.constraintlayout.widget.ConstraintLayout>

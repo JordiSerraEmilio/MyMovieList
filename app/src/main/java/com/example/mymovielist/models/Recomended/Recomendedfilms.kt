@@ -6,14 +6,18 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mymovielist.*
 import com.example.mymovielist.databinding.ActivityRankingBinding
 import com.example.mymovielist.databinding.ActivityRecomendedfilmsBinding
+import com.example.mymovielist.login.RestApiService
 import com.example.mymovielist.models.ApiService
 import com.example.mymovielist.models.TopFilms.ResultsTop
 import com.example.mymovielist.models.TopFilms.TopAdapter
 import com.example.mymovielist.models.TopFilms.TopFilms
+import com.example.mymovielist.models.Users.User
+import com.example.mymovielist.models.Users.usAdapter
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -25,26 +29,20 @@ class Recomendedfilms : AppCompatActivity() {
 
     private lateinit var binding: ActivityRecomendedfilmsBinding
     private lateinit var adapter: TopAdapter
+    private lateinit var adapterGetUser: usAdapter
+    private  var inputUser = User()
 
-    private var pags = arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-    private var pag = 1
-
+    private var lGenresStr = ""
     private var films = mutableListOf<ResultsTop>()
-    private var recomendedFilms = mutableListOf<ResultsTop>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRecomendedfilmsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        for (x in pags){
-//            pag = x
-//            listaPeliculas(true)
-//        }
+        GetUser()
 
-
-        listaPeliculas()
-        println(films.toString())
+        // region MENU
 
         // Finestra Films you see
         val yousee1 = findViewById<ImageButton>(R.id.bu_films_yousee)
@@ -80,43 +78,18 @@ class Recomendedfilms : AppCompatActivity() {
             overridePendingTransition(R.anim.animation0, R.anim.animation0)
             finish();
         }
+        // endregion
     }
 
     private fun getRetrofit(): Retrofit {
-        return Retrofit.Builder().baseUrl("https://api.themoviedb.org/3/movie/")
+        return Retrofit.Builder().baseUrl("https://api.themoviedb.org/3/discover/")
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
 
-    private fun listaPeliculas() {
-
-        CoroutineScope(Dispatchers.IO).launch {
-            val call = getRetrofit().create(ApiService::class.java)
-                .getPopularFilms("top_rated?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=en-US&page=" + pag.toString())
-
-            val peli = call.body()
-            runOnUiThread {
-                initFilms(peli!!)
-            }
-            val handler = CoroutineExceptionHandler { _, exception ->
-                println("CoroutineExceptionHandler got $exception")
-            }
-        }
-    }
 
     private fun initFilms(topFilms: TopFilms) {
-        val shared: SharedPreferences =
-            applicationContext.getSharedPreferences("Login", Context.MODE_PRIVATE)
-        val email = shared.getString("email", "")
-
         for (film in topFilms!!.results) {
             films.add(film)
-
-            //Filtro por generos
-//            for (movie in films) {
-//                if (movie.genreIds.contains(user.genres.id)) {
-//                    recomendedFilms.add(movie)
-//                }
-//            }
         }
         adapter = TopAdapter(films)
         binding.rvFilms.layoutManager = LinearLayoutManager(this)
@@ -127,4 +100,52 @@ class Recomendedfilms : AppCompatActivity() {
         films.removeAll { true }
     }
 
+    private fun GetUser(){
+        val shared: SharedPreferences = applicationContext.getSharedPreferences("Login", Context.MODE_PRIVATE)
+        val email = shared.getString("email", "")
+        if (email != null) {
+            gettingUser(email)
+        }
+    }
+
+    private fun getRetrofitUserByEmail(): Retrofit {
+        return Retrofit.Builder().baseUrl("https://6o5zl5.deta.dev/users/")
+            .addConverterFactory(GsonConverterFactory.create()).build()
+    }
+
+    private fun gettingUser(email: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val call = getRetrofitUserByEmail().create(ApiService::class.java)
+                .getUser(email)
+
+            val user = call.body()
+
+            runOnUiThread {
+                if (user != null) {
+                    initUser(user, email)
+                }
+            }
+        }
+    }
+    private fun initUser(u: User, email: String){
+        inputUser = u
+        for(genre in inputUser.genres){
+            lGenresStr += genre.id+","
+        }
+        lGenresStr = lGenresStr.dropLast(1)
+        adapterGetUser = usAdapter(inputUser)
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val call = getRetrofit().create(ApiService::class.java)
+                .getPopularFilms("movie?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres="+lGenresStr+"&with_watch_monetization_types=flatrate")
+
+            val peli = call.body()
+            runOnUiThread {
+                initFilms(peli!!)
+            }
+            val handler = CoroutineExceptionHandler { _, exception ->
+                println("CoroutineExceptionHandler got $exception")
+            }
+        }
+    }
 }

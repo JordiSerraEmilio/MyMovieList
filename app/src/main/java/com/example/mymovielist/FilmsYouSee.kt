@@ -63,10 +63,10 @@ class FilmsYouSee : AppCompatActivity() {
             finish();
         }
 
-        val prova = findViewById<Button>(R.id.prova)
-        prova.setOnClickListener {
-            listaPeliculas()
-        }
+//        val prova = findViewById<Button>(R.id.prova)
+//        prova.setOnClickListener {
+//            listaPeliculas()
+//        }
     }
 
     private fun getRetrofit(): Retrofit {

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2B2929"
+    android:background="@color/backgroundcolor"
     tools:context=".Movie">
 
     <RatingBar
@@ -42,7 +42,7 @@
         android:layout_height="30dp"
         android:autoSizeTextType="uniform"
         android:background="@color/baseorange"
-        android:fontFamily="@font/autour_one"
+        android:fontFamily="@font/opensans"
         android:maxHeight="50dp"
         android:text="FILM"
         android:textAlignment="center"
@@ -64,9 +64,10 @@
         android:autoSizeMaxTextSize="16sp"
         android:autoSizeMinTextSize="12sp"
         android:autoSizeTextType="uniform"
-        android:background="#5E5A5A"
+        android:background="@color/cardviewbackground"
         android:text="Descripcion"
         android:textColor="@color/white"
+        android:fontFamily="@font/opensans"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
