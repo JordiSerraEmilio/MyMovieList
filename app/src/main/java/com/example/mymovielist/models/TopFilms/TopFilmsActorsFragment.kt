@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.mymovielist.R
+import com.example.mymovielist.models.Actors.AdapterActor
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -19,6 +22,10 @@ private const val ARG_PARAM2 = "param2"
  */
 class TopFilmsActorsFragment : Fragment() {
     // TODO: Rename and change types of parameters
+
+    private var layoutManager: RecyclerView.LayoutManager? = null
+    private var adapter: RecyclerView.Adapter<AdapterActor.CastViewHolder>? = null
+
     private var param1: String? = null
     private var param2: String? = null
 
@@ -56,5 +63,13 @@ class TopFilmsActorsFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //R.id.rv_actors.apply{
+        //    layoutManager = LinearLayoutManager(activity)
+        //    adapter = AdapterActor()
+        //}
     }
 }
