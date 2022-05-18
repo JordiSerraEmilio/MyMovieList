@@ -121,7 +121,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
-        android:background="@color/yellowishorange"
+        android:background="@color/backgroundcolor"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -134,6 +134,8 @@
             android:id="@+id/tv_bu_producers"
             android:layout_width="102dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="1"
             android:background="@color/yellowishorange"
             android:gravity="center"
@@ -147,23 +149,31 @@
             android:id="@+id/tv_bu_actors"
             android:layout_width="86dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="1"
+            android:background="@color/yellowishorange"
             android:gravity="center"
             android:text="Actors"
             android:textColor="@color/textColor"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_bu_reviews"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="1"
+            android:background="@color/yellowishorange"
             android:gravity="center"
             android:text="Reviews"
             android:textColor="@color/textColor"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

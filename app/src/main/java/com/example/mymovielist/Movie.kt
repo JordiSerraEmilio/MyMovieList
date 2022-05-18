@@ -209,57 +209,11 @@ class Movie : AppCompatActivity() {
             val body2 = call2.body()
             val body3 = call3.body()
 
-            println(id)
+
 
             if (i == 1){
                 if (body != null) {
                     runOnUiThread {
-                        for (x in body.genres) {
-                            when (x.id) {
-                                "28" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Action"
-                                "12" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Adventure"
-                                "16" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Animation"
-                                "35" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Comedy"
-                                "80" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Crime"
-                                "99" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Documentary"
-                                "18" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Drama"
-                                "10751" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Family"
-                                "14" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Fantasy"
-                                "36" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " History"
-                                "27" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Horror"
-                                "10402" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Music"
-                                "9648" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Mystery"
-                                "10749" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Romance"
-                                "878" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Science Fiction"
-                                "10770" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " TV Movie"
-                                "53" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Thriller"
-                                "10752" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " War"
-                                "37" -> findViewById<TextView>(R.id.tv_film_genres).text =
-                                    findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Western"
-                                else -> { // Note the block
-                                    findViewById<TextView>(R.id.tv_film_genres).text =
-                                        findViewById<TextView>(R.id.tv_film_genres).text.toString() + " Undefined genre"
-                                }
-                            }
-                        }
                         if(body.productionCompanies != null){
                             initCompanies(body.productionCompanies)
                         }
@@ -278,7 +232,9 @@ class Movie : AppCompatActivity() {
             else if(i == 3){
                 if (body3 != null){
                     runOnUiThread {
-                        initReviews(body3, id)
+                        if (body != null) {
+                            initReviews(body3, body.id.toString())
+                        }
                     }
                 }
             }
