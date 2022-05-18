@@ -80,8 +80,8 @@ class Reviews_a : AppCompatActivity() {
     private fun listaReviewsUser() {
         val shared: SharedPreferences = applicationContext.getSharedPreferences("Login", Context.MODE_PRIVATE)
         val edit = shared.edit()
-        edit.putString("email", "rockyrockyUPDATED@example.com")
-        edit.commit()
+//        edit.putString("email", "rockyrockyUPDATED@example.com")
+//        edit.commit()
         val email = shared.getString("email", "")
 
         CoroutineScope(Dispatchers.IO).launch {

@@ -4,17 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.384375" />
-        <entry key="..\:/Users/Usuario/StudioProjects/MyMovieList/app/src/main/res/layout/activity_movie.xml" value="0.30648148148148147" />
         <entry key="..\:/Users/Usuario/StudioProjects/MyMovieList/app/src/main/res/layout/activity_recomendedfilms.xml" value="0.36102564102564105" />
-        <entry key="..\:/Users/Usuario/StudioProjects/MyMovieList/app/src/main/res/layout/activity_user.xml" value="0.30648148148148147" />
-        <entry key="..\:/Users/Usuario/StudioProjects/MyMovieList/app/src/main/res/layout/activity_users.xml" value="0.30648148148148147" />
         <entry key="..\:/Users/Usuario/StudioProjects/MyMovieList/app/src/main/res/layout/actor_item.xml" value="0.365625" />
-        <entry key="..\:/Users/Usuario/StudioProjects/MyMovieList/app/src/main/res/layout/film_item.xml" value="0.30648148148148147" />
         <entry key="..\:/Users/Usuario/StudioProjects/MyMovieList/app/src/main/res/layout/fragment_top_films_actors.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Usuario/StudioProjects/MyMovieList/app/src/main/res/layout/fragment_top_films_information.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Usuario/StudioProjects/MyMovieList/app/src/main/res/layout/genre_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Usuario/StudioProjects/MyMovieList/app/src/main/res/layout/item_companies.xml" value="0.33" />
-        <entry key="..\:/Users/Usuario/StudioProjects/MyMovieList/app/src/main/res/layout/reviewfilm_item.xml" value="0.30648148148148147" />
         <entry key="app/src/main/res/drawable-v24/custom_button.xml" value="0.311" />
         <entry key="app/src/main/res/drawable-v24/ic_drama_focused.xml" value="0.3035" />
         <entry key="app/src/main/res/drawable-v24/ic_facebook.xml" value="0.256" />
@@ -54,6 +49,7 @@
         <entry key="app/src/main/res/layout/activity_choose_image_user.xml" value="0.29243266353142366" />
         <entry key="app/src/main/res/layout/activity_escollir_temes.xml" value="0.19" />
         <entry key="app/src/main/res/layout/activity_films_you_see.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_genre_chooser.xml" value="0.29243266353142366" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_movie.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_on_boarding.xml" value="0.35625" />

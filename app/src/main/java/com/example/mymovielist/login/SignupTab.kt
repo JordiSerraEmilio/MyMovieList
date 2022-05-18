@@ -16,6 +16,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.mymovielist.EscollirTemes
+import com.example.mymovielist.GenreChooser
 import com.example.mymovielist.R
 import com.example.mymovielist.models.Genre.Genres
 import com.example.mymovielist.models.Recomended.Recomendedfilms
@@ -133,7 +134,7 @@ class SignupTab : Fragment() {
             }
 
             // Para pruebas BORRAR
-//            val intent = Intent(activity, EscollirTemes::class.java)
+//            val intent = Intent(activity, GenreChooser::class.java)
 //            startActivity(intent)
         }
 
@@ -316,7 +317,7 @@ class SignupTab : Fragment() {
 //                val test = shared.getString("email", "")
 //                Toast.makeText(context, test.toString(), Toast.LENGTH_SHORT).show()
 
-                val intent = Intent(activity, EscollirTemes::class.java)
+                val intent = Intent(activity, GenreChooser::class.java)
                 startActivity(intent)
 
             } else {
