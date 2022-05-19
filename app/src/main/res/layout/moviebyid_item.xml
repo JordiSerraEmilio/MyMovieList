@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="70dp"
-    app:cardBackgroundColor="@color/yellowishorange">
+    app:cardBackgroundColor="@color/backgroundcolor">
 
     <LinearLayout
         android:id="@+id/ll_moviebyid"
@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
-        android:background="@color/backgroundcolor"
+        android:background="@color/cardviewbackground"
         android:orientation="horizontal">
 
         <ImageView

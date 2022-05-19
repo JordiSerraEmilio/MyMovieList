@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="140dp"
-    app:cardBackgroundColor="@color/yellowishorange">
+    app:cardBackgroundColor="@color/backgroundcolor">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="2.5dp"
         android:layout_marginBottom="2.5dp"
-        android:background="#2B2929"
+        android:background="@color/cardviewbackground"
         android:orientation="horizontal">
 
         <LinearLayout
