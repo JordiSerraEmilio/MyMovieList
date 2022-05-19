@@ -11,6 +11,10 @@
         <entry key="..\:/Users/Usuario/StudioProjects/MyMovieList/app/src/main/res/layout/genre_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Usuario/StudioProjects/MyMovieList/app/src/main/res/layout/item_companies.xml" value="0.33" />
         <entry key="app/src/main/res/drawable-v24/custom_button.xml" value="0.311" />
+        <entry key="app/src/main/res/drawable-v24/custom_documentary_icon.xml" value="0.1275" />
+        <entry key="app/src/main/res/drawable-v24/ic_adventure_focused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable-v24/ic_animation_focused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable-v24/ic_crime_focused.xml" value="0.3065" />
         <entry key="app/src/main/res/drawable-v24/ic_drama_focused.xml" value="0.3035" />
         <entry key="app/src/main/res/drawable-v24/ic_facebook.xml" value="0.256" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
@@ -21,23 +25,71 @@
         <entry key="app/src/main/res/drawable-v24/login_edittxt_bg.xml" value="0.2925" />
         <entry key="app/src/main/res/drawable-v24/vie_bg.xml" value="0.3035" />
         <entry key="app/src/main/res/drawable/cine.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/custom_action_family.xml" value="0.1275" />
+        <entry key="app/src/main/res/drawable/custom_action_icon.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/custom_adventure_icon.xml" value="0.1275" />
+        <entry key="app/src/main/res/drawable/custom_animation_icon.xml" value="0.1275" />
+        <entry key="app/src/main/res/drawable/custom_comedy_icon.xml" value="0.1275" />
+        <entry key="app/src/main/res/drawable/custom_crime_icon.xml" value="0.1275" />
         <entry key="app/src/main/res/drawable/custom_drama_icon.xml" value="0.3035" />
         <entry key="app/src/main/res/drawable/custom_email_icon.xml" value="0.3035" />
+        <entry key="app/src/main/res/drawable/custom_family_icon.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/custom_fantasy_icon.xml" value="0.1275" />
+        <entry key="app/src/main/res/drawable/custom_fiction_icon.xml" value="0.1275" />
+        <entry key="app/src/main/res/drawable/custom_history_icon.xml" value="0.1275" />
+        <entry key="app/src/main/res/drawable/custom_horror_icon.xml" value="0.1275" />
         <entry key="app/src/main/res/drawable/custom_music_icon.xml" value="0.3035" />
+        <entry key="app/src/main/res/drawable/custom_mystery_icon.xml" value="0.1275" />
         <entry key="app/src/main/res/drawable/custom_person_icon.xml" value="0.3035" />
+        <entry key="app/src/main/res/drawable/custom_romance_icon.xml" value="0.1275" />
+        <entry key="app/src/main/res/drawable/custom_thriller_icon.xml" value="0.1275" />
         <entry key="app/src/main/res/drawable/custom_toast.xml" value="0.311" />
+        <entry key="app/src/main/res/drawable/custom_tvmovie_icon.xml" value="0.1275" />
+        <entry key="app/src/main/res/drawable/custom_war_icon.xml" value="0.1275" />
+        <entry key="app/src/main/res/drawable/custom_western_icon.xml" value="0.1275" />
         <entry key="app/src/main/res/drawable/director.xml" value="0.1675" />
         <entry key="app/src/main/res/drawable/director_black.xml" value="0.2565" />
         <entry key="app/src/main/res/drawable/family.xml" value="0.1675" />
         <entry key="app/src/main/res/drawable/gafas3d.xml" value="0.1675" />
         <entry key="app/src/main/res/drawable/gafas3d_black.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_action_focused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_action_unfocused.xml" value="0.3065" />
         <entry key="app/src/main/res/drawable/ic_admission_tickets_svgrepo_com.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_adventure_unfocused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_animation_unfocused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_comedy_focused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_comedy_unfocused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_crime_unfocused.xml" value="0.3065" />
         <entry key="app/src/main/res/drawable/ic_cup_cup_svgrepo_com.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_documentary_focused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_documentary_unfocused.xml" value="0.3065" />
         <entry key="app/src/main/res/drawable/ic_drama.xml" value="0.3035" />
         <entry key="app/src/main/res/drawable/ic_eye_svgrepo_com.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_family_focused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_family_unfocused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_fantasy_focused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_fantasy_unfocused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_fiction_focused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_fiction_unfocused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_history_focused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_history_unfocused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_horror_focused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_horror_unfocused.xml" value="0.3065" />
         <entry key="app/src/main/res/drawable/ic_music.xml" value="0.156" />
+        <entry key="app/src/main/res/drawable/ic_mystery_focused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_mystery_unfocused.xml" value="0.3065" />
         <entry key="app/src/main/res/drawable/ic_popcorn_svgrepo_com.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_romance_focused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_romance_unfocused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_thriller_focused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_thriller_unfocused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_tvmovie_focused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_tvmovie_unfocused.xml" value="0.3065" />
         <entry key="app/src/main/res/drawable/ic_user_svgrepo_com.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_war_focused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_war_unfocused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_western_focused.xml" value="0.3065" />
+        <entry key="app/src/main/res/drawable/ic_western_unfocused.xml" value="0.3065" />
         <entry key="app/src/main/res/drawable/lupa.xml" value="0.1675" />
         <entry key="app/src/main/res/drawable/movie.xml" value="0.1675" />
         <entry key="app/src/main/res/drawable/movie_black.xml" value="0.3035" />
