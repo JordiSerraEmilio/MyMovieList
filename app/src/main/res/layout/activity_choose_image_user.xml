@@ -19,12 +19,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
-
     <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="300dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.button.MaterialButtonToggleGroup
@@ -41,22 +42,36 @@
                 id="@+id/btn1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:icon="@drawable/defaultusericon"/>
+                app:icon="@drawable/defaultusericon1" />
 
             <com.google.android.material.button.MaterialButton
                 style="?attr/materialButtonOutlinedStyle"
                 id="@+id/btn2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:icon="@drawable/defaultusericon2"/>
+                app:icon="@drawable/defaultusericon22" />
 
             <com.google.android.material.button.MaterialButton
                 style="?attr/materialButtonOutlinedStyle"
                 id="@+id/btn3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:icon="@drawable/defaultusericon3"/>
+                app:icon="@drawable/defaultusericon33"/>
 
         </com.google.android.material.button.MaterialButtonToggleGroup>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/bttnChangeGenres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/custom_button"
+        android:text="CHANGE GENRES"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

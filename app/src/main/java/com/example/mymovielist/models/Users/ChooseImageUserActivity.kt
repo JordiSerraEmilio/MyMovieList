@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import android.widget.ToggleButton
+import com.example.mymovielist.ProfileGenreChooser
 import com.example.mymovielist.R
 import com.example.mymovielist.Users
 import com.example.mymovielist.login.RestApiService
@@ -45,6 +46,12 @@ class ChooseImageUserActivity : AppCompatActivity() {
 
         bttnChange.setOnClickListener {
             UpdateUserImage()
+        }
+
+        val bttnChangeGenres = findViewById<Button>(R.id.bttnChangeGenres)
+        bttnChangeGenres.setOnClickListener {
+            val intent = Intent(this.applicationContext, ProfileGenreChooser::class.java)
+            startActivity(intent)
         }
     }
 

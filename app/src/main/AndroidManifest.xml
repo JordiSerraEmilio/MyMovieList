@@ -55,6 +55,9 @@
             android:name=".EscollirTemes"
             android:exported="false" />
         <activity
+            android:name=".ProfileGenreChooser"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
