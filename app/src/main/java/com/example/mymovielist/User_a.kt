@@ -25,7 +25,8 @@ class User_a : AppCompatActivity() {
 
     var i = 1;
     private var reviewsUser = mutableListOf<Reviews>()
-    private var vistasfilms = mutableListOf<Seen>()
+    private var watchedfilms = mutableListOf<Seen>()
+    private var seenfilms = mutableListOf<Seen>()
     private lateinit var adapter: ReviewUserAdapter
     private lateinit var adapter2: SeenAdapter
 
@@ -40,7 +41,7 @@ class User_a : AppCompatActivity() {
         rank1.setOnClickListener {
             if(i != 1) {
                 if (i == 2) {
-                    //actores.removeAll { true }
+                    seenfilms.removeAll { true }
                 } else if (i == 3) {
                     reviewsUser.removeAll { true }
                 }
@@ -53,7 +54,7 @@ class User_a : AppCompatActivity() {
         rank2.setOnClickListener {
             if(i != 2){
                 if(i == 1){
-                    //companies.removeAll {true}
+                    watchedfilms.removeAll {true}
                 }else if(i == 3){
                     reviewsUser.removeAll { true }
                 }
@@ -66,9 +67,9 @@ class User_a : AppCompatActivity() {
         rank3.setOnClickListener {
             if(i != 3) {
                 if (i == 1) {
-                    //companies.removeAll {true}
+                    watchedfilms.removeAll {true}
                 } else if (i == 2) {
-                    //actores.removeAll { true }
+                    seenfilms.removeAll { true }
                 }
                 i = 3
                 CanviarRecycleView(mailuser.toString())
@@ -121,15 +122,17 @@ class User_a : AppCompatActivity() {
             val body = call.body()
 
             if(i == 1){
-                //runOnUiThread {
-
-                //}
+                runOnUiThread {
+                    if (body != null) {
+                        initWatched(body)
+                    }
+                }
             }
             else if(i == 2){
 
                     if (body != null) {
                         runOnUiThread {
-                            initFavorite(body)
+                            initSeen(body)
                         }
 
                     }
@@ -155,12 +158,22 @@ class User_a : AppCompatActivity() {
         findViewById<RecyclerView>(R.id.rv_user_act).adapter = adapter
     }
 
-    private fun initFavorite(user: User?) {
+    private fun initSeen(user: User?) {
         for (u in user!!.seen){
-            vistasfilms.add(u)
+            seenfilms.add(u)
         }
 
-        adapter2 = SeenAdapter(vistasfilms)
+        adapter2 = SeenAdapter(seenfilms)
+        findViewById<RecyclerView>(R.id.rv_user_act).layoutManager = LinearLayoutManager(this)
+        findViewById<RecyclerView>(R.id.rv_user_act).adapter = adapter2
+    }
+
+    private fun initWatched(user: User?) {
+        for (u in user!!.toWatch){
+            watchedfilms.add(u)
+        }
+
+        adapter2 = SeenAdapter(watchedfilms)
         findViewById<RecyclerView>(R.id.rv_user_act).layoutManager = LinearLayoutManager(this)
         findViewById<RecyclerView>(R.id.rv_user_act).adapter = adapter2
     }
