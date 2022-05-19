@@ -21,7 +21,8 @@ import com.example.mymovielist.R
 import com.example.mymovielist.models.Genre.Genres
 import com.example.mymovielist.models.Recomended.Recomendedfilms
 import com.example.mymovielist.models.Review.Reviews
-import com.example.mymovielist.models.Users.FilmsUser
+import com.example.mymovielist.models.Users.Seen
+import com.example.mymovielist.models.Users.ToWatch
 import com.example.mymovielist.models.Users.User
 
 
@@ -295,9 +296,9 @@ class SignupTab : Fragment() {
         user.isLogged = 1 // Si acaba de crear la cuenta significa que va a estar loggeado apartir de ahora
         user.genres = arrayListOf(Genres("", ""))
         user.reviews = arrayListOf(Reviews("", "", "", "", "", 0.0f))
-        user.seen = arrayListOf(FilmsUser("", ""))
-        user.toWatch = arrayListOf(FilmsUser("", ""))
-        user.dropped = arrayListOf(FilmsUser("", ""))
+        user.seen = arrayListOf(Seen("", "", "",""))
+        user.toWatch = arrayListOf(Seen("", "","", ""))
+        user.dropped = arrayListOf(ToWatch("", ""))
 
         val apiService = RestApiService()
 

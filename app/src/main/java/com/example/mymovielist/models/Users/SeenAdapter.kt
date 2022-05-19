@@ -1,4 +1,4 @@
-package com.example.mymovielist.models.Movies
+package com.example.mymovielist.models.Users
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,16 +7,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mymovielist.R
 import com.example.mymovielist.databinding.MoviebyidItemBinding
-import com.example.mymovielist.models.TopFilms.ResultsTop
 
-class MovieByIdAdapter(
-    private val movieById: List< MovieById>
-    ): RecyclerView.Adapter<MovieByIdAdapter.MovieByIdViewHolder>() {
+class SeenAdapter(
+    private val seen: List<Seen>
+    ): RecyclerView.Adapter<SeenAdapter.MovieByIdViewHolder>() {
 
         class MovieByIdViewHolder(view: View) : RecyclerView.ViewHolder(view){
             private val binding = MoviebyidItemBinding.bind(view)
             fun binMovieById(image:String?, name: String?){
-                Glide.with(itemView).load(image).into(binding.ivImgMoviebyid)
+                Glide.with(itemView).load("https://image.tmdb.org/t/p/w500"+image).into(binding.ivImgMoviebyid)
                 binding.tvTitleMoviebyid.text = name
             }
         }
@@ -28,12 +27,12 @@ class MovieByIdAdapter(
     }
 
     override fun onBindViewHolder(holder: MovieByIdViewHolder, position: Int) {
-        val result = movieById[position]
-        holder.binMovieById(result.backdropPath, result.title)
+        val result = seen[position]
+        holder.binMovieById(result.backdropPath, result.movieTitle)
     }
 
     override fun getItemCount(): Int {
-        return  movieById.size
+        return  seen.size
     }
 
 

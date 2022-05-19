@@ -8,10 +8,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mymovielist.models.ApiService
-import com.example.mymovielist.models.Movies.MovieById
-import com.example.mymovielist.models.Movies.MovieByIdAdapter
+import com.example.mymovielist.models.Users.SeenAdapter
 import com.example.mymovielist.models.Review.ReviewUserAdapter
 import com.example.mymovielist.models.Review.Reviews
+import com.example.mymovielist.models.Users.Seen
 import com.example.mymovielist.models.Users.User
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -25,9 +25,9 @@ class User_a : AppCompatActivity() {
 
     var i = 1;
     private var reviewsUser = mutableListOf<Reviews>()
-    private var favoritefilms = mutableListOf<MovieById>()
+    private var vistasfilms = mutableListOf<Seen>()
     private lateinit var adapter: ReviewUserAdapter
-    private lateinit var adapter2: MovieByIdAdapter
+    private lateinit var adapter2: SeenAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -128,18 +128,8 @@ class User_a : AppCompatActivity() {
             else if(i == 2){
 
                     if (body != null) {
-                        var id = ""
-                        for( r in body.reviews){
-                            id = r.movieId.toString()
-                            val call2 = getRetrofit().create(ApiService::class.java)
-                                .getMevie(id+"?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=en-US")
-                            val body2 = call2.body()
-                            if (body2 != null) {
-                                favoritefilms.add(body2)
-                            }
-                        }
                         runOnUiThread {
-                            initFavorite()
+                            initFavorite(body)
                         }
 
                     }
@@ -165,8 +155,12 @@ class User_a : AppCompatActivity() {
         findViewById<RecyclerView>(R.id.rv_user_act).adapter = adapter
     }
 
-    private fun initFavorite() {
-        adapter2 = MovieByIdAdapter(favoritefilms)
+    private fun initFavorite(user: User?) {
+        for (u in user!!.seen){
+            vistasfilms.add(u)
+        }
+
+        adapter2 = SeenAdapter(vistasfilms)
         findViewById<RecyclerView>(R.id.rv_user_act).layoutManager = LinearLayoutManager(this)
         findViewById<RecyclerView>(R.id.rv_user_act).adapter = adapter2
     }
