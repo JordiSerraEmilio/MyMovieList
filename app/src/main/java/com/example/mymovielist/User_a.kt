@@ -36,6 +36,7 @@ class User_a : AppCompatActivity() {
         setContentView(R.layout.activity_user)
         val mailuser = intent.extras?.getString("uCorreo")
         BuscarPorCorreo(mailuser.toString())
+        CanviarRecycleView(mailuser.toString())
 
         val rank1 = findViewById<TextView>(R.id.tv_bu_favorite_user)
         rank1.setOnClickListener {
