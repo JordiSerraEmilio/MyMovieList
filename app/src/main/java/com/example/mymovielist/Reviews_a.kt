@@ -100,10 +100,6 @@ class Reviews_a : AppCompatActivity() {
     }
 
     private fun initReviewsUser(user: User) {
-        for (u in user!!.reviews) {
-            reviewsUser.add(u)
-            println(u)
-        }
         adapter = ReviewUserAdapter(user)
         binding.rvReviewsUser.layoutManager = LinearLayoutManager(this)
         binding.rvReviewsUser.adapter = adapter

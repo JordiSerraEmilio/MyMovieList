@@ -1,11 +1,14 @@
 package com.example.mymovielist.models.Review
 
+import android.content.Intent
 import android.view.LayoutInflater
 import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import com.bumptech.glide.Glide
 import com.example.mymovielist.R
+import com.example.mymovielist.User_a
 import com.example.mymovielist.databinding.ReviewfilmItemBinding
 import com.example.mymovielist.models.Users.User
 
@@ -45,6 +48,11 @@ class ReviewFilmsAdapter(
         }
 
         holder.binReviewfilm(result.image, result.name, num, com )
+        holder.itemView.findViewById<LinearLayout>(R.id.ll_reviewfilm_item).setOnClickListener {
+            val intent = Intent(it.context, User_a::class.java)
+            intent.putExtra("uCorreo", result.email)
+            it.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

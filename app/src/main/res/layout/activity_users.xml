@@ -10,7 +10,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_users"
         android:layout_width="match_parent"
-        android:layout_height="490dp"
+        android:layout_height="410dp"
         android:layout_marginTop="40dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_fr_ranking2"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.027"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -140,7 +141,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.878"
         app:layout_constraintStart_toEndOf="@+id/imgBttnUserImage"
-        app:layout_constraintTop_toBottomOf="@+id/se_busca_usuari" />
+        app:layout_constraintTop_toBottomOf="@+id/se_busca_usuari"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/bttnUpdateProfile"

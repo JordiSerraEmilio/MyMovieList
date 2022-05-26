@@ -154,8 +154,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_filmlist"
         android:layout_width="match_parent"
+        android:layout_height="580dp"
         android:maxHeight="690dp"
-        android:layout_height="690dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
