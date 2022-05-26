@@ -29,11 +29,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_reviewsUser"
         android:layout_width="409dp"
-        android:layout_height="589dp"
+        android:layout_height="730dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_fr_ranking6" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_fr_ranking6"
+        app:layout_constraintVertical_bias="0.054" />
 
     <LinearLayout
         android:id="@+id/linearLayout"

@@ -42,7 +42,9 @@ class Recomendedfilms : AppCompatActivity() {
         setContentView(binding.root)
         val spinner = binding.spinner
         val spinList = listOf("Descendant", "Ascendant", "Genres")
-        val spinAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, spinList)
+        val spinAdapter = ArrayAdapter(this, R.layout.custom_selecteddropdown, spinList)
+        spinAdapter.setDropDownViewResource(R.layout.custom_dropdown)
+        spinner.adapter = spinAdapter
         GetUser()
 
         // region MENU
