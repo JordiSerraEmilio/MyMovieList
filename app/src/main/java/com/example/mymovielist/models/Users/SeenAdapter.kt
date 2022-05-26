@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mymovielist.Movie
@@ -32,7 +33,7 @@ class SeenAdapter(
     override fun onBindViewHolder(holder: MovieByIdViewHolder, position: Int) {
         val result = seen[position]
         holder.binMovieById(result.backdropPath, result.movieTitle)
-        holder.itemView.findViewById<ImageView>(R.id.iv_img_moviebyid).setOnClickListener{
+        holder.itemView.findViewById<LinearLayout>(R.id.ll_moviebyid).setOnClickListener{
             val intent = Intent(it.context, Movie::class.java)
             intent.putExtra("rid", result.movieId!!.toInt())
             it.context.startActivity(intent)

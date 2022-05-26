@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mymovielist.Movie
@@ -95,7 +96,7 @@ class TopAdapter(
             result.voteAverage,
             result.genreIds
         )
-        holder.itemView.findViewById<ImageView>(R.id.iv_film_cv).setOnClickListener{
+        holder.itemView.findViewById<LinearLayout>(R.id.ll_film_item).setOnClickListener{
             val intent = Intent(it.context, Movie::class.java)
             intent.putExtra("rid", result.id)
             it.context.startActivity(intent)

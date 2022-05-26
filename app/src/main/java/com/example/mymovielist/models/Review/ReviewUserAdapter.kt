@@ -1,15 +1,19 @@
 package com.example.mymovielist.models.Review
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mymovielist.R
+import com.example.mymovielist.User_a
 import com.example.mymovielist.databinding.ReviewuserItemBinding
+import com.example.mymovielist.models.Users.User
 
 class ReviewUserAdapter(
-    private val reviews: List<Reviews>
+    private val user: User
     ) : RecyclerView.Adapter<ReviewUserAdapter.ReviewUserViewHolder>() {
 
         class ReviewUserViewHolder(view: View) : RecyclerView.ViewHolder(view){
@@ -32,12 +36,17 @@ class ReviewUserAdapter(
     }
 
     override fun onBindViewHolder(holder: ReviewUserViewHolder, position: Int) {
-        val result = reviews[position]
+        val result = user.reviews[position]
         holder.binReviewUser(result.backdropPath, result.movieTitle, result.score, result.comment)
+        holder.itemView.findViewById<LinearLayout>(R.id.ll_reviewuser_item).setOnClickListener{
+            val intent = Intent(it.context, User_a::class.java)
+            intent.putExtra("uCorreo", user.email)
+            it.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
-        return reviews.size
+        return user.reviews.size
     }
 
 
