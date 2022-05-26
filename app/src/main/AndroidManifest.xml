@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMovieList">
         <activity
+            android:name=".login.multilanguage.MultiLanguageActivity"
+            android:exported="false" />
+        <activity
             android:name=".GenreChooser"
             android:exported="false" />
         <activity
