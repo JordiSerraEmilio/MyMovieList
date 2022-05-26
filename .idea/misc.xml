@@ -114,8 +114,10 @@
         <entry key="app/src/main/res/drawable/ticket.xml" value="0.1675" />
         <entry key="app/src/main/res/drawable/unselected_indicator.xml" value="0.311" />
         <entry key="app/src/main/res/layout/activity_choose_image_user.xml" value="0.29243266353142366" />
+        <entry key="app/src/main/res/layout/activity_create_review.xml" value="0.29243266353142366" />
         <entry key="app/src/main/res/layout/activity_escollir_temes.xml" value="0.19" />
         <entry key="app/src/main/res/layout/activity_films_you_see.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_genre_chooser.xml" value="0.25611967361740706" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_movie.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_multi_language.xml" value="0.29243266353142366" />
@@ -129,6 +131,8 @@
         <entry key="app/src/main/res/layout/activity_user.xml" value="0.29243266353142366" />
         <entry key="app/src/main/res/layout/activity_users.xml" value="0.25" />
         <entry key="app/src/main/res/layout/choose_genres.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/custom_dropdown.xml" value="0.29243266353142366" />
+        <entry key="app/src/main/res/layout/custom_selecteddropdown.xml" value="0.29243266353142366" />
         <entry key="app/src/main/res/layout/film_item.xml" value="0.67" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_login_tab.xml" value="0.35625" />
