@@ -104,7 +104,7 @@ class Reviews_a : AppCompatActivity() {
             reviewsUser.add(u)
             println(u)
         }
-        adapter = ReviewUserAdapter(reviewsUser)
+        adapter = ReviewUserAdapter(user)
         binding.rvReviewsUser.layoutManager = LinearLayoutManager(this)
         binding.rvReviewsUser.adapter = adapter
     }

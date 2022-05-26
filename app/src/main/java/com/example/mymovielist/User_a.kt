@@ -150,11 +150,7 @@ class User_a : AppCompatActivity() {
     }
 
     private fun initReviewsUser(user: User?) {
-        for (u in user!!.reviews) {
-            reviewsUser.add(u)
-
-        }
-        adapter = ReviewUserAdapter(reviewsUser)
+        adapter = ReviewUserAdapter(user!!)
         findViewById<RecyclerView>(R.id.rv_user_act).layoutManager = LinearLayoutManager(this)
         findViewById<RecyclerView>(R.id.rv_user_act).adapter = adapter
     }

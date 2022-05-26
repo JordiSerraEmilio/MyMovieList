@@ -303,6 +303,16 @@ class Movie : AppCompatActivity() {
                     }
                 }
             }
+            if (body2 != null){
+                runOnUiThread {
+                    for(item in body2.toWatch){
+                        if(item.movieId == idmovie.toString()){
+                            println("################################ "+idmovie)
+                            findViewById<CheckBox>(R.id.chkBoxToWatch).isChecked = true
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -320,7 +330,7 @@ class Movie : AppCompatActivity() {
             applicationContext.getSharedPreferences("Login", Context.MODE_PRIVATE)
         val email = shared.getString("email", "")
         if (email != null) {
-            gettingUserAddListSeen(email)
+            gettingUserAddListToWatch(email)
         }
     }
 
@@ -338,7 +348,7 @@ class Movie : AppCompatActivity() {
             applicationContext.getSharedPreferences("Login", Context.MODE_PRIVATE)
         val email = shared.getString("email", "")
         if (email != null) {
-            gettingUserRemoveListSeen(email)
+            gettingUserRemoveListToWatch(email)
         }
     }
 
