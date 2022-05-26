@@ -183,7 +183,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_film"
         android:layout_width="match_parent"
-        android:layout_height="311dp"
+        android:layout_height="400dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -199,12 +199,12 @@
         android:text="ADD REVIEW"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rBttnToWatch"
+        app:layout_constraintStart_toEndOf="@+id/chkBoxToWatch"
         app:layout_constraintTop_toBottomOf="@+id/tv_film_description"
         app:layout_constraintVertical_bias="0.454" />
 
     <CheckBox
-        android:id="@+id/rBttnSeen"
+        android:id="@+id/chkBoxSeen"
         android:layout_width="wrap_content"
         android:textColor="@color/white"
         android:layout_height="wrap_content"
@@ -214,14 +214,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_film_description" />
 
     <CheckBox
-        android:id="@+id/rBttnToWatch"
+        android:id="@+id/chkBoxToWatch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:text="TO WATCH"
         android:layout_marginTop="10dp"
         android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/rBttnSeen"
+        app:layout_constraintStart_toEndOf="@+id/chkBoxSeen"
         app:layout_constraintTop_toBottomOf="@+id/tv_film_description" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -39,7 +40,9 @@ class Recomendedfilms : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRecomendedfilmsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        val spinner = binding.spinner
+        val spinList = listOf("Descendant", "Ascendant", "Genres")
+        val spinAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, spinList)
         GetUser()
 
         // region MENU

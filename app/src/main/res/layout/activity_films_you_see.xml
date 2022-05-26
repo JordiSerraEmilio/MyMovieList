@@ -137,7 +137,7 @@
             android:background="@color/baseorange"
             android:fontFamily="@font/opensans"
             android:gravity="center"
-            android:text="Watched"
+            android:text="To Watch"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="24sp"
@@ -154,13 +154,14 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_filmlist"
         android:layout_width="match_parent"
-        android:layout_height="560dp"
+        android:maxHeight="690dp"
+        android:layout_height="690dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
-        app:layout_constraintVertical_bias="0.323" />
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
