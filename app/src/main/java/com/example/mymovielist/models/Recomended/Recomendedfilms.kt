@@ -5,6 +5,8 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ImageButton
 import android.widget.Toast
@@ -36,16 +38,38 @@ class Recomendedfilms : AppCompatActivity() {
     private var lGenresStr = ""
     private var films = mutableListOf<ResultsTop>()
 
+    private var orderBy = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRecomendedfilmsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         val spinner = binding.spinner
         val spinList = listOf("Descendant", "Ascendant", "Genres")
         val spinAdapter = ArrayAdapter(this, R.layout.custom_selecteddropdown, spinList)
         spinAdapter.setDropDownViewResource(R.layout.custom_dropdown)
         spinner.adapter = spinAdapter
-        GetUser()
+        spinner.onItemSelectedListener = object:
+            AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                if (p2 == 0){
+                    orderBy = "desc"
+                    GetUser()
+                }else if(p2 == 1){
+                    orderBy = "asc"
+                    GetUser()
+                }else{
+                    orderBy = "desc"
+                    GetUser()
+                }
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+        }
 
         // region MENU
 
@@ -141,8 +165,8 @@ class Recomendedfilms : AppCompatActivity() {
         adapterGetUser = usAdapter(inputUser)
 
         CoroutineScope(Dispatchers.IO).launch {
-            val call = getRetrofit().create(ApiService::class.java)
-                .getPopularFilms("movie?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres="+lGenresStr+"&with_watch_monetization_types=flatrate")
+            var call = getRetrofit().create(ApiService::class.java)
+                .getPopularFilms("movie?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=en-US&sort_by=popularity."+orderBy+"&include_adult=false&include_video=false&page=1&with_genres="+lGenresStr+"&with_watch_monetization_types=flatrate")
 
             val peli = call.body()
             runOnUiThread {

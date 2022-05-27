@@ -20,6 +20,7 @@ import com.example.mymovielist.models.Genre.Genres
 import com.example.mymovielist.models.Movies.AdapterCompanies
 import com.example.mymovielist.models.Movies.ProductionCompanies
 import com.example.mymovielist.models.Recomended.Recomendedfilms
+import com.example.mymovielist.models.Review.CreateReviewActivity
 import com.example.mymovielist.models.Review.ReviewFilmsAdapter
 import com.example.mymovielist.models.TopFilms.ResultsTop
 import com.example.mymovielist.models.Users.Seen
@@ -118,6 +119,13 @@ class Movie : AppCompatActivity() {
             } else {
                 UpdateUserRemoveListToWatch()
             }
+        }
+
+        val bttnCreateReview = findViewById<Button>(R.id.bttnCreateReview)
+        bttnCreateReview.setOnClickListener {
+            val intent = Intent(applicationContext, CreateReviewActivity::class.java)
+            intent.putExtra("movieid", idmovie)
+            startActivity(intent)
         }
     }
 

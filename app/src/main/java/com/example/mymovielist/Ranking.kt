@@ -72,7 +72,7 @@ class Ranking : AppCompatActivity() {
             finish();
         }
 
-        val menos=findViewById<Button>(R.id.bu_pag_atras)
+        val menos=findViewById<ImageButton>(R.id.bu_pag_atras)
         menos.setOnClickListener {
             if (pag >1){
                 pag = pag -1;
@@ -82,7 +82,7 @@ class Ranking : AppCompatActivity() {
             }
         }
 
-        val mas=findViewById<Button>(R.id.bu_pag_delante)
+        val mas=findViewById<ImageButton>(R.id.bu_pag_delante)
         mas.setOnClickListener {
             if (pag <10){
                 pag = pag +1;

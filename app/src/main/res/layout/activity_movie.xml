@@ -192,7 +192,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/bu_add_comment"
+        android:id="@+id/bttnCreateReview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/custom_button"
