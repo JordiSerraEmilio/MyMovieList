@@ -112,44 +112,42 @@
         android:id="@+id/tv_numpag_popular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
         android:layout_marginTop="12dp"
         android:gravity="center"
         android:text="- 1 -"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/rv_ranking"
-        app:layout_constraintStart_toEndOf="@+id/bu_pag_atras"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_fr_ranking4"
-        app:layout_constraintVertical_bias="0.064" />
-
-    <ImageButton
-        android:id="@+id/bu_pag_atras"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/backgroundcolor"
-        android:fontFamily="@font/opensans"
-        android:src="@drawable/ic_goback"
-        app:layout_constraintBottom_toTopOf="@+id/rv_ranking"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_fr_ranking4"
-        app:layout_constraintVertical_bias="0.545" />
+        app:layout_constraintVertical_bias="0.354" />
 
     <ImageButton
         android:id="@+id/bu_pag_delante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/vie_bg"
+        android:layout_marginStart="8dp"
         android:backgroundTint="@color/backgroundcolor"
         android:fontFamily="@font/opensans"
         android:src="@drawable/ic_gonext"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_numpag_popular"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.297"
         app:layout_constraintStart_toEndOf="@+id/tv_numpag_popular"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_fr_ranking4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/tv_numpag_popular" />
+
+    <ImageButton
+        android:id="@+id/bu_pag_atras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/backgroundcolor"
+        android:fontFamily="@font/opensans"
+        android:src="@drawable/ic_goback"
+        app:layout_constraintBottom_toTopOf="@+id/rv_ranking"
+        app:layout_constraintEnd_toStartOf="@+id/tv_numpag_popular"
+        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_numpag_popular"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
