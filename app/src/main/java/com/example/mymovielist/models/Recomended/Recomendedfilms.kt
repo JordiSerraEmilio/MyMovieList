@@ -7,10 +7,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.ImageButton
-import android.widget.Toast
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mymovielist.*
 import com.example.mymovielist.databinding.ActivityRankingBinding
@@ -61,7 +58,6 @@ class Recomendedfilms : AppCompatActivity() {
                 spinList = listOf("Descendent", "Ascendent", "Generes")
             }
         }
-
 
         val spinAdapter = ArrayAdapter(this, R.layout.custom_selecteddropdown, spinList)
         spinAdapter.setDropDownViewResource(R.layout.custom_dropdown)
