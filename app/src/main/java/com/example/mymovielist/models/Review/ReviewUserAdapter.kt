@@ -4,12 +4,16 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.mymovielist.Movie
 import com.example.mymovielist.R
 import com.example.mymovielist.User_a
 import com.example.mymovielist.databinding.ReviewuserItemBinding
+import com.example.mymovielist.models.Recomended.Recomendedfilms
 import com.example.mymovielist.models.Users.User
 
 class ReviewUserAdapter(
@@ -39,8 +43,20 @@ class ReviewUserAdapter(
         val result = user.reviews[position]
         holder.binReviewUser(result.backdropPath, result.movieTitle, result.score, result.comment)
         holder.itemView.findViewById<LinearLayout>(R.id.ll_reviewuser_item).setOnClickListener{
-            val intent = Intent(it.context, User_a::class.java)
-            intent.putExtra("uCorreo", user.email)
+            val intent = Intent(it.context, UpdateCreateReviewActivity::class.java)
+            intent.putExtra("oldpath", result.backdropPath)
+            intent.putExtra("oldtitle", result.movieTitle)
+            intent.putExtra("oldcomment", result.comment)
+            intent.putExtra("oldrating", result.score)
+            intent.putExtra("oldmovieid", result.movieId)
+            it.context.startActivity(intent)
+        }
+        holder.itemView.findViewById<ImageView>(R.id.iv_img_film_i_ru).setOnClickListener{
+//            val intent = Intent(it.context, User_a::class.java)
+//            intent.putExtra("uCorreo", user.email)
+//            it.context.startActivity(intent)
+            val intent = Intent(it.context, Movie::class.java)
+            intent.putExtra("rid", result.movieId!!.toInt())
             it.context.startActivity(intent)
         }
     }

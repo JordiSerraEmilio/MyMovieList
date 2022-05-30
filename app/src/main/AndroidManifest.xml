@@ -12,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMovieList">
         <activity
+            android:name=".models.Review.UpdateCreateReviewActivity"
+            android:exported="false" />
+        <activity
             android:name=".models.Review.CreateReviewActivity"
             android:exported="false"
-            android:theme="@style/Theme.MyMovieList.NoActionBar"/>
+            android:theme="@style/Theme.MyMovieList.NoActionBar" />
         <activity
             android:name=".login.multilanguage.MultiLanguageActivity"
             android:exported="false" />
