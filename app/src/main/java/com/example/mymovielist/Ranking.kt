@@ -1,6 +1,8 @@
 package com.example.mymovielist
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -31,6 +33,18 @@ class Ranking : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRankingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val leng: SharedPreferences = applicationContext.getSharedPreferences("Language", Context.MODE_PRIVATE)
+        val idioma = leng.getString("lang", "")
+
+        if(idioma != "english"){
+            if (idioma == "spanish"){
+                spanish()
+            }
+            if(idioma == "catalan"){
+                catalan()
+            }
+        }
 
         listaPeliculas(true)
         binding.tvNumpagPopular.text = "- $pag -"
@@ -130,5 +144,13 @@ class Ranking : AppCompatActivity() {
 
     private fun delFilms(){
         films.removeAll { true }
+    }
+
+    private fun spanish(){
+        binding.tvTitleFrRanking4.text = "PELICULAS POPULARES"
+    }
+
+    private fun catalan(){
+        binding.tvTitleFrRanking4.text = "PEL·LÍCULES POPULARS"
     }
 }

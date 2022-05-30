@@ -38,6 +38,18 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
         binding = ActivityUsersBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val leng: SharedPreferences = applicationContext.getSharedPreferences("Language", Context.MODE_PRIVATE)
+        val idioma = leng.getString("lang", "")
+
+        if(idioma != "english"){
+            if (idioma == "spanish"){
+                spanish()
+            }
+            if(idioma == "catalan"){
+                catalan()
+            }
+        }
+
         binding.seBuscaUsuari.setOnQueryTextListener(this)
 
         llistaUsers(false,"")
@@ -137,7 +149,7 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
             var call: Response<List<User>>
 
             if(boolean == true){
-                 call = getUsersFiltre().create(ApiService::class.java)
+                call = getUsersFiltre().create(ApiService::class.java)
                     .getListUsers("{searchName}?search_name=$query")
 
             }else{
@@ -182,7 +194,7 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
 
     override fun onQueryTextSubmit(query: String?): Boolean {
         if(query != null) {
-           searchByName(query)
+            searchByName(query)
         }
         return true
     }
@@ -263,6 +275,18 @@ class Users : AppCompatActivity() , SearchView.OnQueryTextListener{
         }else{
             Toast.makeText(this.applicationContext, "Email not saved in configuration", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun spanish(){
+        binding.tvTitleFrRanking2.text = "USUARIOS"
+        binding.bttnUpdateProfile.text = "ACTUALIZAR PERFIL"
+        binding.editTxtUserName.setText("Tu nuevo nombre")
+    }
+
+    private fun catalan(){
+        binding.tvTitleFrRanking2.text = "USUARIS"
+        binding.bttnUpdateProfile.text = "ACTIALIZAR PERFIL"
+        binding.editTxtUserName.setText("El teu nou nom")
     }
 
     // endregion

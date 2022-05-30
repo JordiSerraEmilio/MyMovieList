@@ -30,6 +30,18 @@ class Reviews_a : AppCompatActivity() {
         binding = ActivityReviewsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val leng: SharedPreferences = applicationContext.getSharedPreferences("Language", Context.MODE_PRIVATE)
+        val idioma = leng.getString("lang", "")
+
+        if(idioma != "english"){
+            if (idioma == "spanish"){
+                spanish()
+            }
+            if(idioma == "catalan"){
+                catalan()
+            }
+        }
+
         listaReviewsUser()
 
         // region MENU
@@ -103,5 +115,13 @@ class Reviews_a : AppCompatActivity() {
         adapter = ReviewUserAdapter(user)
         binding.rvReviewsUser.layoutManager = LinearLayoutManager(this)
         binding.rvReviewsUser.adapter = adapter
+    }
+
+    private fun spanish(){
+        binding.tvTitleFrRanking6.text = "RESEÑAS"
+    }
+
+    private fun catalan(){
+        binding.tvTitleFrRanking6.text = "RESSENYES"
     }
 }

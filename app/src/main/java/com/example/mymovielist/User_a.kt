@@ -1,5 +1,7 @@
 package com.example.mymovielist
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -34,6 +36,19 @@ class User_a : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user)
+
+        val leng: SharedPreferences = applicationContext.getSharedPreferences("Language", Context.MODE_PRIVATE)
+        val idioma = leng.getString("lang", "")
+
+        if(idioma != "english"){
+            if (idioma == "spanish"){
+                spanish()
+            }
+            if(idioma == "catalan"){
+                catalan()
+            }
+        }
+
         val mailuser = intent.extras?.getString("uCorreo")
         BuscarPorCorreo(mailuser.toString())
         CanviarRecycleView(mailuser.toString())
@@ -131,12 +146,12 @@ class User_a : AppCompatActivity() {
             }
             else if(i == 2){
 
-                    if (body != null) {
-                        runOnUiThread {
-                            initSeen(body)
-                        }
-
+                if (body != null) {
+                    runOnUiThread {
+                        initSeen(body)
                     }
+
+                }
 
             }
             else if(i == 3){
@@ -144,7 +159,7 @@ class User_a : AppCompatActivity() {
                     if (body != null) {
                         initReviewsUser(body)
                     }
-                 }
+                }
             }
         }
     }
@@ -173,6 +188,18 @@ class User_a : AppCompatActivity() {
         adapter2 = SeenAdapter(watchedfilms)
         findViewById<RecyclerView>(R.id.rv_user_act).layoutManager = LinearLayoutManager(this)
         findViewById<RecyclerView>(R.id.rv_user_act).adapter = adapter2
+    }
+
+    private fun spanish(){
+        findViewById<TextView>(R.id.tv_bu_favorite_user).text = "POR VER"
+        findViewById<TextView>(R.id.tv_bu_watched_user).text = "VISTAS"
+        findViewById<TextView>(R.id.tv_bu_reviews_user).text = "RESEÑAS"
+    }
+
+    private fun catalan(){
+        findViewById<TextView>(R.id.tv_bu_favorite_user).text = "PER VEURE"
+        findViewById<TextView>(R.id.tv_bu_watched_user).text = "VISTES"
+        findViewById<TextView>(R.id.tv_bu_reviews_user).text = "RESSENYES"
     }
 
 }

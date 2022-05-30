@@ -55,7 +55,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView14"
+                    android:id="@+id/tv_genre_film_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Genres :"
@@ -80,7 +80,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView15"
+                    android:id="@+id/tv_date_film_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Release date :"

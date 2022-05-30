@@ -46,8 +46,23 @@ class Recomendedfilms : AppCompatActivity() {
         binding = ActivityRecomendedfilmsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val leng: SharedPreferences = applicationContext.getSharedPreferences("Language", Context.MODE_PRIVATE)
+        val idioma = leng.getString("lang", "")
         val spinner = binding.spinner
-        var spinList = listOf("Descendant", "Ascendant")
+        var spinList = listOf("Descendant", "Ascendant", "Genres")
+
+        if(idioma != "english"){
+            if (idioma == "spanish"){
+                spanish()
+                spinList = listOf("Descendiente", "Ascendente", "Generos")
+            }
+            if(idioma == "catalan"){
+                catalan()
+                spinList = listOf("Descendent", "Ascendent", "Generes")
+            }
+        }
+
+
         val spinAdapter = ArrayAdapter(this, R.layout.custom_selecteddropdown, spinList)
         spinAdapter.setDropDownViewResource(R.layout.custom_dropdown)
         spinner.adapter = spinAdapter
@@ -55,15 +70,12 @@ class Recomendedfilms : AppCompatActivity() {
             AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 if (p2 == 0){
-//                    Toast.makeText(applicationContext, "Descendant", Toast.LENGTH_SHORT).show()
                     orderBy = "desc"
                     GetUser()
                 }else if(p2 == 1){
-//                    Toast.makeText(applicationContext, "Ascendant", Toast.LENGTH_SHORT).show()
                     orderBy = "asc"
-//                    GetUser()
+                    GetUser()
                 }else{
-//                    Toast.makeText(applicationContext, "Not implemented", Toast.LENGTH_SHORT).show()
                     orderBy = "desc"
                     GetUser()
                 }
@@ -72,6 +84,7 @@ class Recomendedfilms : AppCompatActivity() {
             override fun onNothingSelected(p0: AdapterView<*>?) {
                 TODO("Not yet implemented")
             }
+
         }
 
         // region MENU
@@ -124,7 +137,6 @@ class Recomendedfilms : AppCompatActivity() {
             films.add(film)
         }
         adapter = TopAdapter(films)
-        adapter.notifyDataSetChanged()
         binding.rvFilms.layoutManager = LinearLayoutManager(this)
         binding.rvFilms.adapter = adapter
     }
@@ -169,25 +181,24 @@ class Recomendedfilms : AppCompatActivity() {
         adapterGetUser = usAdapter(inputUser)
 
         CoroutineScope(Dispatchers.IO).launch {
-            if (orderBy.equals("desc")){
-                var call = getRetrofit().create(ApiService::class.java).getPopularFilms("movie?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres="+lGenresStr+"&with_watch_monetization_types=flatrate")
-                val peli = call.body()
-                runOnUiThread {
-                    initFilms(peli!!)
-                }
-                val handler = CoroutineExceptionHandler { _, exception ->
-                    println("CoroutineExceptionHandler got $exception")
-                }
-            }else{
-                var call = getRetrofit().create(ApiService::class.java).getPopularFilms("movie?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=en-US&sort_by=popularity.asc&include_adult=false&include_video=false&page=1&with_genres="+lGenresStr+"&with_watch_monetization_types=flatrate")
-                val peli = call.body()
-                runOnUiThread {
-                    initFilms(peli!!)
-                }
-                val handler = CoroutineExceptionHandler { _, exception ->
-                    println("CoroutineExceptionHandler got $exception")
-                }
+            var call = getRetrofit().create(ApiService::class.java)
+                .getPopularFilms("movie?api_key=902a2e71fa0c8a74cbe2fc39a4560b99&language=en-US&sort_by=popularity."+orderBy+"&include_adult=false&include_video=false&page=1&with_genres="+lGenresStr+"&with_watch_monetization_types=flatrate")
+
+            val peli = call.body()
+            runOnUiThread {
+                initFilms(peli!!)
+            }
+            val handler = CoroutineExceptionHandler { _, exception ->
+                println("CoroutineExceptionHandler got $exception")
             }
         }
+    }
+
+    private fun spanish(){
+        binding.tvTitleFrRanking3.text = "PELICULAS"
+    }
+
+    private fun catalan(){
+        binding.tvTitleFrRanking3.text = "PEL·LICULES"
     }
 }

@@ -91,7 +91,7 @@
         app:layout_constraintVertical_bias="0.148" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/tv_genres_movieactivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Genres :"
@@ -113,7 +113,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.352"
-        app:layout_constraintStart_toEndOf="@+id/textView16"
+        app:layout_constraintStart_toEndOf="@+id/tv_genres_movieactivity"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.199" />
 
@@ -138,6 +138,7 @@
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
             android:layout_weight="1"
+            android:autoSizeMaxTextSize="24sp"
             android:background="@color/baseorange"
             android:fontFamily="@font/opensans"
             android:gravity="center"
@@ -145,6 +146,8 @@
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
+            app:autoSizeMaxTextSize="24sp"
+            app:autoSizeTextType="uniform"
             tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -195,6 +198,8 @@
         android:id="@+id/bttnCreateReview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="14sp"
+        android:autoSizeTextType="uniform"
         android:background="@drawable/custom_button"
         android:text="ADD REVIEW"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"

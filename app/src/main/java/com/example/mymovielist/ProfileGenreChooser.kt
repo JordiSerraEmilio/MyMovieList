@@ -34,6 +34,18 @@ class ProfileGenreChooser : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_genre_chooser)
 
+        val leng: SharedPreferences = applicationContext.getSharedPreferences("Language", Context.MODE_PRIVATE)
+        val idioma = leng.getString("lang", "")
+
+        if(idioma != "english"){
+            if (idioma == "spanish"){
+                spanish()
+            }
+            if(idioma == "catalan"){
+                catalan()
+            }
+        }
+
         // region ADD/REMOVE FROM GENRE LIST EVENT
         val tgBttnAction = findViewById<ToggleButton>(R.id.tbttnAction)
         tgBttnAction.setOnCheckedChangeListener { _, isChecked ->
@@ -324,6 +336,14 @@ class ProfileGenreChooser : AppCompatActivity() {
         }else{
             Toast.makeText(this.applicationContext, "Email not saved in configuration", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun spanish(){
+
+    }
+
+    private fun catalan(){
+
     }
 
     // endregion

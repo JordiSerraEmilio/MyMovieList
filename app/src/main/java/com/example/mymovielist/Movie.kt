@@ -60,6 +60,18 @@ class Movie : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie)
+        val leng: SharedPreferences = applicationContext.getSharedPreferences("Language", Context.MODE_PRIVATE)
+        val idioma = leng.getString("lang", "")
+
+        if(idioma != "english"){
+            if (idioma == "spanish"){
+                spanish()
+            }
+            if(idioma == "catalan"){
+                catalan()
+            }
+        }
+
         idmovie = intent.extras?.getInt("rid")!!
         bucarPorId(idmovie.toString())
         CanviarRecycleView(idmovie.toString())
@@ -644,4 +656,24 @@ class Movie : AppCompatActivity() {
         }
     }
 
+
+    private fun spanish(){
+        findViewById<TextView>(R.id.tv_bu_producers).text ="Productores"
+        findViewById<TextView>(R.id.tv_bu_actors).text = "Actores"
+        findViewById<TextView>(R.id.tv_bu_reviews).text = "Reseñas"
+        findViewById<TextView>(R.id.tv_genres_movieactivity).text = "Generos :"
+        findViewById<CheckBox>(R.id.chkBoxSeen).text = "VISTA"
+        findViewById<CheckBox>(R.id.chkBoxToWatch).text = "POR VER"
+        findViewById<Button>(R.id.bttnCreateReview).text = "AÑADE RESEÑA"
+    }
+
+    private fun catalan(){
+        findViewById<TextView>(R.id.tv_bu_producers).text ="Productors"
+        findViewById<TextView>(R.id.tv_bu_actors).text = "Actors"
+        findViewById<TextView>(R.id.tv_bu_reviews).text = "Ressenyes"
+        findViewById<TextView>(R.id.tv_genres_movieactivity).text = "Generes :"
+        findViewById<CheckBox>(R.id.chkBoxSeen).text = "VISTE"
+        findViewById<CheckBox>(R.id.chkBoxToWatch).text = "PER VEURE"
+        findViewById<Button>(R.id.bttnCreateReview).text = "AFEGIR RESSENYA"
+    }
 }

@@ -38,6 +38,18 @@ class FilmsYouSee : AppCompatActivity() {
         binding = ActivityFilmsYouSeeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val leng: SharedPreferences = applicationContext.getSharedPreferences("Language", Context.MODE_PRIVATE)
+        val idioma = leng.getString("lang", "")
+
+        if(idioma != "english"){
+            if (idioma == "spanish"){
+                spanish()
+            }
+            if(idioma == "catalan"){
+                catalan()
+            }
+        }
+
         val shared: SharedPreferences = applicationContext.getSharedPreferences("Login", Context.MODE_PRIVATE)
         val edit = shared.edit()
         val email = shared.getString("email", "")
@@ -114,31 +126,31 @@ class FilmsYouSee : AppCompatActivity() {
     }
 
     private fun CanviarRecycleView(correo: String) {
-            CoroutineScope(Dispatchers.IO).launch {
-                val call = getRetrofit().create(ApiService::class.java)
-                    .getUser(correo+"")
+        CoroutineScope(Dispatchers.IO).launch {
+            val call = getRetrofit().create(ApiService::class.java)
+                .getUser(correo+"")
 
-                val body = call.body()
+            val body = call.body()
 
-                if(i == 1){
-                    runOnUiThread {
-                        if (body != null) {
-                            initSeen(body)
-                        }
+            if(i == 1){
+                runOnUiThread {
+                    if (body != null) {
+                        initSeen(body)
                     }
                 }
-                else if(i == 2){
+            }
+            else if(i == 2){
 
-                    if (body != null) {
-                        runOnUiThread {
-                            initWatched(body)
-                        }
-
+                if (body != null) {
+                    runOnUiThread {
+                        initWatched(body)
                     }
 
                 }
 
             }
+
+        }
 
     }
 
@@ -162,5 +174,16 @@ class FilmsYouSee : AppCompatActivity() {
         binding.rvFilmlist.adapter = adapter
     }
 
+    private fun spanish(){
+        binding.tvTitleFrRanking5.text = "LISTA DE PELICULAS"
+        binding.tvSeenYousee.text = "Vistas"
+        binding.tvWatchedYousee.text = "Por Ver"
+    }
+
+    private fun catalan(){
+        binding.tvTitleFrRanking5.text = "LLISTA DE PEL·LÍCULES"
+        binding.tvSeenYousee.text = "Vistes"
+        binding.tvWatchedYousee.text = "Per Veure"
+    }
 
 }
